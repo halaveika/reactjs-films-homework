@@ -8,9 +8,9 @@
     "start": "node utils/server.js",
     "build": "webpack --config ./config/webpack/webpack.prod.config.js",
     "prode": "node utils/prodServer.js",
-    "lint": "eslint src --ext .js,.jsx && npx stylelint src",
-    "eslint": "eslint src --ext .js,.jsx",
-    "stylelint": "npx stylelint src",
+    "lint": "eslint && npm run stylelint",
+    "eslint": "eslint src --fix --ext .js,.jsx",
+    "stylelint": "stylelint src/**/*.scss",
     "test": "jest --config=config/jest/jest.config.js --coverage -u",
     "prepare": "husky install",
     "pre-commit": "yarn lint-staged",
@@ -61,6 +61,7 @@
     "react-test-renderer": "^17.0.2",
     "sass": "^1.43.2",
     "sass-loader": "^12.2.0",
+    "stylelint": "^13.13.1",
     "stylelint-config-standard": "^22.0.0",
     "webpack": "^5.58.2",
     "webpack-cli": "^4.9.1",
@@ -68,6 +69,7 @@
     "webpack-hot-middleware": "^2.25.1"
   },
   "dependencies": {
+    "antd": "^4.16.13",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
