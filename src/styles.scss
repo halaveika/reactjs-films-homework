@@ -21,3 +21,30 @@ body {
     color: #fff;
   }
 }
+
+.ant-popover-inner {
+  width: 300px;
+  height: auto;
+  background-color: transparent;
+}
+
+.ant-popover-inner-content {
+  color: #fff;
+}
+
+.ant-popover-arrow {
+  display: none;
+}
+
+.ant-input {
+  background-color: transparent;
+  color: #fff;
+}
+
+.ant-input-search-button {
+  background-color: transparent;
+}
+
+.ant-input-group-addon {
+  background-color: transparent;
+}

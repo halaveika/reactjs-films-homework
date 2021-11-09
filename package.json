@@ -8,7 +8,7 @@
     "start": "node utils/server.js",
     "build": "webpack --config ./config/webpack/webpack.prod.config.js",
     "prode": "node utils/prodServer.js",
-    "lint": "eslint && npm run stylelint",
+    "lint": "npm run eslint && npm run stylelint",
     "eslint": "eslint src --fix --ext .js,.jsx",
     "stylelint": "stylelint src/**/*.scss",
     "test": "jest --config=config/jest/jest.config.js --coverage -u",
