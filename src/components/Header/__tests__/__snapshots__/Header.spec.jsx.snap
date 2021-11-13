@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render Header component should render Header component 1`] = `
+exports[`test Header component should render Header component 1`] = `
 <header
   className="ant-layout-header header"
 >
@@ -8,6 +8,7 @@ exports[`should render Header component should render Header component 1`] = `
     className="title"
   >
     films
+    
   </h1>
   <span
     className="ant-input-group-wrapper ant-input-search search"

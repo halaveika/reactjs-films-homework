@@ -1,21 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Popover, Button, Row } from 'antd';
 import PropTypes from 'prop-types';
 import './NavBar.scss';
 
-export default class NavBar extends React.Component {
+export default class NavBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
       visible: false,
     };
   }
-
-  hide = () => {
-    this.setState({
-      visible: false,
-    });
-  };
 
   handleVisibleChange = (visible) => {
     this.setState({ visible });
