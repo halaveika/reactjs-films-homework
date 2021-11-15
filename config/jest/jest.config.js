@@ -28,4 +28,5 @@ module.exports = {
         statements: 100
       }
     },
+    // transform: { "^.+\\.(ts|tsx|js|jsx)?$": "ts-jest" }
 };

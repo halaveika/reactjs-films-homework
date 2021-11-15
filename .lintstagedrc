@@ -1,4 +1,4 @@
 {
-  "src/**/*.{js,jsx}": ["npm run eslint"],
+  "src/**/*.{js,jsx}": ["npm run eslint","npm run test"],
    "*.scss": "npm run stylelint"
 }

@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 module.exports = {
   mode: 'development',
@@ -51,6 +52,7 @@ module.exports = {
   },
   devtool: 'inline-source-map',
   plugins: [
+    new FaviconsWebpackPlugin('../../public/assets/images/film-icon.png'),
     new HtmlWebpackPlugin({
       template:  path.resolve(__dirname, '../../src/index.html'),
     }),

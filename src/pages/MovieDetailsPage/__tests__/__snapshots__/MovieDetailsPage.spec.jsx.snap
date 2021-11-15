@@ -7,7 +7,7 @@ exports[`test MovieDetailsPage component should render MovieDetailsPage componen
   <img
     alt="wallpaper"
     className="movieDetails-image"
-    src="/images/cover-image.jpg"
+    src="/assets/images/cover-image.jpg"
   />
   <header
     className="ant-layout-header header"

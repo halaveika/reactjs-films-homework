@@ -30,7 +30,7 @@ export default function MovieDetailsPage() {
   /* eslint-enable */
   return (
     <Layout className="movieDetails-container">
-      <img className="movieDetails-image" src="/images/cover-image.jpg" alt="wallpaper" />
+      <img className="movieDetails-image" src="/assets/images/cover-image.jpg" alt="wallpaper" />
       <Header />
       <Layout.Content className="movieDetails-content">
         <InfoBar

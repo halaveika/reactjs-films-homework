@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 module.exports = {
   mode: 'production',
@@ -35,17 +36,11 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader,     {
-          loader: "css-loader",
-          options: { modules: true}
-        }],
+        use: [MiniCssExtractPlugin.loader,"css-loader"],
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [MiniCssExtractPlugin.loader,     {
-          loader: "css-loader",
-          options: { modules: true }
-        }, 'sass-loader']
+        use: [MiniCssExtractPlugin.loader,"css-loader", "sass-loader"]
       }
     ],
   },
@@ -54,6 +49,7 @@ module.exports = {
   },
   devtool: 'inline-source-map',
   plugins: [
+    new FaviconsWebpackPlugin('../../public/assets/images/film-icon.png'),
     new HtmlWebpackPlugin({
       template:  path.resolve(__dirname, '../../src/index.html'),
     }),
@@ -62,7 +58,7 @@ module.exports = {
     new MiniCssExtractPlugin({ filename: 'css/[name].[contenthash].css' }),
     new CopyPlugin({
       patterns: [
-        { from: path.resolve(__dirname, '../../public/images') , to: 'assets/images'},
+        { from: path.resolve(__dirname, '../../public/assets/images') , to: 'assets/images'},
         // { from: path.resolve(__dirname, '../../public/fonts') , to: 'assets/fonts'},
       ],
     }),
