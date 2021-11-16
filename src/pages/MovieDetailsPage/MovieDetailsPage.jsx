@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Layout } from 'antd';
 import InfoBar from '../../components/InfoBar';
 import NavBar from '../../components/NavBar';
-import Header from '../../components/Header';
 import './MovieDetailsPage.scss';
 
 export default function MovieDetailsPage() {
@@ -31,7 +30,7 @@ export default function MovieDetailsPage() {
   return (
     <Layout className="movieDetails-container">
       <img className="movieDetails-image" src="/assets/images/cover-image.jpg" alt="wallpaper" />
-      <Header />
+
       <Layout.Content className="movieDetails-content">
         <InfoBar
           original_title={filmDetails.original_title}
