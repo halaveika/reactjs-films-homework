@@ -7787,6 +7787,11 @@ require-from-string@^2.0.2:
   resolved "https://registry.npmjs.org/require-from-string/-/require-from-string-2.0.2.tgz"
   integrity sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw==
 
+reselect@^4.1.4:
+  version "4.1.4"
+  resolved "https://registry.yarnpkg.com/reselect/-/reselect-4.1.4.tgz#66df0aff41b6ee0f51e2cc17cfaf2c1995916f32"
+  integrity sha512-i1LgXw8DKSU5qz1EV0ZIKz4yIUHJ7L3bODh+Da6HmVSm9vdL/hG7IpbgzQ3k2XSirzf8/eI7OMEs81gb1VV2fQ==
+
 resize-img@^1.1.0:
   version "1.1.2"
   resolved "https://registry.npmjs.org/resize-img/-/resize-img-1.1.2.tgz"

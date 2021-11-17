@@ -1,12 +1,12 @@
 import React from 'react';
 import ListContainer from './components/ListContainer';
 import DetailsContainer from './components/DetailsContainer';
-import Header from './components/Header';
+import HeaderContainer from './components/HeaderContainer';
 
 export default function App() {
   return (
     <>
-      <Header />
+      <HeaderContainer />
       <DetailsContainer />
       <ListContainer />
     </>
