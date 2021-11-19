@@ -1,5 +1,6 @@
 import React from 'react';
 import { Layout, Input } from 'antd';
+import PropTypes from 'prop-types';
 import './Header.scss';
 
 export default function Header({ addSearchResult }) {
@@ -12,3 +13,7 @@ export default function Header({ addSearchResult }) {
     </Layout.Header>
   );
 }
+
+Header.propTypes = {
+  addSearchResult: PropTypes.func.isRequired,
+};

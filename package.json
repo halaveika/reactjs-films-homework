@@ -3,7 +3,7 @@
   "homepage": "https://halaveika.github.io/reactjs-films-homework/",
   "version": "1.0.0",
   "description": "[![Build Status](https://travis-ci.com/halaveika/reactjs-films-homework.svg?branch=master)](https://travis-ci.com/halaveika/reactjs-films-homework) ![Hackage-Deps](https://img.shields.io/hackage-deps/v/lens.svg) [![Greenkeeper badge](https://badges.greenkeeper.io/halaveika/reactjs-films-homework.svg)](https://greenkeeper.io/) [![GitHub release](https://img.shields.io/github/release/halaveika/reactjs-films-homework.svg)](https://github.com/halaveika/reactjs-films-homework/releases/latest)",
-  "main": "index.js",
+  "main": "index.jsx",
   "scripts": {
     "start": "node utils/server.js",
     "build": "webpack --config ./config/webpack/webpack.prod.config.js",
@@ -74,11 +74,13 @@
     "webpack-hot-middleware": "^2.25.1"
   },
   "dependencies": {
+    "@ant-design/icons": "^4.7.0",
     "antd": "^4.16.13",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.6",
+    "redux": "^4.1.2",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.4.0",
     "reselect": "^4.1.4"

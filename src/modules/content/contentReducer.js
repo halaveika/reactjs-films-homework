@@ -4,6 +4,7 @@ const initialState = {
   total_pages: 0,
   total_results: 0,
   genres_array: [],
+  video_url: '',
 };
 
 const contentReducer = (state = initialState, action) => {
@@ -18,6 +19,8 @@ const contentReducer = (state = initialState, action) => {
       };
     case 'ADD_GENRES':
       return { ...state, genres_array: action.payload.genres };
+    case 'ADD_VIDEO':
+      return { ...state, video_url: action.payload };
     default:
       return state;
   }
