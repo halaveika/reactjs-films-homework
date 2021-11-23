@@ -4,10 +4,10 @@ import thunk from 'redux-thunk';
 import contentReducer from './content';
 import { GetGenres } from './content/contentActions';
 
-const rootReducer = combineReducers({ content: contentReducer });
+export const rootReducer = combineReducers({ content: contentReducer });
 
 const middleware = [thunk];
-const store = createStore(
+export const store = createStore(
   rootReducer,
   composeWithDevTools(
     applyMiddleware(...middleware),
@@ -15,5 +15,3 @@ const store = createStore(
 );
 
 store.dispatch(GetGenres());
-
-export default store;

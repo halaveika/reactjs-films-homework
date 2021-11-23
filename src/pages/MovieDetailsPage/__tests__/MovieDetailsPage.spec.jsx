@@ -8,6 +8,10 @@ describe('test MovieDetailsPage component', () => {
   act(() => { component = create(<MovieDetailsPage />); });
   const tree = component.toJSON();
   it('should render MovieDetailsPage component', () => {
+    const component = create(
+      <MovieDetailsPage />,
+    );
+    const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

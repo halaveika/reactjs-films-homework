@@ -8,7 +8,6 @@ exports[`test Header component should render Header component 1`] = `
     className="title"
   >
     films
-    
   </h1>
   <span
     className="ant-input-group-wrapper ant-input-search search"

@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`content reducer should handle ADD_GENRES 1`] = `
+Object {
+  "genres_array": Array [
+    213,
+    333,
+    45,
+  ],
+  "page": 0,
+  "results": Array [],
+  "total_pages": 0,
+  "total_results": 0,
+  "video_url": "",
+}
+`;
+
+exports[`content reducer should handle ADD_ITEMS 1`] = `
+Object {
+  "genres_array": Array [],
+  "page": 1,
+  "results": Array [],
+  "total_pages": 12,
+  "total_results": 55,
+  "video_url": "",
+}
+`;
+
+exports[`content reducer should handle ADD_VIDEO 1`] = `
+Object {
+  "genres_array": Array [],
+  "page": 0,
+  "results": Array [],
+  "total_pages": 0,
+  "total_results": 0,
+  "video_url": "test_url",
+}
+`;
+
+exports[`content reducer should return the initial state 1`] = `
+Object {
+  "genres_array": Array [],
+  "page": 0,
+  "results": Array [],
+  "total_pages": 0,
+  "total_results": 0,
+  "video_url": "",
+}
+`;

@@ -1,4 +1,4 @@
-const initialState = {
+export const initialState = {
   page: 0,
   results: [],
   total_pages: 0,
@@ -7,7 +7,7 @@ const initialState = {
   video_url: '',
 };
 
-const contentReducer = (state = initialState, action) => {
+export const contentReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'ADD_ITEMS':
       return {
@@ -25,5 +25,3 @@ const contentReducer = (state = initialState, action) => {
       return state;
   }
 };
-
-export default contentReducer;

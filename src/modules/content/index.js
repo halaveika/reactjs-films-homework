@@ -1,3 +1,3 @@
-import contentReducer from './contentReducer';
+import { contentReducer } from './contentReducer';
 
 export default contentReducer;

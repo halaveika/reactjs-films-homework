@@ -1,7 +1,7 @@
 import { URL, API_KEY_V3, URL_YOUTUBE } from '../../constants';
 
 class HttpService {
-  searchMovieRequest = async (str) => {
+  static async searchMovieRequest(str) {
     try {
       const response = await fetch(`${URL}search/movie?api_key=${API_KEY_V3}&query=${str}&page=1`, { method: 'GET' });
       return await response.json();
@@ -10,7 +10,7 @@ class HttpService {
     }
   }
 
-  movieGenresRequest = async () => {
+  static async movieGenresRequest() {
     try {
       const response = await fetch(`${URL}genre/movie/list?api_key=${API_KEY_V3}`, { method: 'GET' });
       return await response.json();
@@ -19,7 +19,7 @@ class HttpService {
     }
   }
 
-  movieVideoRequest = async (id) => {
+  static async movieVideoRequest(id) {
     try {
       const videoInfo = await fetch(`${URL}movie/${id}/videos?api_key=${API_KEY_V3}`, { method: 'GET' });
       const json = await videoInfo.json();
@@ -31,4 +31,4 @@ class HttpService {
   }
 }
 
-export default new HttpService();
+export default HttpService;
