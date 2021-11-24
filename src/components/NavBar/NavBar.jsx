@@ -14,7 +14,7 @@ export default class NavBar extends Component {
   handleVisibleChange(visible) {
     this.setState({ visible });
   }
-
+/* eslint-disable */
   render() {
     const { overview } = this.props;
     const { visible } = this.state;
@@ -33,7 +33,7 @@ export default class NavBar extends Component {
     );
   }
 }
-
+/* eslint-enable */
 NavBar.propTypes = {
   overview: PropTypes.string.isRequired,
 };

@@ -1,36 +1,40 @@
-import React, { cloneElement, useState } from 'react';
+import React, { Component } from 'react';
 import { Modal } from 'antd';
 import PropTypes from 'prop-types';
 import './WatchVideoModal.scss';
 
-export default function WatchVideoModal(props) {
-  const [isModalVisible, setIsModalVisible] = useState(false);
+export default class WatchVideoModal extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isModalVisible: false,
+    };
+  }
 
-  const showModal = () => {
-    props.handleVideo(props.id);
-    setIsModalVisible(true);
-  };
+  handleCancel() {
+    this.setState({ isModalVisible: false });
+  }
 
-  const handleOk = () => {
-    setIsModalVisible(false);
-  };
-
-  const handleCancel = () => {
-    setIsModalVisible(false);
-  };
+  showModal() {
+    const { id, handleVideo } = this.props;
+    handleVideo(id);
+    this.setState({ isModalVisible: true });
+  }
 
   /* eslint-disable */
+  render() {
+    const { isModalVisible } = this.state;
   return (
     <>
-      { cloneElement(props.children, { onClick: showModal }) }
-      <Modal visible={isModalVisible} cancelText="cancel" okButtonProps={{ style: { display: 'none' } }} onOk={handleOk} width="850px" height="500px" onCancel={handleCancel} closable={false} centered>
-        <iframe className="videoIframe" src={`${props.video}`} frameBorder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+      { React.cloneElement(this.props.children, { onClick: this.showModal.bind(this) }) }
+      <Modal visible={isModalVisible} cancelText="cancel" okButtonProps={{ style: { display: 'none' } }} width="85vw" height="85vh" onCancel={this.handleCancel.bind(this)} closable={false} centered>
+        <iframe className="videoIframe" src={`${this.props.video}`} frameBorder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
       </Modal>
     </>
   );
     /* eslint-enable */
+  }
 }
-
 WatchVideoModal.propTypes = {
   id: PropTypes.string.isRequired,
   video: PropTypes.string.isRequired,

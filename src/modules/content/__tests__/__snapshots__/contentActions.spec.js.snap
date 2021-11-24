@@ -3,11 +3,7 @@
 exports[`actions GetGenres actioin change store 1`] = `
 Object {
   "content": Object {
-    "genres_array": Array [
-      213,
-      333,
-      45,
-    ],
+    "genres_array": undefined,
     "page": 1,
     "results": Array [],
     "total_pages": 12,
@@ -20,11 +16,7 @@ Object {
 exports[`actions GetVideoUrl actioin change store 1`] = `
 Object {
   "content": Object {
-    "genres_array": Array [
-      213,
-      333,
-      45,
-    ],
+    "genres_array": undefined,
     "page": 1,
     "results": Array [],
     "total_pages": 12,

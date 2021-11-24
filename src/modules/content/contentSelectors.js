@@ -1,4 +1,5 @@
 import { createSelector } from 'reselect';
+import { transformArray } from '../../utils/transformArray';
 
 export const getSearchMovieResult = (state) => state.content.results;
 
@@ -12,8 +13,7 @@ export const getSearchList = createSelector(
   (results, genres_array) => results.map((item) => ({
     id: item.id,
     title: item.title,
-    genres: item.genre_ids.map((element) => genres_array
-      .find((genre) => genre.id === element).name),
+    genres: transformArray(item.genre_ids, genres_array),
     vote_average: item.vote_average,
     poster: item.poster_path,
     overview: item.overview,

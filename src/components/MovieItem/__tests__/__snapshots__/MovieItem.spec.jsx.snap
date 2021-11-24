@@ -41,3 +41,138 @@ exports[`test MovieItem component should render MovieItem component 1`] = `
   </div>
 </div>
 `;
+
+exports[`test MovieItem component toggleActive should change state 1`] = `
+<div
+  className="ant-card ant-card-bordered movie-item__hovered"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <div
+    className="ant-card-body"
+    style={Object {}}
+  >
+    <div
+      className="overlay__active"
+    />
+    <img
+      alt="Poster!"
+      className="poster__active"
+      src="https://image.tmdb.org/t/p/w500/image_path"
+    />
+    <button
+      className="ant-btn ant-btn-primary watch-btn__active"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Watch Now
+      </span>
+    </button>
+    <div
+      className="movie-item-container__active"
+    >
+      <span
+        className="movie-item_title"
+      >
+        Fight club
+      </span>
+      <span
+        className="movie-item_vote-average"
+      >
+        8
+      </span>
+      <span
+        className="movie-item_genre"
+      >
+        drama, sport, comedy
+      </span>
+    </div>
+    <span
+      className="overview"
+    >
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry
+    </span>
+  </div>
+</div>
+`;
+
+exports[`test MovieItem component toggleHover should change state 1`] = `
+<div
+  className="ant-card ant-card-bordered movie-item__hovered"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <div
+    className="ant-card-body"
+    style={Object {}}
+  >
+    <div
+      className="overlay"
+    />
+    <img
+      alt="Poster!"
+      className="poster"
+      src="https://image.tmdb.org/t/p/w500/image_path"
+    />
+    <button
+      className="ant-btn ant-btn-primary ant-btn-circle watch-btn"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        aria-label="caret-right"
+        className="anticon anticon-caret-right icon"
+        role="img"
+        style={
+          Object {
+            "fontSize": "250%",
+          }
+        }
+      >
+        <svg
+          aria-hidden="true"
+          data-icon="caret-right"
+          fill="currentColor"
+          focusable="false"
+          height="1em"
+          viewBox="0 0 1024 1024"
+          width="1em"
+        >
+          <path
+            d="M715.8 493.5L335 165.1c-14.2-12.2-35-1.2-35 18.5v656.8c0 19.7 20.8 30.7 35 18.5l380.8-328.4c10.9-9.4 10.9-27.6 0-37z"
+          />
+        </svg>
+      </span>
+    </button>
+    <button
+      className="ant-btn more-btn"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        View Info
+      </span>
+    </button>
+    <div
+      className="movie-item-container"
+    >
+      <span
+        className="movie-item_title"
+      >
+        Fight club
+      </span>
+      <span
+        className="movie-item_vote-average"
+      >
+        8
+      </span>
+      <span
+        className="movie-item_genre"
+      >
+        drama, sport, comedy
+      </span>
+    </div>
+  </div>
+</div>
+`;

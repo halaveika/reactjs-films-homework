@@ -1,6 +1,6 @@
 import React from 'react';
-import { create, act } from 'react-test-renderer';
-import { Card, Button } from 'antd';
+import { create } from 'react-test-renderer';
+import { Button } from 'antd';
 import WatchVideoModal from '../WatchVideoModal';
 
 const WatchVideoModalProps = {
@@ -9,50 +9,58 @@ const WatchVideoModalProps = {
   handleVideo: jest.fn(),
 };
 
-afterEach(() => {
-  jest.clearAllMocks();
-});
-
-const toggleActive = jest.fn();
-
 describe('test WatchVideoModal component', () => {
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   it('should render WatchVideoModal component', () => {
     const component = create(
       <WatchVideoModal
         video={WatchVideoModalProps.video}
         handleVideo={WatchVideoModalProps.handleVideo}
         id={WatchVideoModalProps.id}
-        children={<Button onClick={toggleActive} />}
-      />,
+      >
+        <Button />
+      </WatchVideoModal>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-  // it('handleVisibleChange should change state', () => {
-  //   const mockCallback = jest.spyOn(NavBar.prototype, 'setState').mockImplementation();
+  it('click should change state', () => {
+    const mockCallback = jest.spyOn(WatchVideoModal.prototype, 'setState').mockImplementation();
+    const component = create(
+      <WatchVideoModal
+        video={WatchVideoModalProps.video}
+        handleVideo={WatchVideoModalProps.handleVideo}
+        id={WatchVideoModalProps.id}
+      >
+        <Button />
+      </WatchVideoModal>,
+    );
+    const { root } = component;
+    expect(root.instance.state.isModalVisible).toBe(false);
+    root.findAllByType('button')[0].props.onClick();
+    expect(mockCallback.mock.calls.length).toBe(1);
+    expect(mockCallback.mock.calls[0][0]).toEqual({ isModalVisible: true });
+  });
 
-  //   const { root } = create(
-  //     <NavBar
-  //       overview={mockData.overview}
-  //     />,
-  //   );
-  //   root.instance.handleVisibleChange(true);
-  //   expect(mockCallback.mock.calls.length).toBe(1);
-  //   expect(mockCallback.mock.calls[0][0]).toStrictEqual({visible:true});
-  // });
-
-  // it('handleVisibleChange should handle button click', () => {
-  //   const mockCallback = jest.spyOn(NavBar.prototype, 'handleVisibleChange').mockImplementation();
-
-  //   const { root } = create(
-  //     <NavBar
-  //       overview={mockData.overview}
-  //     />,
-  //   );
-  //   expect(root.instance.state.visible).toBe(false);
-  //   act(() => { root.findAllByType('button')[1].props.onClick(); });
-  //   expect(mockCallback.mock.calls.length).toBe(1);
-  //   expect(mockCallback.mock.calls[0][0]).toBe(true);
-  // });
+  it('handleCancel should change stat', () => {
+    const mockCallback = jest.spyOn(WatchVideoModal.prototype, 'setState').mockImplementation();
+    const component = create(
+      <WatchVideoModal
+        video={WatchVideoModalProps.video}
+        handleVideo={WatchVideoModalProps.handleVideo}
+        id={WatchVideoModalProps.id}
+        SS
+      >
+        <Button />
+      </WatchVideoModal>,
+    );
+    const { root } = component;
+    root.instance.handleCancel();
+    expect(mockCallback.mock.calls.length).toBe(1);
+    expect(mockCallback.mock.calls[0][0]).toEqual({ isModalVisible: false });
+  });
 });

@@ -11,7 +11,7 @@
     "lint": "npm run eslint && npm run stylelint",
     "eslint": "eslint src --fix --ext .js,.jsx",
     "stylelint": "stylelint src/**/*.scss",
-    "test": "jest --config=config/jest/jest.config.js --coverage -u",
+    "test": "jest --config=config/jest/jest.config.js --coverage --collectCoverageFrom='src/**/*.{js,jsx}'",
     "prepare": "husky install",
     "pre-commit": "yarn lint-staged",
     "predeploy": "npm run build",

@@ -3,9 +3,22 @@
 exports[`content reducer should handle ADD_GENRES 1`] = `
 Object {
   "genres_array": Array [
-    213,
-    333,
-    45,
+    Object {
+      "id": 13,
+      "name": "Adventure",
+    },
+    Object {
+      "id": 18,
+      "name": "Drama",
+    },
+    Object {
+      "id": 20,
+      "name": "Family",
+    },
+    Object {
+      "id": 21,
+      "name": "Fantasy",
+    },
   ],
   "page": 0,
   "results": Array [],

@@ -25,7 +25,19 @@ describe('content reducer', () => {
     const action = {
       type: 'ADD_GENRES',
       payload: {
-        genres: [213, 333, 45],
+        genres: [{
+          id: 13,
+          name: 'Adventure',
+        }, {
+          id: 18,
+          name: 'Drama',
+        }, {
+          id: 20,
+          name: 'Family',
+        }, {
+          id: 21,
+          name: 'Fantasy',
+        }],
       },
     };
     expect(

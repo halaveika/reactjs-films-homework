@@ -2,16 +2,30 @@ import { SearchData, GetGenres, GetVideoUrl } from '../contentActions';
 import HttpService from '../../api/httpService';
 import { store } from '../../store';
 
-const mockSearchMovieRequest = jest.spyOn(HttpService, 'searchMovieRequest').mockImplementation((str) => ({
+jest.spyOn(HttpService, 'searchMovieRequest').mockImplementation(() => ({
   results: [],
   page: 1,
   total_pages: 12,
   total_results: 55,
 }));
-const mockMovieGenresRequest = jest.spyOn(HttpService, 'movieGenresRequest').mockImplementation(() => ({
-  genres: [213, 333, 45],
+
+jest.spyOn(HttpService, 'movieGenresRequest').mockImplementation(() => ({
+  genres_array: [{
+    id: 13,
+    name: 'Adventure',
+  }, {
+    id: 18,
+    name: 'Drama',
+  }, {
+    id: 20,
+    name: 'Family',
+  }, {
+    id: 21,
+    name: 'Fantasy',
+  }],
 }));
-const mockMovieVideoRequest = jest.spyOn(HttpService, 'movieVideoRequest').mockImplementation((id) => 'test_url');
+
+jest.spyOn(HttpService, 'movieVideoRequest').mockImplementation(() => 'test_url');
 
 describe('actions', () => {
   afterEach(() => {

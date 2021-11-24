@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`contentSelectors testing getMoviesGenre should return genres_array from state 1`] = `
+Array [
+  Object {
+    "id": 13,
+    "name": "Adventure",
+  },
+  Object {
+    "id": 18,
+    "name": "Drama",
+  },
+  Object {
+    "id": 20,
+    "name": "Family",
+  },
+  Object {
+    "id": 21,
+    "name": "Fantasy",
+  },
+]
+`;
+
+exports[`contentSelectors testing getSearchMovieResult should return getSearchList props 1`] = `
+Array [
+  Object {
+    "genres": Array [
+      "Adventure",
+      "Family",
+      "Fantasy",
+    ],
+    "id": 2412412,
+    "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry",
+    "poster": undefined,
+    "title": "Fight club",
+    "vote_average": 8,
+  },
+  Object {
+    "genres": Array [
+      "Adventure",
+      "Drama",
+    ],
+    "id": 41412,
+    "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry",
+    "poster": undefined,
+    "title": "Sopranos",
+    "vote_average": undefined,
+  },
+]
+`;
+
+exports[`contentSelectors testing getSearchMovieResult should return results from state 1`] = `
+Array [
+  Object {
+    "genre_ids": Array [
+      13,
+      20,
+      21,
+    ],
+    "id": 2412412,
+    "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry",
+    "poster": "image_path",
+    "title": "Fight club",
+    "vote_average": 8,
+  },
+  Object {
+    "genre_ids": Array [
+      13,
+      18,
+    ],
+    "id": 41412,
+    "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry",
+    "poster": "image_path",
+    "title": "Sopranos",
+    "vote_average_ids": 10,
+  },
+]
+`;
+
+exports[`contentSelectors testing getSearchMovieResult should return video_url from state 1`] = `"test_url"`;

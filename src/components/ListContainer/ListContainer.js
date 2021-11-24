@@ -8,10 +8,6 @@ const mapStateToProps = (state) => ({
   video: getVideo(state),
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  handleVideo: (id) => dispatch(GetVideoUrl(id)),
-});
-
-const ListContainer = connect(mapStateToProps, mapDispatchToProps)(MovieList);
+const ListContainer = connect(mapStateToProps, { handleVideo: GetVideoUrl })(MovieList);
 
 export default ListContainer;

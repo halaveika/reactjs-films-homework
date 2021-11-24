@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import App from '../app';
 import { store } from '../modules/store';
 
-window.matchMedia = window.matchMedia || function () {
+window.matchMedia = window.matchMedia || function mMedia() {
   return {
     matches: false,
     addListener() {},
