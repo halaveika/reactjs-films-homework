@@ -1,14 +1,15 @@
 import React from 'react';
-import ListContainer from './components/ListContainer';
-import DetailsContainer from './components/DetailsContainer';
+import { useLocation } from "react-router-dom";
 import HeaderContainer from './components/HeaderContainer';
+import AppRouter from './components/AppRouter';
+
+
 
 export default function App() {
   return (
     <>
       <HeaderContainer />
-      <DetailsContainer />
-      <ListContainer />
+      <AppRouter />
     </>
   );
 }

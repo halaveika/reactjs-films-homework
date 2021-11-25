@@ -3,15 +3,18 @@ import PropTypes from 'prop-types';
 import './InfoBar.scss';
 
 export default function InfoBar({
-  original_title, genres, runtime, vote_average,
+  title, genres, runtime, vote_average,
 }) {
+  console.dir({
+    title, genres, runtime, vote_average,
+  });
   return (
     <div className="info-container">
       <span className="title">
-        {original_title}
+        {title}
       </span>
       <span className="genre">
-        {genres.map((e) => e.name).join('  ')}
+        {genres.join('  ')}
         {' '}
         |
         {runtime}
@@ -27,11 +30,8 @@ export default function InfoBar({
 }
 
 InfoBar.propTypes = {
-  original_title: PropTypes.string.isRequired,
-  genres: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired,
-  })).isRequired,
+  title: PropTypes.string.isRequired,
+  genres: PropTypes.arrayOf(PropTypes.string),
   runtime: PropTypes.number.isRequired,
-  vote_average: PropTypes.number.isRequired,
+  vote_average: PropTypes.number,
 };

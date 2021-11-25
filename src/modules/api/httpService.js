@@ -29,6 +29,15 @@ class HttpService {
       throw new Error(error);
     }
   }
+
+  static async movieDetailsRequest(id) {
+    try {
+      const response = await fetch(`${URL}movie/${id}?api_key=${API_KEY_V3}`, { method: 'GET' });
+      return await response.json();
+    } catch (error) {
+      throw new Error(error);
+    }
+  }
 }
 
 export default HttpService;

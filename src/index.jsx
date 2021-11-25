@@ -1,6 +1,7 @@
 import React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import { BrowserRouter } from "react-router-dom";
 import 'antd/dist/antd.css';
 import { store } from './modules/store';
 import App from './app';
@@ -12,7 +13,10 @@ moduleHotAccept(module);
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
-  </Provider>,
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>
+,
   document.querySelector('#root'),
 );

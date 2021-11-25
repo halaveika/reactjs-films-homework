@@ -1,15 +1,15 @@
 import { connect } from 'react-redux';
 import MovieDetailsPage from '../../pages/MovieDetailsPage';
+import { getDetailsPageSelector } from '../../modules/content/contentSelectors';
+import { GetVideoUrl } from '../../modules/content/contentActions';
 
 /* eslint-disable */
 const mapStateToProps = (state) => ({
-});
-
-const mapDispatchToProps = (dispatch) => ({
+  ...getDetailsPageSelector(state),
 });
 
      /* eslint-enable */
 
-const DetailsContainer = connect(mapStateToProps, mapDispatchToProps)(MovieDetailsPage);
+const DetailsContainer = connect(mapStateToProps, {GetVideoUrl})(MovieDetailsPage);
 
 export default DetailsContainer;

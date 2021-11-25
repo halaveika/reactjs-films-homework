@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Popover, Button, Row } from 'antd';
 import PropTypes from 'prop-types';
+import WatchVideoModal from '../WatchVideoModal'
 import './NavBar.scss';
 
 export default class NavBar extends Component {
@@ -16,11 +17,13 @@ export default class NavBar extends Component {
   }
 /* eslint-disable */
   render() {
-    const { overview } = this.props;
+    const { overview, id , video, GetVideoUrl } = this.props;
     const { visible } = this.state;
     return (
       <Row className="navbar-container" justify="space-between">
-        <Button>Watch Now</Button>
+        <WatchVideoModal video={video} handleVideo={GetVideoUrl} id={id}>
+          <Button>Watch Now</Button>
+        </WatchVideoModal>
         <Popover
           content={overview}
           trigger="click"

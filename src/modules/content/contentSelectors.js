@@ -7,6 +7,8 @@ export const getMoviesGenre = (state) => state.content.genres_array;
 
 export const getVideo = (state) => state.content.video_url;
 
+export const getDetailsSelector = (state) => state.content.details;
+
 export const getSearchList = createSelector(
   getSearchMovieResult,
   getMoviesGenre,
@@ -19,3 +21,24 @@ export const getSearchList = createSelector(
     overview: item.overview,
   })),
 );
+
+
+export const getDetailsPageSelector = createSelector(
+  getSearchMovieResult,
+  getMoviesGenre,
+  getDetailsSelector,
+  getVideo,
+  (results, genres_array, details, video) => {
+ 
+    const result = results.filter(item => item.id === details.id)[0];
+    return {
+      id: details.id,
+      title: result.title,
+      genres: transformArray(result.genre_ids, genres_array),
+      vote_average: result.vote_average,
+      poster: result.poster_path,
+      overview: result.overview,
+      runtime: details.runtime,
+      video: video
+    }
+  });
