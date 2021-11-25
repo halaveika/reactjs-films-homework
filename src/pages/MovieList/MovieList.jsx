@@ -8,7 +8,7 @@ export default function MovieList({ items, video, handleVideo, getDetails }) {
   const itemList = items.filter(item => item.poster && !item.poster.includes('null')).slice(0,15).map((item) => (
     <MovieItem
       key={item.id}
-      id={String(item.id)}
+      id={item.id}
       title={item.title}
       genres={item.genres}
       vote_average={item.vote_average}

@@ -5,9 +5,6 @@ import './InfoBar.scss';
 export default function InfoBar({
   title, genres, runtime, vote_average,
 }) {
-  console.dir({
-    title, genres, runtime, vote_average,
-  });
   return (
     <div className="info-container">
       <span className="title">

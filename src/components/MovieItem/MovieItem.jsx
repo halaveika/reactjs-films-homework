@@ -72,7 +72,7 @@ export default function MovieItem({
 }
 
 MovieItem.propTypes = {
-  id: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
   title: PropTypes.string,
   genres: PropTypes.arrayOf(PropTypes.string),
   vote_average: PropTypes.number,

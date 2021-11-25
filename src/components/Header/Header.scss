@@ -4,9 +4,11 @@
   align-items: center;
   height: 80px;
   width: 100vw;
-  background-color: transparent;
+  // background-color: transparent;
   position: absolute;
   z-index: 10;
+  background: linear-gradient(#0c0a0a, #e7e8ec);
+  opacity: 0.8;
 
   .title {
     display: block;

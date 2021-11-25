@@ -12,7 +12,7 @@ export const getDetailsSelector = (state) => state.content.details;
 export const getSearchList = createSelector(
   getSearchMovieResult,
   getMoviesGenre,
-  (results, genres_array) => results.map((item) => ({
+  (results, genres_array) => (results || []).map((item) => ({
     id: item.id,
     title: item.title,
     genres: transformArray(item.genre_ids, genres_array),

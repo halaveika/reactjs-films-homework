@@ -7,7 +7,6 @@ import './MovieDetailsPage.scss';
 
 export default function MovieDetailsPage({id, title, genres, vote_average, poster, overview, runtime, video, GetVideoUrl }) {
 
-  console.dir({id, title, genres, vote_average, poster, overview, runtime, video, GetVideoUrl });
   return (
     <Layout className="movieDetails-container">
       <img className="movieDetails-image" src={`${BACKDROP_PATH_URL}${poster}`} alt="wallpaper" />
