@@ -15,13 +15,13 @@ export const getSearchList = createSelector(
   getSearchMovieResult,
   getMoviesGenre,
   (results, genres_array) => results.map((item) => ({
-      id: item.id,
-      title: item.title,
-      genres: transformArray(item.genre_ids, genres_array),
-      vote_average: item.vote_average,
-      poster: item.poster_path,
-      overview: item.overview,
-    }))
+    id: item.id,
+    title: item.title,
+    genres: transformArray(item.genre_ids, genres_array),
+    vote_average: item.vote_average,
+    poster: item.poster_path,
+    overview: item.overview,
+  })),
 );
 
 export const getDetailsPageSelector = createSelector(

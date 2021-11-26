@@ -1,5 +1,6 @@
 import {
-  getSearchMovieResult, getMoviesGenre, getVideo, getSearchList,getDetailsPageSelector
+  getSearchMovieResult, getMoviesGenre, getVideo,
+  getSearchList, getDetailsPageSelector, getInitialisation,
 } from '../contentSelectors';
 
 const mockState = {
@@ -37,18 +38,19 @@ const mockState = {
       name: 'Fantasy',
     }],
     video_url: 'test_url',
-    details:{
+    details: {
       id: 2412412,
       title: 'Fight club',
       runtime: 120,
       vote_average_ids: 10,
       poster: 'image_path',
-      overview: 'Lorem Ipsum is simply dummy text of the printing'
-    }
+      overview: 'Lorem Ipsum is simply dummy text of the printing',
+    },
+    isInitialisated: false,
   },
 };
 
-const mockStateEmpty ={
+const mockStateEmpty = {
   content: {
     page: 0,
     results: [],
@@ -57,8 +59,8 @@ const mockStateEmpty ={
     genres_array: [],
     video_url: '',
     details: {},
-  }
-}
+  },
+};
 
 describe('contentSelectors testing', () => {
   afterEach(() => {
@@ -67,6 +69,10 @@ describe('contentSelectors testing', () => {
 
   test('getSearchMovieResult should return results from state', () => {
     expect(getSearchMovieResult(mockState)).toMatchSnapshot();
+  });
+
+  test('getInitialisation should return results from state', () => {
+    expect(getInitialisation(mockState)).toMatchSnapshot();
   });
 
   test('getMoviesGenre should return genres_array from state', () => {

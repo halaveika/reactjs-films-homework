@@ -55,7 +55,7 @@ const mockMovieDetailsResponse = {
   vote_average_ids: 10,
   poster: 'image_path',
   title: 'Sopranos',
-  overview: 'Lorem Ipsum is simply dummy text of the printing'
+  overview: 'Lorem Ipsum is simply dummy text of the printing',
 };
 
 function mockFetch(data) {

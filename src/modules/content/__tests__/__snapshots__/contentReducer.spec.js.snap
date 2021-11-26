@@ -1,5 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`content reducer should handle ADD_DETAILS 1`] = `
+Object {
+  "details": Object {},
+  "genres_array": Array [],
+  "isInitialisated": false,
+  "page": 0,
+  "results": Array [],
+  "total_pages": 0,
+  "total_results": 0,
+  "video_url": "",
+}
+`;
+
 exports[`content reducer should handle ADD_GENRES 1`] = `
 Object {
   "details": Object {},
@@ -53,6 +66,19 @@ Object {
   "total_pages": 0,
   "total_results": 0,
   "video_url": "test_url",
+}
+`;
+
+exports[`content reducer should handle INITIALISATION 1`] = `
+Object {
+  "details": Object {},
+  "genres_array": Array [],
+  "isInitialisated": true,
+  "page": 0,
+  "results": Array [],
+  "total_pages": 0,
+  "total_results": 0,
+  "video_url": "",
 }
 `;
 

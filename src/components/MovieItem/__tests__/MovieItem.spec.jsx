@@ -1,8 +1,7 @@
 import React from 'react';
 import { create, act } from 'react-test-renderer';
-import MovieItem from '../MovieItem';
-
 import { BrowserRouter } from 'react-router-dom';
+import MovieItem from '../MovieItem';
 
 const mockMovieItemProps = {
   id: 2412412,
@@ -23,19 +22,19 @@ describe('test MovieItem component', () => {
 
   const component = create(
     <BrowserRouter>
-       <MovieItem
-      id={mockMovieItemProps.id}
-      title={mockMovieItemProps.title}
-      genres={mockMovieItemProps.genres}
-      vote_average={mockMovieItemProps.vote_average}
-      poster={mockMovieItemProps.poster}
-      overview={mockMovieItemProps.overview}
-      video={mockMovieItemProps.video}
-      handleVideo={mockMovieItemProps.handleVideo}
-      getDetails={mockMovieItemProps.getDetails}
+      <MovieItem
+        id={mockMovieItemProps.id}
+        title={mockMovieItemProps.title}
+        genres={mockMovieItemProps.genres}
+        vote_average={mockMovieItemProps.vote_average}
+        poster={mockMovieItemProps.poster}
+        overview={mockMovieItemProps.overview}
+        video={mockMovieItemProps.video}
+        handleVideo={mockMovieItemProps.handleVideo}
+        getDetails={mockMovieItemProps.getDetails}
       />
     </BrowserRouter>
- ,
+    ,
   );
 
   it('should render MovieItem component', () => {
@@ -60,7 +59,6 @@ describe('test MovieItem component', () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
-
 
   it('handleDetailPageNavigation should execut', () => {
     const { root } = component;

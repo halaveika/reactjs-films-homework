@@ -37,7 +37,7 @@ export default class WatchVideoModal extends Component {
 }
 
 WatchVideoModal.propTypes = {
-  id: PropTypes.number,
-  video: PropTypes.string,
-  handleVideo: PropTypes.func,
+  id: PropTypes.number.isRequired,
+  video: PropTypes.string.isRequired,
+  handleVideo: PropTypes.func.isRequired,
 };

@@ -24,10 +24,10 @@ describe('Application root', () => {
             /* eslint-enable */
     expect(ReactDOM.render).toHaveBeenCalledWith(
       <Provider store={store}>
-          <BrowserRouter>
-            <App />
-          </BrowserRouter>
-      </Provider>,div,
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </Provider>, div,
     );
   });
 });

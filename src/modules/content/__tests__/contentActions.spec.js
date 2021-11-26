@@ -1,4 +1,6 @@
-import { SearchData, GetGenres, GetVideoUrl, getDetails } from '../contentActions';
+import {
+  SearchData, GetGenres, GetVideoUrl, getDetails, getInitialisated,
+} from '../contentActions';
 import HttpService from '../../api/httpService';
 import { store } from '../../store';
 
@@ -34,7 +36,7 @@ jest.spyOn(HttpService, 'movieDetailsRequest').mockImplementation(() => (
     vote_average_ids: 10,
     poster: 'image_path',
     title: 'Sopranos',
-    overview: 'Lorem Ipsum is simply dummy text of the printing'
+    overview: 'Lorem Ipsum is simply dummy text of the printing',
   }));
 
 describe('actions', () => {
@@ -59,6 +61,11 @@ describe('actions', () => {
 
   test('getDetails actioin change store', async () => {
     await store.dispatch(getDetails(43));
+    expect(store.getState()).toMatchSnapshot();
+  });
+
+  test('getInitialisated actioin change store', () => {
+    store.dispatch(getInitialisated());
     expect(store.getState()).toMatchSnapshot();
   });
 });

@@ -1,26 +1,22 @@
-import React, { useEffect }  from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Layout, Input } from 'antd';
-
 import PropTypes from 'prop-types';
 import './Header.scss';
 
-export default function Header({isInitialisated,getInitialisated, SearchData,GetGenres }) {
-  useEffect(()=> {
-    if(!isInitialisated) {
+export default function Header({
+  isInitialisated, getInitialisated, SearchData, GetGenres,
+}) {
+  /* eslint-disable */
+  useEffect(() => {
+    if (!isInitialisated) {
       SearchData('Hello');
       GetGenres();
       getInitialisated();
     }
-    }
-,[]);
-  const navigate = useNavigate();
-
-  const onSearch = (value) => {
-    SearchData(value);
-    navigate('/');
-  };
-
+  },
+  []);
+    /* eslint-enable */
   return (
     <Layout.Header className="header">
       <Link to="/">
@@ -28,12 +24,14 @@ export default function Header({isInitialisated,getInitialisated, SearchData,Get
           films
         </h1>
       </Link>
-      <Input.Search className="search" onSearch={onSearch} />
+      <Link className="search" to="/"><Input.Search className="search" onSearch={SearchData} /></Link>
     </Layout.Header>
   );
 }
 
 Header.propTypes = {
+  isInitialisated: PropTypes.bool.isRequired,
+  getInitialisated: PropTypes.func.isRequired,
   SearchData: PropTypes.func.isRequired,
   GetGenres: PropTypes.func.isRequired,
 };

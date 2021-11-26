@@ -1,24 +1,16 @@
 import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
-import App from '../app';
-
-window.matchMedia = window.matchMedia || function mMedia() {
-  return {
-    matches: false,
-    addListener() {},
-    removeListener() {},
-  };
-};
+import AppRouter from '..';
 
 afterEach(() => {
   jest.clearAllMocks();
 });
 
-describe('test App component', () => {
+describe('test AppRouter component', () => {
   it('Matches snapshot ShallowRenderer', () => {
     const renderer = new ShallowRenderer();
     const result = renderer.render(
-      <App />,
+      <AppRouter />,
     );
     expect(result).toMatchSnapshot();
   });

@@ -5,8 +5,8 @@ import MovieItem from '../../components/MovieItem';
 import './MovieList.scss';
 
 export default function MovieList({
-  items, video, handleVideo, getDetails}) {
-
+  items, video, handleVideo, getDetails,
+}) {
   const itemList = items.filter((item) => item.poster && !item.poster.includes('null')).slice(0, 15).map((item) => (
     <MovieItem
       key={item.id}

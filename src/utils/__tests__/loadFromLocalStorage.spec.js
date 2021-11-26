@@ -1,20 +1,20 @@
 import loadFromLocalStorage from '../loadFromLocalStorage';
 
 const mockState = {
-  test: 'TestState'
-}
+  test: 'TestState',
+};
 
 describe('loadFromLocalStorage', () => {
-
   afterEach(() => {
     jest.restoreAllMocks();
   });
-  
 
   it('should load from localstorage and return object', () => {
     const serializedState = JSON.stringify(mockState);
     localStorage.setItem('teststate', serializedState);
-    jest.spyOn(localStorage.__proto__,'getItem').mockImplementation(()=>serializedState)
+    /* eslint-disable */
+    jest.spyOn(localStorage.__proto__, 'getItem').mockImplementation(() => serializedState);
+      /* eslint-enable */
     const result = loadFromLocalStorage();
     localStorage.removeItem('teststate');
     expect(result).toEqual(mockState);
@@ -25,5 +25,4 @@ describe('loadFromLocalStorage', () => {
     const result = loadFromLocalStorage();
     expect(result).toBeUndefined();
   });
-  
 });

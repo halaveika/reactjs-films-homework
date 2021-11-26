@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test AppRouter component Matches snapshot ShallowRenderer 1`] = `
+<Routes>
+  <Route
+    element={<Memo(Connect(MovieList)) />}
+    path="/"
+  />
+  <Route
+    element={
+      <React.Fragment>
+        <Memo(Connect(MovieDetailsPage)) />
+        <Memo(Connect(MovieList)) />
+      </React.Fragment>
+    }
+    path="/details"
+  />
+  <Route
+    element={
+      <Navigate
+        replace={true}
+        to="/"
+      />
+    }
+    path="*"
+  />
+</Routes>
+`;

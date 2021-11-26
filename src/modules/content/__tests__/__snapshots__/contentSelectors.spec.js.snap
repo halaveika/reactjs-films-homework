@@ -17,6 +17,8 @@ Object {
 }
 `;
 
+exports[`contentSelectors testing getInitialisation should return results from state 1`] = `false`;
+
 exports[`contentSelectors testing getMoviesGenre should return genres_array from state 1`] = `
 Array [
   Object {

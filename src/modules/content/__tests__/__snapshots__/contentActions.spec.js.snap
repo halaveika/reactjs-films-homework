@@ -66,3 +66,25 @@ Object {
   },
 }
 `;
+
+exports[`actions getInitialisated actioin change store 1`] = `
+Object {
+  "content": Object {
+    "details": Object {
+      "id": 14030,
+      "overview": "Lorem Ipsum is simply dummy text of the printing",
+      "poster": "image_path",
+      "runtime": 120,
+      "title": "Sopranos",
+      "vote_average_ids": 10,
+    },
+    "genres_array": undefined,
+    "isInitialisated": true,
+    "page": 1,
+    "results": Array [],
+    "total_pages": 12,
+    "total_results": 55,
+    "video_url": "test_url",
+  },
+}
+`;

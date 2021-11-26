@@ -3902,10 +3902,10 @@
     "jsx-ast-utils" "^3.1.0"
     "language-tags" "^1.0.5"
 
-"eslint-plugin-react-hooks@^4 || ^3 || ^2.3.0 || ^1.7.0", "eslint-plugin-react-hooks@^4.2.0":
-  "integrity" "sha512-623WEiZJqxR7VdxFCKLI6d6LLpwJkGPYKODnkH3D7WpOG5KM8yWueBd8TLsNAetEJNF5iJmolaAKO3F8yzyVBQ=="
-  "resolved" "https://registry.npmjs.org/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-4.2.0.tgz"
-  "version" "4.2.0"
+"eslint-plugin-react-hooks@^4 || ^3 || ^2.3.0 || ^1.7.0", "eslint-plugin-react-hooks@^4.2.1-beta-0cc724c77-20211125":
+  "integrity" "sha512-hRiH3UNKxWJK0YONsfmfPQljQEKGXVBU1HJcJ9TFQDUNCZ42iU/OvwdhsEhPNVS09Dn7aiuCDnO15e1LwJH0Ew=="
+  "resolved" "https://registry.npmjs.org/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-4.2.1-beta-0cc724c77-20211125.tgz"
+  "version" "4.2.1-beta-0cc724c77-20211125"
 
 "eslint-plugin-react@^7.21.5", "eslint-plugin-react@^7.26.1":
   "integrity" "sha512-Lug0+NOFXeOE+ORZ5pbsh6mSKjBKXDXItUD2sQoT+5Yl0eoT82DqnXeTMfUare4QVCn9QwXbfzO/dBLjLXwVjQ=="
@@ -3971,7 +3971,7 @@
     "normalize-path" "^3.0.0"
     "schema-utils" "^3.1.0"
 
-"eslint@*", "eslint@^2 || ^3 || ^4 || ^5 || ^6 || ^7.2.0 || ^8", "eslint@^3 || ^4 || ^5 || ^6 || ^7", "eslint@^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0", "eslint@^5.16.0 || ^6.8.0 || ^7.2.0", "eslint@^6.0.0 || ^7.0.0 || ^8.0.0", "eslint@^7.0.0", "eslint@^8.0.1", "eslint@>=5", "eslint@>=7.5.0":
+"eslint@*", "eslint@^2 || ^3 || ^4 || ^5 || ^6 || ^7.2.0 || ^8", "eslint@^3 || ^4 || ^5 || ^6 || ^7", "eslint@^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0", "eslint@^5.16.0 || ^6.8.0 || ^7.2.0", "eslint@^6.0.0 || ^7.0.0 || ^8.0.0", "eslint@^7.0.0", "eslint@^8.0.1", "eslint@>=5", "eslint@>=7.5.0":
   "integrity" "sha512-LsgcwZgQ72vZ+SMp4K6pAnk2yFDWL7Ti4pJaRvsZ0Hsw2h8ZjUIW38a9AFn2cZXdBMlScMFYYgsSp4ttFI/0bA=="
   "resolved" "https://registry.npmjs.org/eslint/-/eslint-8.0.1.tgz"
   "version" "8.0.1"

@@ -6,7 +6,7 @@ export const initialState = {
   genres_array: [],
   video_url: '',
   details: {},
-  isInitialisated: false
+  isInitialisated: false,
 };
 
 export const contentReducer = (state = initialState, action) => {
