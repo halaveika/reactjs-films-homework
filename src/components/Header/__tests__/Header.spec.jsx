@@ -1,17 +1,25 @@
 import React from 'react';
 import { create, act } from 'react-test-renderer';
 import Header from '..';
+import { useNavigate } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
+const SearchData = jest.fn();
 
-afterEach(() => {
-  jest.clearAllMocks();
-});
 
 describe('test Header component', () => {
-  let component;
-  const addSearchResult = jest.fn();
-  act(() => { component = create(<Header addSearchResult={addSearchResult} />); });
-  const tree = component.toJSON();
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+  
+
   it('should render Header component', () => {
+
+    const component = create(
+      <BrowserRouter>
+        <Header SearchData={SearchData} />
+      </BrowserRouter>
+    );
+    const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

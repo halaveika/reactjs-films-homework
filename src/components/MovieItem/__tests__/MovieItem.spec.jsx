@@ -2,8 +2,10 @@ import React from 'react';
 import { create, act } from 'react-test-renderer';
 import MovieItem from '../MovieItem';
 
+import { BrowserRouter } from 'react-router-dom';
+
 const mockMovieItemProps = {
-  id: '2412412',
+  id: 2412412,
   title: 'Fight club',
   genres: ['drama', 'sport', 'comedy'],
   vote_average: 8,
@@ -11,6 +13,7 @@ const mockMovieItemProps = {
   overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
   video: 'youtube-link',
   handleVideo: jest.fn(),
+  getDetails: jest.fn(),
 };
 
 describe('test MovieItem component', () => {
@@ -19,7 +22,8 @@ describe('test MovieItem component', () => {
   });
 
   const component = create(
-    <MovieItem
+    <BrowserRouter>
+       <MovieItem
       id={mockMovieItemProps.id}
       title={mockMovieItemProps.title}
       genres={mockMovieItemProps.genres}
@@ -28,7 +32,10 @@ describe('test MovieItem component', () => {
       overview={mockMovieItemProps.overview}
       video={mockMovieItemProps.video}
       handleVideo={mockMovieItemProps.handleVideo}
-    />,
+      getDetails={mockMovieItemProps.getDetails}
+      />
+    </BrowserRouter>
+ ,
   );
 
   it('should render MovieItem component', () => {

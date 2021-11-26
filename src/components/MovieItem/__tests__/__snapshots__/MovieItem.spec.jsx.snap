@@ -12,6 +12,7 @@ exports[`test MovieItem component should render MovieItem component 1`] = `
   >
     <div
       className="overlay"
+      onClick={[Function]}
     />
     <img
       alt="Poster!"
@@ -54,6 +55,7 @@ exports[`test MovieItem component toggleActive should change state 1`] = `
   >
     <div
       className="overlay__active"
+      onClick={[Function]}
     />
     <img
       alt="Poster!"
@@ -109,6 +111,7 @@ exports[`test MovieItem component toggleHover should change state 1`] = `
   >
     <div
       className="overlay"
+      onClick={[Function]}
     />
     <img
       alt="Poster!"

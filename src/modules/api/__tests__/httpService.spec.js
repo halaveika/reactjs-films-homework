@@ -49,6 +49,15 @@ const mockVideoResponse = {
 
 const mockVideoResponseEmpty = { id: 14030, results: [] };
 
+const mockMovieDetailsResponse = {
+  id: 14030,
+  runtime: 120,
+  vote_average_ids: 10,
+  poster: 'image_path',
+  title: 'Sopranos',
+  overview: 'Lorem Ipsum is simply dummy text of the printing'
+};
+
 function mockFetch(data) {
   return jest.fn().mockImplementation(() => Promise.resolve({
     ok: true,
@@ -105,5 +114,19 @@ describe('HttpService testing', () => {
       await HttpService.movieVideoRequest('test');
     }).rejects.toThrowErrorMatchingSnapshot();
   });
+
+  test('movieDetailsRequest should return response', async () => {
+    global.fetch = mockFetch(mockMovieDetailsResponse);
+    const result = await HttpService.movieDetailsRequest('test');
+    expect(result).toMatchSnapshot();
+  });
+
+  test('movieDetailsRequest should handle error', () => {
+    global.fetch = jest.fn().mockImplementation(() => { Promise.reject(); });
+    expect(async () => {
+      await HttpService.movieDetailsRequest('test');
+    }).rejects.toThrowErrorMatchingSnapshot();
+  });
+
 });
 /* eslint-enable */

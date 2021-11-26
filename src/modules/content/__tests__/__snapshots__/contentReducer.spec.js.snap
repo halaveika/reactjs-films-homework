@@ -2,6 +2,7 @@
 
 exports[`content reducer should handle ADD_GENRES 1`] = `
 Object {
+  "details": Object {},
   "genres_array": Array [
     Object {
       "id": 13,
@@ -30,6 +31,7 @@ Object {
 
 exports[`content reducer should handle ADD_ITEMS 1`] = `
 Object {
+  "details": Object {},
   "genres_array": Array [],
   "page": 1,
   "results": Array [],
@@ -41,6 +43,7 @@ Object {
 
 exports[`content reducer should handle ADD_VIDEO 1`] = `
 Object {
+  "details": Object {},
   "genres_array": Array [],
   "page": 0,
   "results": Array [],
@@ -52,6 +55,7 @@ Object {
 
 exports[`content reducer should return the initial state 1`] = `
 Object {
+  "details": Object {},
   "genres_array": Array [],
   "page": 0,
   "results": Array [],

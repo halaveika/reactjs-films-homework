@@ -12,10 +12,7 @@ exports[`test InfoBar component should render InfoBar component 1`] = `
   <span
     className="genre"
   >
-    Adventure  Drama  Family  Fantasy
-     
-    |
-    139
+    Adventure  Drama  Family  Fantasy | 2h 19m
   </span>
   <div
     className="popularity"

@@ -15,11 +15,7 @@ export const GetVideoUrl = (id) => async (dispatch) => {
   dispatch({ type: 'ADD_VIDEO', payload: str });
 };
 
-
 export const getDetails = (id) => async (dispatch) => {
   const json = await HttpService.movieDetailsRequest(id);
   dispatch({ type: 'ADD_DETAILS', payload: json });
 };
-
-
-

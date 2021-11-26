@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Layout } from 'antd';
+import PropTypes from 'prop-types';
 import InfoBar from '../../components/InfoBar';
 import NavBar from '../../components/NavBar';
 import { BACKDROP_PATH_URL } from '../../constants';
 import './MovieDetailsPage.scss';
 
-export default function MovieDetailsPage({id, title, genres, vote_average, poster, overview, runtime, video, GetVideoUrl }) {
-
+export default function MovieDetailsPage({
+  id, title, genres, vote_average, poster, overview, runtime, video, GetVideoUrl,
+}) {
   return (
     <Layout className="movieDetails-container">
       <img className="movieDetails-image" src={`${BACKDROP_PATH_URL}${poster}`} alt="wallpaper" />
@@ -28,3 +30,17 @@ export default function MovieDetailsPage({id, title, genres, vote_average, poste
     </Layout>
   );
 }
+
+/* eslint-disable */
+MovieDetailsPage.propTypes = {
+  id: PropTypes.number.isRequired,
+  title: PropTypes.string,
+  genres: PropTypes.arrayOf(PropTypes.string),
+  vote_average: PropTypes.number,
+  poster: PropTypes.string,
+  overview: PropTypes.string,
+  runtime: PropTypes.number,
+  video: PropTypes.string.isRequired,
+  GetVideoUrl: PropTypes.func.isRequired,
+};
+/* eslint-enable */

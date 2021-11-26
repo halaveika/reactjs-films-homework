@@ -1,4 +1,4 @@
-import { SearchData, GetGenres, GetVideoUrl } from '../contentActions';
+import { SearchData, GetGenres, GetVideoUrl, getDetails } from '../contentActions';
 import HttpService from '../../api/httpService';
 import { store } from '../../store';
 
@@ -27,13 +27,23 @@ jest.spyOn(HttpService, 'movieGenresRequest').mockImplementation(() => ({
 
 jest.spyOn(HttpService, 'movieVideoRequest').mockImplementation(() => 'test_url');
 
+jest.spyOn(HttpService, 'movieDetailsRequest').mockImplementation(() => (
+  {
+    id: 14030,
+    runtime: 120,
+    vote_average_ids: 10,
+    poster: 'image_path',
+    title: 'Sopranos',
+    overview: 'Lorem Ipsum is simply dummy text of the printing'
+  }));
+
 describe('actions', () => {
   afterEach(() => {
     jest.clearAllMocks();
   });
 
   test('SearchData actioin change store', async () => {
-    await store.dispatch(SearchData('test'));
+    await store.dispatch(SearchData(43));
     expect(store.getState()).toMatchSnapshot();
   });
 
@@ -43,7 +53,12 @@ describe('actions', () => {
   });
 
   test('GetVideoUrl actioin change store', async () => {
-    await store.dispatch(GetVideoUrl('test'));
+    await store.dispatch(GetVideoUrl(43));
+    expect(store.getState()).toMatchSnapshot();
+  });
+
+  test('getDetails actioin change store', async () => {
+    await store.dispatch(getDetails(43));
     expect(store.getState()).toMatchSnapshot();
   });
 });

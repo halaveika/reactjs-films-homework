@@ -1,5 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`HttpService testing movieDetailsRequest should handle error 1`] = `"TypeError: Cannot read property 'json' of undefined"`;
+
+exports[`HttpService testing movieDetailsRequest should return response 1`] = `
+Object {
+  "id": 14030,
+  "overview": "Lorem Ipsum is simply dummy text of the printing",
+  "poster": "image_path",
+  "runtime": 120,
+  "title": "Sopranos",
+  "vote_average_ids": 10,
+}
+`;
+
 exports[`HttpService testing movieGenresRequest should handle error 1`] = `"TypeError: Cannot read property 'json' of undefined"`;
 
 exports[`HttpService testing movieGenresRequest should return response 1`] = `

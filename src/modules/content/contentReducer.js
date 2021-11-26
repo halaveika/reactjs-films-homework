@@ -5,7 +5,7 @@ export const initialState = {
   total_results: 0,
   genres_array: [],
   video_url: '',
-  details: {}
+  details: {},
 };
 
 export const contentReducer = (state = initialState, action) => {

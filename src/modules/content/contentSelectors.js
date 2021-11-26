@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect';
-import { transformArray } from '../../utils/transformArray';
+import transformArray from '../../utils/transformArray';
 
 export const getSearchMovieResult = (state) => state.content.results;
 
@@ -12,7 +12,7 @@ export const getDetailsSelector = (state) => state.content.details;
 export const getSearchList = createSelector(
   getSearchMovieResult,
   getMoviesGenre,
-  (results, genres_array) => (results || []).map((item) => ({
+  (results, genres_array) => results.map((item) => ({
     id: item.id,
     title: item.title,
     genres: transformArray(item.genre_ids, genres_array),
@@ -22,15 +22,13 @@ export const getSearchList = createSelector(
   })),
 );
 
-
 export const getDetailsPageSelector = createSelector(
   getSearchMovieResult,
   getMoviesGenre,
   getDetailsSelector,
   getVideo,
   (results, genres_array, details, video) => {
- 
-    const result = results.filter(item => item.id === details.id)[0];
+    const result = results.filter((item) => item.id === details.id)[0];
     return {
       id: details.id,
       title: result.title,
@@ -39,6 +37,7 @@ export const getDetailsPageSelector = createSelector(
       poster: result.poster_path,
       overview: result.overview,
       runtime: details.runtime,
-      video: video
-    }
-  });
+      video,
+    };
+  },
+);

@@ -10,6 +10,6 @@ const mapStateToProps = (state) => ({
 
      /* eslint-enable */
 
-const DetailsContainer = connect(mapStateToProps, {GetVideoUrl})(MovieDetailsPage);
+const DetailsContainer = connect(mapStateToProps, { GetVideoUrl })(MovieDetailsPage);
 
 export default DetailsContainer;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Popover, Button, Row } from 'antd';
 import PropTypes from 'prop-types';
-import WatchVideoModal from '../WatchVideoModal'
+import WatchVideoModal from '../WatchVideoModal';
 import './NavBar.scss';
 
 export default class NavBar extends Component {

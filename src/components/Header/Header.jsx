@@ -6,22 +6,21 @@ import PropTypes from 'prop-types';
 import './Header.scss';
 
 export default function Header({ SearchData }) {
-
   const navigate = useNavigate();
 
-  const onSearch = (value) =>{
-    SearchData(value);
-    navigate('/');
-  }
+  const onSearch = (value) => {
+    if(value.trim()){
+      SearchData(value);
+      navigate('/');
+    }
+  };
 
   return (
     <Layout.Header className="header">
-      <Link to="/">
-        <h1 className="title">
-          films
-        </h1>
-      </Link>
-      <Input.Search className="search" onSearch={onSearch}/>
+      <h1 className="title" onClick={()=>navigate('/')}>
+        films
+      </h1>
+      <Input.Search className="search" onSearch={onSearch} />
     </Layout.Header>
   );
 }

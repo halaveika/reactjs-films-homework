@@ -4,8 +4,10 @@ import PropTypes from 'prop-types';
 import MovieItem from '../../components/MovieItem';
 import './MovieList.scss';
 
-export default function MovieList({ items, video, handleVideo, getDetails }) {
-  const itemList = items.filter(item => item.poster && !item.poster.includes('null')).slice(0,15).map((item) => (
+export default function MovieList({
+  items, video, handleVideo, getDetails,
+}) {
+  const itemList = items.filter((item) => item.poster && !item.poster.includes('null')).slice(0, 15).map((item) => (
     <MovieItem
       key={item.id}
       id={item.id}
@@ -16,7 +18,7 @@ export default function MovieList({ items, video, handleVideo, getDetails }) {
       overview={item.overview}
       video={video}
       handleVideo={handleVideo}
-      getDetails ={getDetails}
+      getDetails={getDetails}
     />
   ));
 
@@ -38,5 +40,5 @@ MovieList.propTypes = {
   })).isRequired,
   video: PropTypes.string.isRequired,
   handleVideo: PropTypes.func.isRequired,
-  getDetails: PropTypes.func.isRequired
+  getDetails: PropTypes.func.isRequired,
 };

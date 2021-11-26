@@ -1,5 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`contentSelectors testing getDetailsPageSelector should return getDetailsPageSelector props 1`] = `
+Object {
+  "genres": Array [
+    "Adventure",
+    "Family",
+    "Fantasy",
+  ],
+  "id": 2412412,
+  "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry",
+  "poster": undefined,
+  "runtime": 120,
+  "title": "Fight club",
+  "video": "test_url",
+  "vote_average": 8,
+}
+`;
+
 exports[`contentSelectors testing getMoviesGenre should return genres_array from state 1`] = `
 Array [
   Object {
@@ -21,7 +38,9 @@ Array [
 ]
 `;
 
-exports[`contentSelectors testing getSearchMovieResult should return getSearchList props 1`] = `
+exports[`contentSelectors testing getSearchList should correct handl empty result of search 1`] = `Array []`;
+
+exports[`contentSelectors testing getSearchList should return getSearchList props 1`] = `
 Array [
   Object {
     "genres": Array [
@@ -77,4 +96,4 @@ Array [
 ]
 `;
 
-exports[`contentSelectors testing getSearchMovieResult should return video_url from state 1`] = `"test_url"`;
+exports[`contentSelectors testing getVideo should return video_url from state 1`] = `"test_url"`;

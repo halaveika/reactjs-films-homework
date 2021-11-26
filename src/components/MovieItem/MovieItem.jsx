@@ -9,7 +9,7 @@ import WatchVideoModal from '../WatchVideoModal';
 import './MovieItem.scss';
 
 export default function MovieItem({
-  id, title, genres, vote_average, poster, overview, video, handleVideo, getDetails
+  id, title, genres, vote_average, poster, overview, video, handleVideo, getDetails,
 }) {
   const navigate = useNavigate();
   const [ownState, setState] = useState(
@@ -19,25 +19,25 @@ export default function MovieItem({
     },
   );
 
-   const toggleHover = () => setState({ ...ownState, hovered: !ownState.hovered, active: false });
+  const toggleHover = () => setState({ ...ownState, hovered: !ownState.hovered, active: false });
   const toggleActive = () => setState({ ...ownState, active: true });
 
-  const handleDetailPageNavigation = async() => {
+  const handleDetailPageNavigation = async () => {
     await getDetails(id);
     navigate('/details');
-  }
+  };
 
   return (
-
+  /* eslint-disable */
     <Card
       className={`movie-item${(ownState.hovered) ? '__hovered' : ''}`}
       onMouseEnter={toggleHover}
       onMouseLeave={toggleHover}
     >
-      <div className={`overlay${(ownState.active) ? '__active' : ''}`} onClick={handleDetailPageNavigation}/>
-      <img className={`poster${(ownState.active) ? '__active' : ''}`} alt="Poster!" src={`${BACKDROP_PATH_URL}${poster}`}/>
+      <div className={`overlay${(ownState.active) ? '__active' : ''}`} onClick={handleDetailPageNavigation} />
+      <img className={`poster${(ownState.active) ? '__active' : ''}`} alt="Poster!" src={`${BACKDROP_PATH_URL}${poster}`} />
       {
-        /* eslint-disable */
+  
       (ownState.hovered)
         ? (!ownState.active)
           ? (
@@ -67,10 +67,10 @@ export default function MovieItem({
         : <MovieInfo active={false} className="movie-info" title={title} genres={genres} vote_average={vote_average} />}
     </Card>
 
-    
   );
 }
 
+/* eslint-disable */
 MovieItem.propTypes = {
   id: PropTypes.number.isRequired,
   title: PropTypes.string,
@@ -82,3 +82,4 @@ MovieItem.propTypes = {
   handleVideo: PropTypes.func.isRequired,
   getDetails: PropTypes.func.isRequired,
 };
+      /* eslint-enable */

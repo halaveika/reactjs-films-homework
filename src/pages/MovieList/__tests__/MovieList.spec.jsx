@@ -1,6 +1,8 @@
 import React from 'react';
 import { create } from 'react-test-renderer';
 import MovieList from '..';
+import { BrowserRouter } from 'react-router-dom';
+import ShallowRenderer from 'react-test-renderer/shallow'
 
 const mockMovieListProps = {
   items: [{
@@ -21,18 +23,35 @@ const mockMovieListProps = {
   }],
   video: 'youtube-link',
   handleVideo: jest.fn(),
+  getDetails: jest.fn()
 };
 
 describe('test MovieList component', () => {
-  it('should render MovieList component', () => {
-    const component = create(
-      <MovieList
+  // it('should render MovieList component', () => {
+  //   const component = create(
+  //     <BrowserRouter>
+  //       <MovieList
+  //         items={mockMovieListProps.items}
+  //         video={mockMovieListProps.video}
+  //         handleVideo={mockMovieListProps.handleVideo}
+  //         getDetails={mockMovieListProps.getDetails}
+  //       />
+  //     </BrowserRouter>
+  //   );
+  //   const tree = component.toJSON();
+  //   expect(tree).toMatchSnapshot();
+  // });
+
+    it('should render MovieList component', () => {
+      const renderer = new ShallowRenderer()
+      const result = renderer.render(
+        <MovieList
         items={mockMovieListProps.items}
         video={mockMovieListProps.video}
         handleVideo={mockMovieListProps.handleVideo}
-      />,
-    );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+        getDetails={mockMovieListProps.getDetails}
+      />
+      )
+      expect(result).toMatchSnapshot()
   });
 });

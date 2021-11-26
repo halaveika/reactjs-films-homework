@@ -1,86 +1,42 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`test MovieList component should render MovieList component 1`] = `
-<section
-  className="ant-layout movieList-container"
+<Layout
+  className="movieList-container"
 >
-  <div
-    className="ant-card ant-card-bordered movie-item"
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-  >
-    <div
-      className="ant-card-body"
-      style={Object {}}
-    >
-      <div
-        className="overlay"
-      />
-      <img
-        alt="Poster!"
-        className="poster"
-        src="https://image.tmdb.org/t/p/w500/image_path"
-      />
-      
-      <div
-        className="movie-item-container"
-      >
-        <span
-          className="movie-item_title"
-        >
-          Fight club
-        </span>
-        <span
-          className="movie-item_vote-average"
-        >
-          8
-        </span>
-        <span
-          className="movie-item_genre"
-        >
-          drama, sport, comedy
-        </span>
-      </div>
-    </div>
-  </div>
-  <div
-    className="ant-card ant-card-bordered movie-item"
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-  >
-    <div
-      className="ant-card-body"
-      style={Object {}}
-    >
-      <div
-        className="overlay"
-      />
-      <img
-        alt="Poster!"
-        className="poster"
-        src="https://image.tmdb.org/t/p/w500/image_path"
-      />
-      
-      <div
-        className="movie-item-container"
-      >
-        <span
-          className="movie-item_title"
-        >
-          Sopranos
-        </span>
-        <span
-          className="movie-item_vote-average"
-        >
-          10
-        </span>
-        <span
-          className="movie-item_genre"
-        >
-          drama, Criminal, comedy
-        </span>
-      </div>
-    </div>
-  </div>
-</section>
+  <MovieItem
+    genres={
+      Array [
+        "drama",
+        "sport",
+        "comedy",
+      ]
+    }
+    getDetails={[MockFunction]}
+    handleVideo={[MockFunction]}
+    id={2412412}
+    overview="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry"
+    poster="image_path"
+    title="Fight club"
+    video="youtube-link"
+    vote_average={8}
+  />
+  <MovieItem
+    genres={
+      Array [
+        "drama",
+        "Criminal",
+        "comedy",
+      ]
+    }
+    getDetails={[MockFunction]}
+    handleVideo={[MockFunction]}
+    id={41412}
+    overview="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry"
+    poster="image_path"
+    title="Sopranos"
+    video="youtube-link"
+    vote_average={10}
+  />
+</Layout>
 `;

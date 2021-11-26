@@ -4,7 +4,7 @@ import { Button } from 'antd';
 import WatchVideoModal from '../WatchVideoModal';
 
 const WatchVideoModalProps = {
-  id: '2412412',
+  id: 2412412,
   video: 'youtube-link',
   handleVideo: jest.fn(),
 };
@@ -53,7 +53,6 @@ describe('test WatchVideoModal component', () => {
         video={WatchVideoModalProps.video}
         handleVideo={WatchVideoModalProps.handleVideo}
         id={WatchVideoModalProps.id}
-        SS
       >
         <Button />
       </WatchVideoModal>,

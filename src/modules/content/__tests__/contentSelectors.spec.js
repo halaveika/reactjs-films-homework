@@ -1,5 +1,5 @@
 import {
-  getSearchMovieResult, getMoviesGenre, getVideo, getSearchList,
+  getSearchMovieResult, getMoviesGenre, getVideo, getSearchList,getDetailsPageSelector
 } from '../contentSelectors';
 
 const mockState = {
@@ -37,8 +37,28 @@ const mockState = {
       name: 'Fantasy',
     }],
     video_url: 'test_url',
+    details:{
+      id: 2412412,
+      title: 'Fight club',
+      runtime: 120,
+      vote_average_ids: 10,
+      poster: 'image_path',
+      overview: 'Lorem Ipsum is simply dummy text of the printing'
+    }
   },
 };
+
+const mockStateEmpty ={
+  content: {
+    page: 0,
+    results: [],
+    total_pages: 0,
+    total_results: 0,
+    genres_array: [],
+    video_url: '',
+    details: {},
+  }
+}
 
 describe('contentSelectors testing', () => {
   afterEach(() => {
@@ -53,11 +73,19 @@ describe('contentSelectors testing', () => {
     expect(getMoviesGenre(mockState)).toMatchSnapshot();
   });
 
-  test('getSearchMovieResult should return video_url from state', () => {
+  test('getVideo should return video_url from state', () => {
     expect(getVideo(mockState)).toMatchSnapshot();
   });
 
-  test('getSearchMovieResult should return getSearchList props', () => {
+  test('getSearchList should return getSearchList props', () => {
     expect(getSearchList(mockState)).toMatchSnapshot();
+  });
+
+  test('getSearchList should correct handl empty result of search', () => {
+    expect(getSearchList(mockStateEmpty)).toMatchSnapshot();
+  });
+
+  test('getDetailsPageSelector should return getDetailsPageSelector props', () => {
+    expect(getDetailsPageSelector(mockState)).toMatchSnapshot();
   });
 });

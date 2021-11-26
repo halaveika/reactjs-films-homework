@@ -7,7 +7,7 @@ exports[`test MovieDetailsPage component should render MovieDetailsPage componen
   <img
     alt="wallpaper"
     className="movieDetails-image"
-    src="/assets/images/cover-image.jpg"
+    src="https://image.tmdb.org/t/p/w500/image_path"
   />
   <main
     className="ant-layout-content movieDetails-content"
@@ -18,15 +18,12 @@ exports[`test MovieDetailsPage component should render MovieDetailsPage componen
       <span
         className="title"
       >
-        the jungle book
+        Fight club
       </span>
       <span
         className="genre"
       >
-        Adventure  Drama  Family  Fantasy
-         
-        |
-        139
+        drama  sport  comedy | 2h 0m
       </span>
       <div
         className="popularity"
@@ -46,8 +43,17 @@ exports[`test MovieDetailsPage component should render MovieDetailsPage componen
         <div
           className="star"
         />
+        <div
+          className="star"
+        />
+        <div
+          className="star"
+        />
+        <div
+          className="star"
+        />
         <span>
-          4.8
+          8
         </span>
       </div>
     </div>

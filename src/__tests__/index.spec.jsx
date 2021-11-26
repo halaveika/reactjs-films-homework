@@ -4,8 +4,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+import { PersistGate } from 'redux-persist/integration/react';
 import App from '../app';
-import { store } from '../modules/store';
+import { store, persistor } from '../modules/store';
 
 jest.mock('react-dom', () => ({ render: jest.fn() }));
 
@@ -23,8 +25,12 @@ describe('Application root', () => {
             /* eslint-enable */
     expect(ReactDOM.render).toHaveBeenCalledWith(
       <Provider store={store}>
-        <App />
-      </Provider>, div,
+        <PersistGate loading={null} persistor={persistor}>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </PersistGate>
+      </Provider>,div,
     );
   });
 });

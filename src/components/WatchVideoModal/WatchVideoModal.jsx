@@ -35,6 +35,7 @@ export default class WatchVideoModal extends Component {
     /* eslint-enable */
   }
 }
+
 WatchVideoModal.propTypes = {
   id: PropTypes.number.isRequired,
   video: PropTypes.string.isRequired,
