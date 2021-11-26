@@ -2,13 +2,10 @@
 
 exports[`actions GetGenres actioin change store 1`] = `
 Object {
-  "_persist": Object {
-    "rehydrated": true,
-    "version": -1,
-  },
   "content": Object {
     "details": Object {},
     "genres_array": undefined,
+    "isInitialisated": false,
     "page": 1,
     "results": Array [],
     "total_pages": 12,
@@ -20,13 +17,10 @@ Object {
 
 exports[`actions GetVideoUrl actioin change store 1`] = `
 Object {
-  "_persist": Object {
-    "rehydrated": true,
-    "version": -1,
-  },
   "content": Object {
     "details": Object {},
     "genres_array": undefined,
+    "isInitialisated": false,
     "page": 1,
     "results": Array [],
     "total_pages": 12,
@@ -38,13 +32,10 @@ Object {
 
 exports[`actions SearchData actioin change store 1`] = `
 Object {
-  "_persist": Object {
-    "rehydrated": true,
-    "version": -1,
-  },
   "content": Object {
     "details": Object {},
     "genres_array": Array [],
+    "isInitialisated": false,
     "page": 1,
     "results": Array [],
     "total_pages": 12,
@@ -56,10 +47,6 @@ Object {
 
 exports[`actions getDetails actioin change store 1`] = `
 Object {
-  "_persist": Object {
-    "rehydrated": true,
-    "version": -1,
-  },
   "content": Object {
     "details": Object {
       "id": 14030,
@@ -70,6 +57,7 @@ Object {
       "vote_average_ids": 10,
     },
     "genres_array": undefined,
+    "isInitialisated": false,
     "page": 1,
     "results": Array [],
     "total_pages": 12,

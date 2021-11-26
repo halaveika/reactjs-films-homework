@@ -23,7 +23,9 @@ const mockMovieListProps = {
   }],
   video: 'youtube-link',
   handleVideo: jest.fn(),
-  getDetails: jest.fn()
+  getDetails: jest.fn(),
+  SearchData: jest.fn(),
+  GetGenres: jest.fn(),
 };
 
 describe('test MovieList component', () => {
@@ -50,6 +52,8 @@ describe('test MovieList component', () => {
         video={mockMovieListProps.video}
         handleVideo={mockMovieListProps.handleVideo}
         getDetails={mockMovieListProps.getDetails}
+        SearchData={mockMovieListProps.SearchData}
+        GetGenres={mockMovieListProps.GetGenres}
       />
       )
       expect(result).toMatchSnapshot()

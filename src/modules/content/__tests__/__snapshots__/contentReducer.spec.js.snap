@@ -21,6 +21,7 @@ Object {
       "name": "Fantasy",
     },
   ],
+  "isInitialisated": false,
   "page": 0,
   "results": Array [],
   "total_pages": 0,
@@ -33,6 +34,7 @@ exports[`content reducer should handle ADD_ITEMS 1`] = `
 Object {
   "details": Object {},
   "genres_array": Array [],
+  "isInitialisated": false,
   "page": 1,
   "results": Array [],
   "total_pages": 12,
@@ -45,6 +47,7 @@ exports[`content reducer should handle ADD_VIDEO 1`] = `
 Object {
   "details": Object {},
   "genres_array": Array [],
+  "isInitialisated": false,
   "page": 0,
   "results": Array [],
   "total_pages": 0,
@@ -57,6 +60,7 @@ exports[`content reducer should return the initial state 1`] = `
 Object {
   "details": Object {},
   "genres_array": Array [],
+  "isInitialisated": false,
   "page": 0,
   "results": Array [],
   "total_pages": 0,

@@ -60,4 +60,15 @@ describe('test MovieItem component', () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+
+  it('handleDetailPageNavigation should execut', () => {
+    const { root } = component;
+
+    const clickable = root.findByProps({ className: 'overlay__active' });
+
+    act(() => { clickable.props.onClick(); });
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

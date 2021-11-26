@@ -6,6 +6,7 @@ export const initialState = {
   genres_array: [],
   video_url: '',
   details: {},
+  isInitialisated: false
 };
 
 export const contentReducer = (state = initialState, action) => {
@@ -24,6 +25,8 @@ export const contentReducer = (state = initialState, action) => {
       return { ...state, video_url: action.payload };
     case 'ADD_DETAILS':
       return { ...state, details: action.payload };
+    case 'INITIALISATION':
+      return { ...state, isInitialisated: action.payload };
     default:
       return state;
   }

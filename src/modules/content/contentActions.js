@@ -19,3 +19,5 @@ export const getDetails = (id) => async (dispatch) => {
   const json = await HttpService.movieDetailsRequest(id);
   dispatch({ type: 'ADD_DETAILS', payload: json });
 };
+
+export const getInitialisated = () => ({ type: 'INITIALISATION', payload: true });

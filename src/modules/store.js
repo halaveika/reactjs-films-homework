@@ -1,29 +1,24 @@
-import { createStore, applyMiddleware, combineReducers } from 'redux';
+import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
-import { persistStore, persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
 import contentReducer from './content';
-import { GetGenres, SearchData } from './content/contentActions';
+import saveToLocalStorage from '../utils/saveToLocalStorage';
+import loadFromLocalStorage from '../utils/loadFromLocalStorage';
+
+const presistedState = loadFromLocalStorage();
 
 export const rootReducer = combineReducers({ content: contentReducer });
-const persistConfig = {
-  key: 'content',
-  storage,
-  whitelist: ['content'], // which reducer want to store
-};
-const pReducer = persistReducer(persistConfig, rootReducer);
 
 const middleware = [thunk];
 
 export const store = createStore(
-  pReducer,
+  rootReducer,
+  presistedState,
   composeWithDevTools(
     applyMiddleware(...middleware),
   ),
 );
 
-export const persistor = persistStore(store);
+store.subscribe(() => saveToLocalStorage(store.getState()));
 
-store.dispatch(GetGenres());
-store.dispatch(SearchData('Hello'));
+
