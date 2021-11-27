@@ -77,54 +77,54 @@ describe('HttpService testing', () => {
   });
 /* eslint-disable */
   test('searchMovieRequest should handle error', () => {
-    global.fetch = jest.fn().mockImplementation(() => { Promise.reject(); });
+    global.fetch = jest.fn().mockImplementation(() => Promise.reject());
     expect(async () => {
-      await HttpService.searchMovieRequest('test');
+        await HttpService.searchMovieRequest('test');
     }).rejects.toThrowErrorMatchingSnapshot();
   });
 
   test('movieGenresRequest should return response', async () => {
-    global.fetch = mockFetch(mockMovieGenresResponse);
-    const result = await HttpService.movieGenresRequest();
-    expect(result).toMatchSnapshot();
+      global.fetch = mockFetch(mockMovieGenresResponse);
+      const result = await HttpService.movieGenresRequest();
+      expect(result).toMatchSnapshot();
   });
 
   test('movieGenresRequest should handle error', () => {
-    global.fetch = jest.fn().mockImplementation(() => { Promise.reject(); });
+    global.fetch = jest.fn().mockImplementation(() => Promise.reject());
     expect(async () => {
-      await HttpService.movieGenresRequest();
+        await HttpService.movieGenresRequest();
     }).rejects.toThrowErrorMatchingSnapshot();
   });
 
   test('movieVideoRequest should return response', async () => {
-    global.fetch = mockFetch(mockVideoResponse);
-    const result = await HttpService.movieVideoRequest('test');
-    expect(result).toMatchSnapshot();
+      global.fetch = mockFetch(mockVideoResponse);
+      const result = await HttpService.movieVideoRequest('test');
+      expect(result).toMatchSnapshot();
   });
 
   test('movieVideoRequest should replace video url if emty result error has come', async () => {
-    global.fetch = mockFetch(mockVideoResponseEmpty);
-    const result = await HttpService.movieVideoRequest('test');
-    expect(result).toMatchSnapshot();
+      global.fetch = mockFetch(mockVideoResponseEmpty);
+      const result = await HttpService.movieVideoRequest('test');
+      expect(result).toMatchSnapshot();
   });
 
   test('movieVideoRequest should handle error', () => {
-    global.fetch = jest.fn().mockImplementation(() => { Promise.reject(); });
+    global.fetch = jest.fn().mockImplementation(() => Promise.reject());
     expect(async () => {
-      await HttpService.movieVideoRequest('test');
+        await HttpService.movieVideoRequest('test');
     }).rejects.toThrowErrorMatchingSnapshot();
   });
 
   test('movieDetailsRequest should return response', async () => {
-    global.fetch = mockFetch(mockMovieDetailsResponse);
-    const result = await HttpService.movieDetailsRequest('test');
-    expect(result).toMatchSnapshot();
+      global.fetch = mockFetch(mockMovieDetailsResponse);
+      const result = await HttpService.movieDetailsRequest('test');
+      expect(result).toMatchSnapshot();
   });
 
   test('movieDetailsRequest should handle error', () => {
-    global.fetch = jest.fn().mockImplementation(() => { Promise.reject(); });
+    global.fetch = jest.fn().mockImplementation(() => Promise.reject());
     expect(async () => {
-      await HttpService.movieDetailsRequest('test');
+        await HttpService.movieDetailsRequest('test');
     }).rejects.toThrowErrorMatchingSnapshot();
   });
 

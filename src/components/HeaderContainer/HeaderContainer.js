@@ -3,7 +3,7 @@ import Header from '../Header';
 import { SearchData, GetGenres, getInitialisated } from '../../modules/content/contentActions';
 import { getInitialisation } from '../../modules/content/contentSelectors';
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   isInitialisated: getInitialisation(state),
 });
 

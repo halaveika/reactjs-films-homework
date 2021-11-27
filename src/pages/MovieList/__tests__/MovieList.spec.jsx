@@ -1,5 +1,6 @@
 import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
+import { act } from 'react-test-renderer';
 import MovieList from '..';
 
 const mockMovieListProps = {
@@ -27,18 +28,21 @@ const mockMovieListProps = {
 };
 
 describe('test MovieList component', () => {
-  it('should render MovieList component', () => {
+  it('should render MovieList component', async () => {
     const renderer = new ShallowRenderer();
-    const result = renderer.render(
-      <MovieList
-        items={mockMovieListProps.items}
-        video={mockMovieListProps.video}
-        handleVideo={mockMovieListProps.handleVideo}
-        getDetails={mockMovieListProps.getDetails}
-        SearchData={mockMovieListProps.SearchData}
-        GetGenres={mockMovieListProps.GetGenres}
-      />,
-    );
+    let result;
+    await act(async () => {
+      result = renderer.render(
+        <MovieList
+          items={mockMovieListProps.items}
+          video={mockMovieListProps.video}
+          handleVideo={mockMovieListProps.handleVideo}
+          getDetails={mockMovieListProps.getDetails}
+          SearchData={mockMovieListProps.SearchData}
+          GetGenres={mockMovieListProps.GetGenres}
+        />,
+      );
+    });
     expect(result).toMatchSnapshot();
   });
 });

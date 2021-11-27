@@ -1,5 +1,6 @@
 import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
+import { act } from 'react-test-renderer';
 import App from '../app';
 
 window.matchMedia = window.matchMedia || function mMedia() {
@@ -15,11 +16,14 @@ afterEach(() => {
 });
 
 describe('test App component', () => {
-  it('Matches snapshot ShallowRenderer', () => {
+  it('Matches snapshot ShallowRenderer', async () => {
     const renderer = new ShallowRenderer();
-    const result = renderer.render(
-      <App />,
-    );
+    let result;
+    await act(async () => {
+      result = renderer.render(
+        <App />,
+      );
+    });
     expect(result).toMatchSnapshot();
   });
 });

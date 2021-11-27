@@ -1,5 +1,5 @@
 import React from 'react';
-import { create } from 'react-test-renderer';
+import { create, act } from 'react-test-renderer';
 import { Button } from 'antd';
 import WatchVideoModal from '../WatchVideoModal';
 
@@ -15,30 +15,36 @@ describe('test WatchVideoModal component', () => {
   });
 
   it('should render WatchVideoModal component', () => {
-    const component = create(
-      <WatchVideoModal
-        video={WatchVideoModalProps.video}
-        handleVideo={WatchVideoModalProps.handleVideo}
-        id={WatchVideoModalProps.id}
-      >
-        <Button />
-      </WatchVideoModal>,
-    );
+    let component;
+    act(() => {
+      component = create(
+        <WatchVideoModal
+          video={WatchVideoModalProps.video}
+          handleVideo={WatchVideoModalProps.handleVideo}
+          id={WatchVideoModalProps.id}
+        >
+          <Button />
+        </WatchVideoModal>,
+      );
+    });
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('click should change state', () => {
     const mockCallback = jest.spyOn(WatchVideoModal.prototype, 'setState').mockImplementation();
-    const component = create(
-      <WatchVideoModal
-        video={WatchVideoModalProps.video}
-        handleVideo={WatchVideoModalProps.handleVideo}
-        id={WatchVideoModalProps.id}
-      >
-        <Button />
-      </WatchVideoModal>,
-    );
+    let component;
+    act(() => {
+      component = create(
+        <WatchVideoModal
+          video={WatchVideoModalProps.video}
+          handleVideo={WatchVideoModalProps.handleVideo}
+          id={WatchVideoModalProps.id}
+        >
+          <Button />
+        </WatchVideoModal>,
+      );
+    });
     const { root } = component;
     expect(root.instance.state.isModalVisible).toBe(false);
     root.findAllByType('button')[0].props.onClick();
@@ -48,15 +54,18 @@ describe('test WatchVideoModal component', () => {
 
   it('handleCancel should change stat', () => {
     const mockCallback = jest.spyOn(WatchVideoModal.prototype, 'setState').mockImplementation();
-    const component = create(
-      <WatchVideoModal
-        video={WatchVideoModalProps.video}
-        handleVideo={WatchVideoModalProps.handleVideo}
-        id={WatchVideoModalProps.id}
-      >
-        <Button />
-      </WatchVideoModal>,
-    );
+    let component;
+    act(() => {
+      component = create(
+        <WatchVideoModal
+          video={WatchVideoModalProps.video}
+          handleVideo={WatchVideoModalProps.handleVideo}
+          id={WatchVideoModalProps.id}
+        >
+          <Button />
+        </WatchVideoModal>,
+      );
+    });
     const { root } = component;
     root.instance.handleCancel();
     expect(mockCallback.mock.calls.length).toBe(1);

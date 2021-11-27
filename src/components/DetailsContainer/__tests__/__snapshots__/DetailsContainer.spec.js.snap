@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DetailsContainer should show mapStateToProps value 1`] = `
+Object {
+  "genres": Array [
+    "Adventure",
+    "Family",
+    "Fantasy",
+  ],
+  "id": 2412412,
+  "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry",
+  "poster": "image_path",
+  "runtime": 120,
+  "title": "Fight club",
+  "video": "test_url",
+  "vote_average": 8,
+}
+`;

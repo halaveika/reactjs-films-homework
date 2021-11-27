@@ -3,7 +3,7 @@ import MovieList from '../../pages/MovieList';
 import { getSearchList, getVideo } from '../../modules/content/contentSelectors';
 import { GetVideoUrl, getDetails } from '../../modules/content/contentActions';
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   items: getSearchList(state),
   video: getVideo(state),
 });

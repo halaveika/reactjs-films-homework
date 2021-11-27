@@ -2,54 +2,9 @@ import {
   getSearchMovieResult, getMoviesGenre, getVideo,
   getSearchList, getDetailsPageSelector, getInitialisation,
 } from '../contentSelectors';
-
-const mockState = {
-  content: {
-    results: [{
-      id: 2412412,
-      title: 'Fight club',
-      genre_ids: [13, 20, 21],
-      vote_average: 8,
-      poster: 'image_path',
-      overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
-    },
-    {
-      id: 41412,
-      title: 'Sopranos',
-      genre_ids: [13, 18],
-      vote_average_ids: 10,
-      poster: 'image_path',
-      overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
-    }],
-    page: 1,
-    total_pages: 12,
-    total_results: 55,
-    genres_array: [{
-      id: 13,
-      name: 'Adventure',
-    }, {
-      id: 18,
-      name: 'Drama',
-    }, {
-      id: 20,
-      name: 'Family',
-    }, {
-      id: 21,
-      name: 'Fantasy',
-    }],
-    video_url: 'test_url',
-    details: {
-      id: 2412412,
-      title: 'Fight club',
-      runtime: 120,
-      vote_average_ids: 10,
-      poster: 'image_path',
-      overview: 'Lorem Ipsum is simply dummy text of the printing',
-    },
-    isInitialisated: false,
-  },
-};
-
+/* eslint-disable */
+import mockState from '../../../../config/jest/__mocks__/mockState';
+  /* eslint-enable */
 const mockStateEmpty = {
   content: {
     page: 0,
@@ -59,6 +14,7 @@ const mockStateEmpty = {
     genres_array: [],
     video_url: '',
     details: {},
+    poster: 'image_path',
   },
 };
 
@@ -81,10 +37,36 @@ describe('contentSelectors testing', () => {
 
   test('getVideo should return video_url from state', () => {
     expect(getVideo(mockState)).toMatchSnapshot();
+    expect(getVideo(mockState)).toBe('test_url');
   });
 
   test('getSearchList should return getSearchList props', () => {
     expect(getSearchList(mockState)).toMatchSnapshot();
+    expect(getSearchList(mockState)).toEqual([
+      {
+        genres: [
+          'Adventure',
+          'Family',
+          'Fantasy',
+        ],
+        id: 2412412,
+        overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
+        poster: 'image_path',
+        title: 'Fight club',
+        vote_average: 8,
+      },
+      {
+        genres: [
+          'Adventure',
+          'Drama',
+        ],
+        id: 41412,
+        overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
+        poster: 'image_path',
+        title: 'Sopranos',
+        vote_average: 10,
+      },
+    ]);
   });
 
   test('getSearchList should correct handl empty result of search', () => {

@@ -1,5 +1,6 @@
 import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
+import { act } from 'react-test-renderer';
 import AppRouter from '..';
 
 afterEach(() => {
@@ -9,9 +10,13 @@ afterEach(() => {
 describe('test AppRouter component', () => {
   it('Matches snapshot ShallowRenderer', () => {
     const renderer = new ShallowRenderer();
-    const result = renderer.render(
-      <AppRouter />,
-    );
+    let result;
+    act(() => {
+      result = renderer.render(
+        <AppRouter />,
+      );
+    });
+
     expect(result).toMatchSnapshot();
   });
 });

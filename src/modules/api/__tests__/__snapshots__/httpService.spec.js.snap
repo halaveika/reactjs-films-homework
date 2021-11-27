@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`HttpService testing movieDetailsRequest should handle error 1`] = `"TypeError: Cannot read property 'json' of undefined"`;
+exports[`HttpService testing movieDetailsRequest should handle error 1`] = `""`;
 
 exports[`HttpService testing movieDetailsRequest should return response 1`] = `
 Object {
@@ -13,7 +13,7 @@ Object {
 }
 `;
 
-exports[`HttpService testing movieGenresRequest should handle error 1`] = `"TypeError: Cannot read property 'json' of undefined"`;
+exports[`HttpService testing movieGenresRequest should handle error 1`] = `""`;
 
 exports[`HttpService testing movieGenresRequest should return response 1`] = `
 Object {
@@ -38,13 +38,13 @@ Object {
 }
 `;
 
-exports[`HttpService testing movieVideoRequest should handle error 1`] = `"TypeError: Cannot read property 'json' of undefined"`;
+exports[`HttpService testing movieVideoRequest should handle error 1`] = `""`;
 
 exports[`HttpService testing movieVideoRequest should replace video url if emty result error has come 1`] = `"https://www.youtube.com/embed/2Q_ZzBGPdqE"`;
 
 exports[`HttpService testing movieVideoRequest should return response 1`] = `"https://www.youtube.com/embed/ae8wmdtGkqg"`;
 
-exports[`HttpService testing searchMovieRequest should handle error 1`] = `"TypeError: Cannot read property 'json' of undefined"`;
+exports[`HttpService testing searchMovieRequest should handle error 1`] = `""`;
 
 exports[`HttpService testing searchMovieRequest should return response 1`] = `
 Object {

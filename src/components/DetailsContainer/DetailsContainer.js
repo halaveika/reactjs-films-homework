@@ -4,7 +4,7 @@ import { getDetailsPageSelector } from '../../modules/content/contentSelectors';
 import { GetVideoUrl } from '../../modules/content/contentActions';
 
 /* eslint-disable */
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   ...getDetailsPageSelector(state),
 });
 

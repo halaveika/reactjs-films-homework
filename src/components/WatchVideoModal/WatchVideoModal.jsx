@@ -32,12 +32,13 @@ export default class WatchVideoModal extends Component {
       </Modal>
     </>
   );
-    /* eslint-enable */
+
   }
 }
 
 WatchVideoModal.propTypes = {
-  id: PropTypes.number.isRequired,
-  video: PropTypes.string.isRequired,
-  handleVideo: PropTypes.func.isRequired,
+  id: PropTypes.number,
+  video: PropTypes.string,
+  handleVideo: PropTypes.func,
 };
+    /* eslint-enable */

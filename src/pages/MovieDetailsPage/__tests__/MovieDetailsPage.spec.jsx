@@ -1,6 +1,6 @@
 import React from 'react';
-import { create } from 'react-test-renderer';
-import '../../../utils/matchMedia';
+import ShallowRenderer from 'react-test-renderer/shallow';
+import { act } from 'react-test-renderer';
 import MovieDetailsPage from '..';
 
 const mockDetailsProps = {
@@ -17,20 +17,23 @@ const mockDetailsProps = {
 
 describe('test MovieDetailsPage component', () => {
   it('should render MovieDetailsPage component', () => {
-    const component = create(
-      <MovieDetailsPage
-        id={mockDetailsProps.id}
-        title={mockDetailsProps.title}
-        genres={mockDetailsProps.genres}
-        vote_average={mockDetailsProps.vote_average}
-        poster={mockDetailsProps.poster}
-        overview={mockDetailsProps.overview}
-        runtime={mockDetailsProps.runtime}
-        video={mockDetailsProps.video}
-        GetVideoUrl={mockDetailsProps.GetVideoUrl}
-      />,
-    );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    const renderer = new ShallowRenderer();
+    let result;
+    act(() => {
+      result = renderer.render(
+        <MovieDetailsPage
+          id={mockDetailsProps.id}
+          title={mockDetailsProps.title}
+          genres={mockDetailsProps.genres}
+          vote_average={mockDetailsProps.vote_average}
+          poster={mockDetailsProps.poster}
+          overview={mockDetailsProps.overview}
+          runtime={mockDetailsProps.runtime}
+          video={mockDetailsProps.video}
+          GetVideoUrl={mockDetailsProps.GetVideoUrl}
+        />,
+      );
+    });
+    expect(result).toMatchSnapshot();
   });
 });
