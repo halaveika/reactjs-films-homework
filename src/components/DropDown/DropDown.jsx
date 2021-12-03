@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import './DropDown.scss';
 
 export default function DropDown({genres, handleGenre}) {
-  console.dir(genres);
   const menuItems = genres.map((genre)=>(
     <Menu.Item key={genre.id}>
       <span className="menu-item" onClick={()=>handleGenre(genre.name)}>{genre.name}</span>

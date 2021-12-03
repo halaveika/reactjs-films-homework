@@ -24,7 +24,7 @@ export default function Header({
           films
         </h1>
       </Link>
-      <Link className="search" to="/"><Input.Search className="search" onSearch={SearchData} /></Link>
+      <Link className="search" to="/"><Input.Search className="search" onSearch={ SearchData } /></Link>
     </Layout.Header>
   );
 }

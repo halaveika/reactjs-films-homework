@@ -5,7 +5,7 @@
 }
 
 body {
-  min-height: 100vh;
+  height: auto;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
@@ -16,7 +16,8 @@ body {
 #root {
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
+  align-content: flex-start;
+  justify-content: flex-start;
 }
 
 .ant-btn {

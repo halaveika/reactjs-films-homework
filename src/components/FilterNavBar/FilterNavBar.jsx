@@ -1,16 +1,21 @@
 import React from 'react';
 import { Tabs } from 'antd';
+import { useNavigate } from 'react-router-dom';
 import DropDown from '../DropDown';
 import PropTypes from 'prop-types';
 import './FilterNavBar.scss';
 const { TabPane } = Tabs;
 
 export default function FilterNavBar({genres, getTrending, getTopRated, getUpcoming,handleGenre}) {
+  const navigate = useNavigate()
   function callback(key) {
-    if (key === '1') {getTrending()}
-    if (key === '2') {getTopRated()}
-    if (key === '3') {getUpcoming()}
-    console.log(key);
+ 
+    if (key === '1') {
+      navigate("/"); getTrending()}
+    if (key === '2') {
+      navigate("/"); getTopRated()}
+    if (key === '3') {
+      navigate("/"); getUpcoming()}
   }
   return (
     <div className="filter-navbar">

@@ -7,13 +7,14 @@
 }
 
 .active {
-  top: 80px;
+  top: 70px;
 }
 
 .movieItem-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 0 30px 30px 30px;
+  min-height: 70vh;
 }

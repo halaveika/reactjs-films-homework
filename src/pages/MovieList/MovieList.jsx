@@ -14,7 +14,7 @@ export default function MovieList({
  
   const [isRow, setRow] = useState(true);
   const [genre, setGenre] = useState();
-  const location = useLocation('')
+  const location = useLocation('/')
   useEffect(() => {},[location,genre]);
 
   function handlRow(){
@@ -27,7 +27,6 @@ export default function MovieList({
 
   function handleGenre(name){
     setGenre(name);
-    console.log(name)
   }
 
   const itemList = items

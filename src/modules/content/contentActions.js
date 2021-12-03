@@ -1,8 +1,10 @@
 import HttpService from '../api/httpService';
 
 export const SearchData = (str) => async (dispatch) => {
-  const json = await HttpService.searchMovieRequest(str);
-  dispatch({ type: 'ADD_ITEMS', payload: json });
+  if (str) {
+    const json = await HttpService.searchMovieRequest(str);
+    dispatch({ type: 'ADD_ITEMS', payload: json });
+  }
 };
 
 export const GetGenres = () => async (dispatch) => {
