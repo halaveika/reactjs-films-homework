@@ -6,12 +6,12 @@
   align-content: space-between;
   width: 20px;
   height: 20px;
+  cursor: pointer;
 
   & div {
     width: 8px;
     height: 8px;
     background-color: #ced1d4;
-    cursor: pointer;
   }
 
   &:hover div,

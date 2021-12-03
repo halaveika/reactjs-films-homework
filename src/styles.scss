@@ -13,6 +13,12 @@ body {
   color: #fff;
 }
 
+#root {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
 .ant-btn {
   &:hover,
   &:focus {

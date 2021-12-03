@@ -28,7 +28,7 @@ export default function InfoBar({
 InfoBar.propTypes = {
   title: PropTypes.string.isRequired,
   genres: PropTypes.arrayOf(PropTypes.string),
-  runtime: PropTypes.number.isRequired,
+  runtime: PropTypes.number,
   vote_average: PropTypes.number,
 };
       /* eslint-enable */

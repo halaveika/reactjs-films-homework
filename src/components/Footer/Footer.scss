@@ -1,0 +1,27 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  align-content: space-between;
+  height: 120px;
+  width: 100vw;
+  position: relative;
+  // background-color: transparent;
+  padding: 20px;
+}
+
+.moved {
+  top: 80px;
+}
+
+.title {
+  display: block;
+  text-transform: uppercase;
+  color: #1890ff;
+}
+
+.copyright {
+  display: block;
+  color: #8a8c8d;
+}

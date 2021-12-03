@@ -6,16 +6,20 @@ import ColumnsBtn from '../ColumnsBtn'
 import RowsBtn from '../RowsBtn';
 import './Filter.scss';
 
-export default function Filter() {
+export default function Filter({handleColumn, handlRow}) {
   return (
     <PageHeader ghost className="site-page-header">
       <FilterNavBar></FilterNavBar>
-      <div class="btn-container">
-        <RowsBtn></RowsBtn>
-        <ColumnsBtn></ColumnsBtn>
+      <div className="btn-container">
+        <RowsBtn handlRow={handlRow}></RowsBtn>
+        <ColumnsBtn handleColumn={handleColumn}></ColumnsBtn>
       </div>
     </PageHeader>
   );
 }
 
 
+Filter.propTypes = {
+  handlRow: PropTypes.func.isRequired,
+  handleColumn: PropTypes.func.isRequired,
+};
