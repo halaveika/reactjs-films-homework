@@ -7,13 +7,13 @@ import { BACKDROP_PATH_URL } from '../../constants';
 import './MovieDetailsPage.scss';
 
 export default function MovieDetailsPage({
-  id, title, genres, vote_average, poster, overview, runtime, video, GetVideoUrl,
+  id, title, genres, vote_average, backdrop, overview, runtime, video, GetVideoUrl,
 }) {
   return (
-    <Layout className="movieDetails-container">
-      <img className="movieDetails-image" src={`${BACKDROP_PATH_URL}${poster}`} alt="wallpaper" />
+    <Layout className="movieDetails">
+      <img className="movieDetails-image" src={`${BACKDROP_PATH_URL}${backdrop}`} alt="wallpaper" />
 
-      <Layout.Content className="movieDetails-content">
+      <Layout.Content className="movieDetails-container">
         <InfoBar
           title={title}
           genres={genres}
@@ -37,7 +37,7 @@ MovieDetailsPage.propTypes = {
   title: PropTypes.string,
   genres: PropTypes.arrayOf(PropTypes.string),
   vote_average: PropTypes.number,
-  poster: PropTypes.string,
+  backdrop: PropTypes.string,
   overview: PropTypes.string,
   runtime: PropTypes.number,
   video: PropTypes.string.isRequired,

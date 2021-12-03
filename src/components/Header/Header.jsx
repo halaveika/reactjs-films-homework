@@ -19,12 +19,14 @@ export default function Header({
     /* eslint-enable */
   return (
     <Layout.Header className="header">
-      <Link to="/">
-        <h1 className="title">
-          films
-        </h1>
-      </Link>
-      <Link className="search" to="/"><Input.Search className="search" onSearch={ SearchData } /></Link>
+      <Layout className="header-container">
+            <Link to="/">
+          <h1 className="title">
+            films
+          </h1>
+        </Link>
+        <Link className="search" to="/"><Input.Search className="search" onSearch={ SearchData } /></Link>
+      </Layout>
     </Layout.Header>
   );
 }

@@ -20,6 +20,10 @@ body {
   justify-content: flex-start;
 }
 
+.container {
+  background: transparent;
+}
+
 .ant-btn {
   &:hover,
   &:focus {

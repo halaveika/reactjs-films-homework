@@ -36,7 +36,7 @@ export const getDetailsPageSelector = createSelector(
       title: result.title,
       genres: transformArray(result.genre_ids, genres_array),
       vote_average: result.vote_average,
-      poster: result.poster_path,
+      backdrop: result.backdrop_path,
       overview: result.overview,
       runtime: details.runtime,
       video,
