@@ -61,7 +61,7 @@ export default function MovieList({
           handleGenre={handleGenre}
           >
         </Filter>
-        <Layout className="movieItem-container" style={(isRow) ? { flexDirection: 'row',alignItems: 'flex-start'}
+        <Layout className="movieItem-container" style={(isRow) ? { flexDirection: 'row',alignItems: 'center'}
          :
          { flexDirection: 'column',alignItems: 'center' }}>
         {itemList}
