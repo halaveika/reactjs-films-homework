@@ -1,12 +1,21 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { Layout } from 'antd';
 import PropTypes from 'prop-types';
 import MovieItem from '../../components/MovieItem';
+import Filter from '../../components/Filter';
 import './MovieList.scss';
+import { useLocation } from 'react-router-dom';
 
 export default function MovieList({
   items, video, handleVideo, getDetails,
 }) {
+  const location = useLocation()
+  console.dir(location);
+  useEffect(() => {
+    ;
+  },
+  [location]);
+
   const itemList = items.filter((item) => item.poster && !item.poster.includes('null')).slice(0, 15).map((item) => (
     <MovieItem
       key={item.id}
@@ -23,8 +32,11 @@ export default function MovieList({
   ));
 
   return (
-    <Layout className="movieList-container">
+    <Layout className={`movieList-container${(location.pathname !== '/details') ? ' active' : ''}`}>
+       <Filter></Filter>
+       <Layout className="movieItem-container">
       {itemList}
+      </Layout>
     </Layout>
   );
 }

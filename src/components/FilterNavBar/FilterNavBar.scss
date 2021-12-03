@@ -1,0 +1,29 @@
+.filter-navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+
+  & span {
+    color: #1890ff;
+    cursor: pointer;
+
+    &:hover,
+    &:active {
+      text-decoration: underline;
+      font-weight: bold;
+    }
+  }
+}
+
+.menu-item {
+  color: #1890ff;
+  cursor: pointer;
+
+  &:hover,
+  &:active {
+    text-decoration: underline;
+    font-weight: bold;
+  }
+}
