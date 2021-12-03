@@ -10,6 +10,33 @@ class HttpService {
     }
   }
 
+  static async getTrendingRequest() {
+    try {
+      const response = await fetch(`${URL}movie/popular?api_key=${API_KEY_V3}&page=1`, { method: 'GET' });
+      return await response.json();
+    } catch (error) {
+      throw new Error(error);
+    }
+  }
+
+  static async getTopRatedRequest() {
+    try {
+      const response = await fetch(`${URL}movie/top_rated?api_key=${API_KEY_V3}&page=1`, { method: 'GET' });
+      return await response.json();
+    } catch (error) {
+      throw new Error(error);
+    }
+  }
+
+  static async getUpcomingRequest() {
+    try {
+      const response = await fetch(`${URL}movie/upcoming?api_key=${API_KEY_V3}&page=1`, { method: 'GET' });
+      return await response.json();
+    } catch (error) {
+      throw new Error(error);
+    }
+  }
+
   static async movieGenresRequest() {
     try {
       const response = await fetch(`${URL}genre/movie/list?api_key=${API_KEY_V3}`, { method: 'GET' });

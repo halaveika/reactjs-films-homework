@@ -1,33 +1,40 @@
 import React from 'react';
-import { Dropdown, Menu } from 'antd';
-import { DownOutlined } from '@ant-design/icons';
+import { Tabs } from 'antd';
+import DropDown from '../DropDown';
 import PropTypes from 'prop-types';
 import './FilterNavBar.scss';
+const { TabPane } = Tabs;
 
-export default function FilterNavBar() {
-  const menu = (
-    <Menu>
-      <Menu.Item key="0">
-        <span className="menu-item">1st menu item</span>
-      </Menu.Item>
-      <Menu.Divider />
-      <Menu.Item key="3">3rd menu item</Menu.Item>
-    </Menu>
-  );
+export default function FilterNavBar({genres, getTrending, getTopRated, getUpcoming,handleGenre}) {
+  function callback(key) {
+    if (key === '1') {getTrending()}
+    if (key === '2') {getTopRated()}
+    if (key === '3') {getUpcoming()}
+    console.log(key);
+  }
   return (
-    <div
-    className="filter-navbar"
-  >
-    <span>Trending</span>
-    <span>Top Rated</span>
-    <span>Coming Soon</span>
-    <Dropdown overlay={menu} trigger={['click']}>
-    <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
-      Genre <DownOutlined />
-    </a>
-  </Dropdown>
+    <div className="filter-navbar">
+      <Tabs defaultActiveKey="1" onChange={callback}>
+        <TabPane tab="Trending" key="1">
+        </TabPane>
+        <TabPane tab="Top Rated" key="2">
+        </TabPane>
+        <TabPane tab="Coming Soon" key="3">
+        </TabPane>
+        <TabPane tab={<DropDown handleGenre={handleGenre} genres={genres}/>} key="4">
+        </TabPane>
+      </Tabs>
     </div>
   );
 }
 
 
+FilterNavBar.propTypes = {
+  genres: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string})),
+  getTrending: PropTypes.func.isRequired,
+  getTopRated: PropTypes.func.isRequired,
+  getUpcoming: PropTypes.func.isRequired,
+  handleGenre: PropTypes.func.isRequired,
+};

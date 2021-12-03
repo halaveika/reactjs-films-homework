@@ -20,4 +20,19 @@ export const getDetails = (id) => async (dispatch) => {
   dispatch({ type: 'ADD_DETAILS', payload: json });
 };
 
+export const getTrending = () => async (dispatch) => {
+  const json = await HttpService.getTrendingRequest();
+  dispatch({ type: 'ADD_ITEMS', payload: json });
+};
+
+export const getTopRated = () => async (dispatch) => {
+  const json = await HttpService.getTopRatedRequest();
+  dispatch({ type: 'ADD_ITEMS', payload: json });
+};
+
+export const getUpcoming = () => async (dispatch) => {
+  const json = await HttpService.getUpcomingRequest();
+  dispatch({ type: 'ADD_ITEMS', payload: json });
+};
+
 export const getInitialisated = () => ({ type: 'INITIALISATION', payload: true });

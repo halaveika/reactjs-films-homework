@@ -9,11 +9,13 @@ import './MovieList.scss';
 
 
 export default function MovieList({
-  items, video, handleVideo, getDetails,
+  items, video, handleVideo, getDetails, genres, getTrending,getTopRated, getUpcoming
 }) {
-  const location = useLocation()
-  useEffect(() => {},[location]);
+ 
   const [isRow, setRow] = useState(true);
+  const [genre, setGenre] = useState();
+  const location = useLocation('')
+  useEffect(() => {},[location,genre]);
 
   function handlRow(){
     setRow(true);
@@ -23,7 +25,16 @@ export default function MovieList({
     setRow(false);
   }
 
-  const itemList = items.filter((item) => item.poster && !item.poster.includes('null')).slice(0, 15).map((item) => (
+  function handleGenre(name){
+    setGenre(name);
+    console.log(name)
+  }
+
+  const itemList = items
+                        .filter((item) => item.poster && !item.poster.includes('null'))
+                        .filter((item) => (genre) ? item.genres.filter(name => name === genre).length > 0 : item)
+                        .slice(0, 15)
+                        .map((item) => (
     <MovieItem
       key={item.id}
       id={item.id}
@@ -41,7 +52,16 @@ export default function MovieList({
   return (
     <>
       <Layout className={`movieList-container${(location.pathname !== '/details') ? ' active' : ''}`}>
-        <Filter handleColumn={handleColumn} handlRow={handlRow}></Filter>
+        <Filter 
+          handleColumn={handleColumn}
+          handlRow={handlRow}
+          genres={genres}
+          getTrending={getTrending}
+          getTopRated={getTopRated}
+          getUpcoming={getUpcoming}
+          handleGenre={handleGenre}
+          >
+        </Filter>
         <Layout className="movieItem-container" style={(isRow) ? { flexDirection: 'row',alignItems: 'flex-start'}
          :
          { flexDirection: 'column',alignItems: 'center' }}>
@@ -65,4 +85,10 @@ MovieList.propTypes = {
   video: PropTypes.string.isRequired,
   handleVideo: PropTypes.func.isRequired,
   getDetails: PropTypes.func.isRequired,
+  genres: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string})),
+  getTrending: PropTypes.func.isRequired,
+  getTopRated: PropTypes.func.isRequired,
+  getUpcoming: PropTypes.func.isRequired,
 };
