@@ -11,8 +11,8 @@ export default function MovieDetailsPage({
 }) {
   return (
     <Layout className="movieDetails">
-      <img className="movieDetails-image" src={`${BACKDROP_PATH_URL}${backdrop}`} alt="wallpaper" />
-
+      <img className="movieDetails-image" 
+      src={(backdrop) ? `${BACKDROP_PATH_URL}${backdrop}` : 'assets/images/cover-image.jpg'} alt="wallpaper" />
       <Layout.Content className="movieDetails-container">
         <InfoBar
           title={title}

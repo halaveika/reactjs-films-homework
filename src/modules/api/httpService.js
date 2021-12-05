@@ -50,7 +50,7 @@ class HttpService {
     try {
       const videoInfo = await fetch(`${URL}movie/${id}/videos?api_key=${API_KEY_V3}`, { method: 'GET' });
       const json = await videoInfo.json();
-      if (json.results.length === 0) { return `${URL_YOUTUBE}2Q_ZzBGPdqE`; }
+      if (json.results.length === 0) { return ''; }
       return `${URL_YOUTUBE}${json.results[0].key}`;
     } catch (error) {
       throw new Error(error);

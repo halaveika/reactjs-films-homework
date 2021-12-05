@@ -6,7 +6,7 @@ import ColumnsBtn from '../ColumnsBtn'
 import RowsBtn from '../RowsBtn';
 import './Filter.scss';
 
-export default function Filter({handleColumn, handlRow,genres,getTrending,getTopRated, getUpcoming,handleGenre}) {
+export default function Filter({handleColumn, handlRow,genres,getTrending,getTopRated, getUpcoming,handleGenre,activeGenre,setFilter,filter}) {
   return (
     <PageHeader ghost className="site-page-header">
       <FilterNavBar
@@ -15,6 +15,9 @@ export default function Filter({handleColumn, handlRow,genres,getTrending,getTop
         getTopRated={getTopRated}
         getUpcoming={getUpcoming}
         handleGenre={handleGenre}
+        activeGenre={activeGenre}
+        setFilter={setFilter}
+        filter={filter}
         >
       </FilterNavBar>
       <div className="btn-container">
@@ -36,4 +39,7 @@ Filter.propTypes = {
   getTopRated: PropTypes.func.isRequired,
   getUpcoming: PropTypes.func.isRequired,
   handleGenre: PropTypes.func.isRequired,
+  activeGenre: PropTypes.string.isRequired,
+  setFilter: PropTypes.func.isRequired,
+  filter: PropTypes.string.isRequired,
 };

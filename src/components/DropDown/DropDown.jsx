@@ -11,15 +11,17 @@ export default function DropDown({genres, handleGenre}) {
     </Menu.Item>
   ));
 
-
   const menu = (
     <Menu>
+      <Menu.Item key="1">
+      <span className="menu-item" onClick={()=>handleGenre('')}>All</span>
+      </Menu.Item>
       {menuItems}
     </Menu>
   );
 
   return (
-    <Dropdown overlay={menu} trigger={['click']}>
+    <Dropdown overlay={menu} trigger={['click']} placement="bottomCenter">
       <span className="ant-dropdown-link" onClick={e => e.preventDefault()}>{'Genre '}
         <DownOutlined />
       </span>

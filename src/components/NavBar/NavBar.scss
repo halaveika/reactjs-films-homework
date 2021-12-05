@@ -6,3 +6,12 @@
     color: #fff;
   }
 }
+
+.ant-popover-inner {
+  background-color: black;
+  opacity: 0.5;
+  width: 300px;
+  height: auto;
+  position: relative;
+  left: -50px;
+}

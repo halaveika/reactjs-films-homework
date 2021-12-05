@@ -35,7 +35,8 @@ export default function MovieItem({
       onMouseLeave={toggleHover}
     >
       <div className={`overlay${(ownState.active) ? '__active' : ''}`} onClick={handleDetailPageNavigation} />
-      <img className={`poster${(ownState.active) ? '__active' : ''}`} alt="Poster!" src={`${BACKDROP_PATH_URL}${poster}`} />
+      <img className={`poster${(ownState.active) ? '__active' : ''}`} alt="Poster!" 
+      src={(poster) ? `${BACKDROP_PATH_URL}${poster}` : 'assets/images/not-found.png'} />
       {
   
       (ownState.hovered)

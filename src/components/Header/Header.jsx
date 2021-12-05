@@ -8,14 +8,14 @@ export default function Header({
   isInitialisated, getInitialisated, SearchData, GetGenres,
 }) {
   /* eslint-disable */
-  useEffect(() => {
-    if (!isInitialisated) {
-      SearchData('Hello');
-      GetGenres();
-      getInitialisated();
-    }
-  },
-  []);
+  // useEffect(() => {
+  //   if (!isInitialisated) {
+  //     SearchData('Hello');
+  //     GetGenres();
+  //     getInitialisated();
+  //   }
+  // },
+  // []);
     /* eslint-enable */
   return (
     <Layout.Header className="header">
@@ -25,7 +25,7 @@ export default function Header({
             films
           </h1>
         </Link>
-        <Link className="search" to="/"><Input.Search className="search" onSearch={ SearchData } /></Link>
+        <Input.Search className="search" onSearch={SearchData} />
       </Layout>
     </Layout.Header>
   );

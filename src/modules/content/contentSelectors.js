@@ -11,6 +11,10 @@ export const getInitialisation = (state) => state.content.isInitialisated;
 
 export const getDetailsSelector = (state) => state.content.details;
 
+export const getLoadingSelector = (state) => state.content.isLoading;
+
+export const getFilter = (state) => state.content.filter;
+
 export const getSearchList = createSelector(
   getSearchMovieResult,
   getMoviesGenre,
@@ -25,19 +29,17 @@ export const getSearchList = createSelector(
 );
 
 export const getDetailsPageSelector = createSelector(
-  getSearchMovieResult,
   getMoviesGenre,
   getDetailsSelector,
   getVideo,
-  (results, genres_array, details, video) => {
-    const result = results.filter((item) => item.id === details.id)[0];
+  (genres_array, details, video) => {
     return {
       id: details.id,
-      title: result.title,
-      genres: transformArray(result.genre_ids, genres_array),
-      vote_average: result.vote_average,
-      backdrop: result.backdrop_path,
-      overview: result.overview,
+      title: details.title,
+      genres: details.genres.map(item => item.name),
+      vote_average: details.vote_average,
+      backdrop: details.backdrop_path,
+      overview: details.overview,
       runtime: details.runtime,
       video,
     };

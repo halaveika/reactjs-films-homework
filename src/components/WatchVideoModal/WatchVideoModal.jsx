@@ -9,9 +9,13 @@ export default class WatchVideoModal extends Component {
     this.state = {
       isModalVisible: false,
     };
+    this.videoRef = React.createRef();
   }
 
   handleCancel() {
+    if(this.props.video) {
+    this.videoRef.current.src =`${this.props.video}`;
+    }
     this.setState({ isModalVisible: false });
   }
 
@@ -27,8 +31,12 @@ export default class WatchVideoModal extends Component {
   return (
     <>
       { React.cloneElement(this.props.children, { onClick: this.showModal.bind(this) }) }
-      <Modal visible={isModalVisible} cancelText="cancel" okButtonProps={{ style: { display: 'none' } }} width="85vw" height="85vh" onCancel={this.handleCancel.bind(this)} closable={false} centered>
-        <iframe className="videoIframe" src={`${this.props.video}`} frameBorder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+      <Modal visible={isModalVisible} cancelText="cancel" okButtonProps={{ style: { display: 'none' } }} width="85vw" bodyStyle={{ height: '90vh' }} onCancel={this.handleCancel.bind(this)} closable={false} centered >
+      {
+      (this.props.video) ? <iframe className="videoIframe" src={`${this.props.video}`} frameBorder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowFullScreen ref={this.videoRef} />
+       :
+      <img className="image-notfound" src="assets/images/not-found.png" alt="not_found" />
+      }
       </Modal>
     </>
   );

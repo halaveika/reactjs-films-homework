@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Header from '../Header';
-import { SearchData, GetGenres, getInitialisated } from '../../modules/content/contentActions';
+import { SearchData, GetGenres, getInitialisated, setLoading} from '../../modules/content/contentActions';
 import { getInitialisation } from '../../modules/content/contentSelectors';
 
 export const mapStateToProps = (state) => ({
@@ -8,6 +8,6 @@ export const mapStateToProps = (state) => ({
 });
 
 const HeaderContainer = connect(mapStateToProps,
-  { SearchData, GetGenres, getInitialisated })(Header);
+  { SearchData, GetGenres, getInitialisated, setLoading })(Header);
 
 export default HeaderContainer;

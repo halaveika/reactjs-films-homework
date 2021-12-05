@@ -1,21 +1,32 @@
 import React,{useEffect, useState} from 'react';
-import { Layout } from 'antd';
+import { Layout, Spin, Alert } from 'antd';
 import { useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import MovieItem from '../../components/MovieItem';
 import Filter from '../../components/Filter';
 import Footer from '../../components/Footer';
+import itemfilter from '../../utils/itemFilter';
 import './MovieList.scss';
 
 
 export default function MovieList({
-  items, video, handleVideo, getDetails, genres, getTrending,getTopRated, getUpcoming
+  items, video, handleVideo, getDetails, genres, getTrending,getTopRated, getUpcoming, isLoading, isInitialisated, GetGenres, getInitialisated, setFilter, filter
 }) {
  
   const [isRow, setRow] = useState(true);
-  const [genre, setGenre] = useState();
+  const [genre, setGenre] = useState('');
   const location = useLocation('/')
   useEffect(() => {},[location,genre]);
+    
+    useEffect(() => {
+    if (!isInitialisated) {
+      console.log(isInitialisated);
+      GetGenres();
+      getTrending();
+      getInitialisated();
+    }
+  },
+  []);
 
   function handlRow(){
     setRow(true);
@@ -29,25 +40,28 @@ export default function MovieList({
     setGenre(name);
   }
 
-  const itemList = items
-                        .filter((item) => item.poster && !item.poster.includes('null'))
-                        .filter((item) => (genre) ? item.genres.filter(name => name === genre).length > 0 : item)
-                        .slice(0, 15)
-                        .map((item) => (
-    <MovieItem
-      key={item.id}
-      id={item.id}
-      title={item.title}
-      genres={item.genres}
-      vote_average={item.vote_average}
-      poster={item.poster}
-      overview={item.overview}
-      video={video}
-      handleVideo={handleVideo}
-      getDetails={getDetails}
-    />
-  ));
-
+  let content;
+  const itemList = itemfilter(items,genre);
+  if (itemList.length) {
+    content = itemList.map((item) => (
+                                      <MovieItem
+                                        key={item.id}
+                                        id={item.id}
+                                        title={item.title}
+                                        genres={item.genres}
+                                        vote_average={item.vote_average}
+                                        poster={item.poster}
+                                        overview={item.overview}
+                                        video={video}
+                                        handleVideo={handleVideo}
+                                        getDetails={getDetails}
+                                      />
+                                    ));
+  } else {
+    console.log('no result');
+    content= (<span className="noresult-msg"> No result! </span>);
+  }
+  
   return (
     <>
       <Layout className={`movieList-container${(location.pathname !== '/details') ? ' active' : ''}`}>
@@ -59,12 +73,19 @@ export default function MovieList({
           getTopRated={getTopRated}
           getUpcoming={getUpcoming}
           handleGenre={handleGenre}
+          activeGenre={genre}
+          setFilter={setFilter}
+          filter={filter}
           >
         </Filter>
         <Layout className="movieItem-container" style={(isRow) ? { flexDirection: 'row',alignItems: 'center'}
          :
          { flexDirection: 'column',alignItems: 'center' }}>
-        {itemList}
+      { (!isLoading) ?
+        content :
+        <Spin tip="Loading...">
+        </Spin>
+      }
         </Layout>
       </Layout>
       <Footer isMoved={(location.pathname !== '/details') ? true : false}/>
@@ -90,4 +111,7 @@ MovieList.propTypes = {
   getTrending: PropTypes.func.isRequired,
   getTopRated: PropTypes.func.isRequired,
   getUpcoming: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  setFilter: PropTypes.func.isRequired,
+  filter: PropTypes.string.isRequired,
 };

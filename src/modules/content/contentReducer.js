@@ -7,6 +7,8 @@ export const initialState = {
   video_url: '',
   details: {},
   isInitialisated: false,
+  isLoading: true,
+  filter: '1'
 };
 
 export const contentReducer = (state = initialState, action) => {
@@ -18,6 +20,7 @@ export const contentReducer = (state = initialState, action) => {
         page: action.payload.page,
         total_pages: action.payload.total_pages,
         total_results: action.payload.total_results,
+        isLoading: false
       };
     case 'ADD_GENRES':
       return { ...state, genres_array: action.payload.genres };
@@ -27,6 +30,10 @@ export const contentReducer = (state = initialState, action) => {
       return { ...state, details: action.payload };
     case 'INITIALISATION':
       return { ...state, isInitialisated: action.payload };
+    case 'SET_LOADING':
+      return { ...state, isLoading: action.payload };
+    case 'SET_FILTER':
+      return { ...state, filter: action.payload };
     default:
       return state;
   }
