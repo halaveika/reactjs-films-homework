@@ -1,5 +1,5 @@
 import React,{useEffect, useState} from 'react';
-import { Layout, Spin, Alert } from 'antd';
+import { Layout, Spin, Pagination } from 'antd';
 import { useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import MovieItem from '../../components/MovieItem';
@@ -10,13 +10,13 @@ import './MovieList.scss';
 
 
 export default function MovieList({
-  items, video, handleVideo, getDetails, genres, getTrending,getTopRated, getUpcoming, isLoading, isInitialisated, GetGenres, getInitialisated, setFilter, filter
+  items, video, handleVideo, getDetails, genres, getTrending,getTopRated, getUpcoming, isLoading, isInitialisated, GetGenres, getInitialisated, setFilter, filter, setCurrentPage, page, total_page
 }) {
  
   const [isRow, setRow] = useState(true);
   const [genre, setGenre] = useState('');
   const location = useLocation('/')
-  useEffect(() => {},[location,genre]);
+  useEffect(() => {},[location,genre, page]);
     
     useEffect(() => {
     if (!isInitialisated) {
@@ -43,22 +43,28 @@ export default function MovieList({
   let content;
   const itemList = itemfilter(items,genre);
   if (itemList.length) {
-    content = itemList.map((item) => (
-                                      <MovieItem
-                                        key={item.id}
-                                        id={item.id}
-                                        title={item.title}
-                                        genres={item.genres}
-                                        vote_average={item.vote_average}
-                                        poster={item.poster}
-                                        overview={item.overview}
-                                        video={video}
-                                        handleVideo={handleVideo}
-                                        getDetails={getDetails}
-                                      />
+    const list = itemList.map((item) => (
+                                        <MovieItem
+                                          key={item.id}
+                                          id={item.id}
+                                          title={item.title}
+                                          genres={item.genres}
+                                          vote_average={item.vote_average}
+                                          poster={item.poster}
+                                          overview={item.overview}
+                                          video={video}
+                                          handleVideo={handleVideo}
+                                          getDetails={getDetails}
+                                        />
                                     ));
+    const pagination = (<Pagination className="pagination" defaultCurrent={1} current={page} total={total_page} onChange={setCurrentPage} />);
+    content = (
+      <>
+        {list}
+        {pagination}
+      </>
+    )
   } else {
-    console.log('no result');
     content= (<span className="noresult-msg"> No result! </span>);
   }
   
@@ -76,6 +82,7 @@ export default function MovieList({
           activeGenre={genre}
           setFilter={setFilter}
           filter={filter}
+          page={page}
           >
         </Filter>
         <Layout className="movieItem-container" style={(isRow) ? { flexDirection: 'row',alignItems: 'center'}
@@ -114,4 +121,7 @@ MovieList.propTypes = {
   isLoading: PropTypes.bool.isRequired,
   setFilter: PropTypes.func.isRequired,
   filter: PropTypes.string.isRequired,
+  page: PropTypes.number.isRequired,
+  total_page: PropTypes.number.isRequired,
+  setCurrentPage: PropTypes.func.isRequired,
 };

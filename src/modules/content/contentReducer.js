@@ -34,6 +34,8 @@ export const contentReducer = (state = initialState, action) => {
       return { ...state, isLoading: action.payload };
     case 'SET_FILTER':
       return { ...state, filter: action.payload };
+    case 'SET_CURRENT_PAGE':
+      return { ...state, page: action.payload };
     default:
       return state;
   }

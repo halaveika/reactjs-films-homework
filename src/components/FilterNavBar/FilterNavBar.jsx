@@ -1,23 +1,21 @@
-import React, {useState} from 'react';
-import { Tabs, Badge } from 'antd';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
+import { Tabs } from 'antd';
 import DropDown from '../DropDown';
 import PropTypes from 'prop-types';
 import './FilterNavBar.scss';
 const { TabPane } = Tabs;
 
-export default function FilterNavBar({genres, getTrending, getTopRated, getUpcoming,handleGenre,activeGenre,setFilter,filter}) {
-  const navigate = useNavigate()
+export default function FilterNavBar({genres, getTrending, getTopRated, getUpcoming,handleGenre,activeGenre,setFilter,filter,page}) {
   function callback(key) {
     if (key === '1') {
       setFilter('1');
-      getTrending()}
+      getTrending(page)}
     if (key === '2') {
       setFilter('2');
-      getTopRated()}
+      getTopRated(page)}
     if (key === '3') {
       setFilter('3');
-      getUpcoming()}
+      getUpcoming(page)}
     if (key === '4') {
     setFilter('4');}
   }
@@ -51,4 +49,5 @@ FilterNavBar.propTypes = {
   activeGenre: PropTypes.string.isRequired,
   setFilter: PropTypes.func.isRequired,
   filter: PropTypes.string.isRequired,
+  page: PropTypes.number.isRequired,
 };

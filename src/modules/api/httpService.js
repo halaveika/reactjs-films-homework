@@ -1,36 +1,36 @@
 import { URL, API_KEY_V3, URL_YOUTUBE } from '../../constants';
 
 class HttpService {
-  static async searchMovieRequest(str) {
+  static async searchMovieRequest(str,page) {
     try {
-      const response = await fetch(`${URL}search/movie?api_key=${API_KEY_V3}&query=${str}&page=1`, { method: 'GET' });
+      const response = await fetch(`${URL}search/movie?api_key=${API_KEY_V3}&query=${str}&page=${page}`, { method: 'GET' });
       return await response.json();
     } catch (error) {
       throw new Error(error);
     }
   }
 
-  static async getTrendingRequest() {
+  static async getTrendingRequest(page) {
     try {
-      const response = await fetch(`${URL}movie/popular?api_key=${API_KEY_V3}&page=1`, { method: 'GET' });
+      const response = await fetch(`${URL}movie/popular?api_key=${API_KEY_V3}&page=${page}`, { method: 'GET' });
       return await response.json();
     } catch (error) {
       throw new Error(error);
     }
   }
 
-  static async getTopRatedRequest() {
+  static async getTopRatedRequest(page) {
     try {
-      const response = await fetch(`${URL}movie/top_rated?api_key=${API_KEY_V3}&page=1`, { method: 'GET' });
+      const response = await fetch(`${URL}movie/top_rated?api_key=${API_KEY_V3}&page=${page}`, { method: 'GET' });
       return await response.json();
     } catch (error) {
       throw new Error(error);
     }
   }
 
-  static async getUpcomingRequest() {
+  static async getUpcomingRequest(page) {
     try {
-      const response = await fetch(`${URL}movie/upcoming?api_key=${API_KEY_V3}&page=1`, { method: 'GET' });
+      const response = await fetch(`${URL}movie/upcoming?api_key=${API_KEY_V3}&page=${page}`, { method: 'GET' });
       return await response.json();
     } catch (error) {
       throw new Error(error);

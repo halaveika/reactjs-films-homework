@@ -15,6 +15,11 @@ export const getLoadingSelector = (state) => state.content.isLoading;
 
 export const getFilter = (state) => state.content.filter;
 
+export const getPageSelector = (state) => state.content.page;
+
+export const getTotalPageSelector = (state) => state.content.total_pages;
+
+
 export const getSearchList = createSelector(
   getSearchMovieResult,
   getMoviesGenre,
