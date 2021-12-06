@@ -1,22 +1,17 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Layout, Input } from 'antd';
 import PropTypes from 'prop-types';
 import './Header.scss';
 
-export default function Header({
-  isInitialisated, getInitialisated, SearchData, GetGenres,
-}) {
-  /* eslint-disable */
-  // useEffect(() => {
-  //   if (!isInitialisated) {
-  //     SearchData('Hello');
-  //     GetGenres();
-  //     getInitialisated();
-  //   }
-  // },
-  // []);
-    /* eslint-enable */
+export default function Header({setCurrentPage,setFilter,setSearchValue}) {
+
+  function callback(value) {
+    setCurrentPage(1);
+    setFilter('');
+    setSearchValue(value.trim());
+  }
+
   return (
     <Layout.Header className="header">
       <Layout className="header-container">
@@ -25,15 +20,14 @@ export default function Header({
             films
           </h1>
         </Link>
-        <Input.Search className="search" onSearch={SearchData} />
+        <Input.Search className="search" onSearch={callback} />
       </Layout>
     </Layout.Header>
   );
 }
 
 Header.propTypes = {
-  isInitialisated: PropTypes.bool.isRequired,
-  getInitialisated: PropTypes.func.isRequired,
-  SearchData: PropTypes.func.isRequired,
-  GetGenres: PropTypes.func.isRequired,
+  setCurrentPage: PropTypes.func.isRequired,
+  setFilter: PropTypes.func.isRequired,
+  setSearchValue: PropTypes.func.isRequired,
 };

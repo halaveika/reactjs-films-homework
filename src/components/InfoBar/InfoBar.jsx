@@ -24,11 +24,9 @@ export default function InfoBar({
   );
 }
 
-/* eslint-disable */
 InfoBar.propTypes = {
   title: PropTypes.string.isRequired,
   genres: PropTypes.arrayOf(PropTypes.string),
   runtime: PropTypes.number,
   vote_average: PropTypes.number,
 };
-      /* eslint-enable */

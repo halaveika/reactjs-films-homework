@@ -3,12 +3,10 @@ import MovieDetailsPage from '../../pages/MovieDetailsPage';
 import { getDetailsPageSelector } from '../../modules/content/contentSelectors';
 import { GetVideoUrl } from '../../modules/content/contentActions';
 
-/* eslint-disable */
+
 export const mapStateToProps = (state) => ({
   ...getDetailsPageSelector(state),
 });
-
-     /* eslint-enable */
 
 const DetailsContainer = connect(mapStateToProps, { GetVideoUrl })(MovieDetailsPage);
 

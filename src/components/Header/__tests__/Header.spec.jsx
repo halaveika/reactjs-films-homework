@@ -34,7 +34,6 @@ describe('test Header component', () => {
   it('input should handle onclick', () => {
     let component;
     const isInitialisated = false;
-    /* eslint-disable */
     act(() => {
       component = create(<BrowserRouter>
         <Header
@@ -53,7 +52,6 @@ describe('test Header component', () => {
         button.props.onClick();
       });
     });
-  /* eslint-enable */
     expect(SearchData).toBeCalled();
   });
 

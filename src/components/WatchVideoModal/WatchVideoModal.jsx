@@ -25,7 +25,6 @@ export default class WatchVideoModal extends Component {
     this.setState({ isModalVisible: true });
   }
 
-  /* eslint-disable */
   render() {
     const { isModalVisible } = this.state;
   return (
@@ -49,4 +48,3 @@ WatchVideoModal.propTypes = {
   video: PropTypes.string,
   handleVideo: PropTypes.func,
 };
-    /* eslint-enable */

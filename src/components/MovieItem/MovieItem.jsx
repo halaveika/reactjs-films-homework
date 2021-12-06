@@ -28,7 +28,6 @@ export default function MovieItem({
   };
 
   return (
-  /* eslint-disable */
     <Card
       className={`movie-item${(ownState.hovered) ? '__hovered' : ''}`}
       onMouseEnter={toggleHover}
@@ -56,7 +55,6 @@ export default function MovieItem({
           )
 
         : ''
-      /* eslint-enable */
         }
       {(ownState.active)
         ? (

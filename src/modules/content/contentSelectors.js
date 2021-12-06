@@ -19,6 +19,10 @@ export const getPageSelector = (state) => state.content.page;
 
 export const getTotalPageSelector = (state) => state.content.total_pages;
 
+export const getSearchValueSelector = (state) => state.content.searchValue;
+
+export const getPageSizeSelector = (state) => state.content.pageSize;
+
 
 export const getSearchList = createSelector(
   getSearchMovieResult,
@@ -34,10 +38,9 @@ export const getSearchList = createSelector(
 );
 
 export const getDetailsPageSelector = createSelector(
-  getMoviesGenre,
   getDetailsSelector,
   getVideo,
-  (genres_array, details, video) => {
+  (details, video) => {
     return {
       id: details.id,
       title: details.title,
