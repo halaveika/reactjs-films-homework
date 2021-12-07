@@ -2,15 +2,15 @@
 
 exports[`test MovieDetailsPage component should render MovieDetailsPage component 1`] = `
 <Layout
-  className="movieDetails-container"
+  className="movieDetails"
 >
   <img
     alt="wallpaper"
     className="movieDetails-image"
-    src="https://image.tmdb.org/t/p/w500/image_path"
+    src="assets/images/cover-image.jpg"
   />
   <Content
-    className="movieDetails-content"
+    className="movieDetails-container"
   >
     <InfoBar
       genres={

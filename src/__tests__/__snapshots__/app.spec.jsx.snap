@@ -1,8 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`test App component Matches snapshot ShallowRenderer 1`] = `
-<React.Fragment>
+<Layout
+  className="container"
+>
   <Memo(Connect(Header)) />
   <AppRouter />
-</React.Fragment>
+</Layout>
 `;

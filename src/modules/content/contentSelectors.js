@@ -7,8 +7,6 @@ export const getMoviesGenre = (state) => state.content.genres_array;
 
 export const getVideo = (state) => state.content.video_url;
 
-export const getInitialisation = (state) => state.content.isInitialisated;
-
 export const getDetailsSelector = (state) => state.content.details;
 
 export const getLoadingSelector = (state) => state.content.isLoading;

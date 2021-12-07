@@ -1,5 +1,110 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`HttpService testing getTopRatedRequest should handle error 1`] = `""`;
+
+exports[`HttpService testing getTopRatedRequest should return response 1`] = `
+Object {
+  "page": 1,
+  "results": Array [
+    Object {
+      "genre_ids": Array [
+        13,
+        20,
+        21,
+      ],
+      "id": 2412412,
+      "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry",
+      "poster": "image_path",
+      "title": "Fight club",
+      "vote_average": 8,
+    },
+    Object {
+      "genre_ids": Array [
+        13,
+        18,
+      ],
+      "id": 41412,
+      "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry",
+      "poster": "image_path",
+      "title": "Sopranos",
+      "vote_average_ids": 10,
+    },
+  ],
+  "total_pages": 12,
+  "total_results": 55,
+}
+`;
+
+exports[`HttpService testing getTrendingRequest should handle error 1`] = `""`;
+
+exports[`HttpService testing getTrendingRequest should return response 1`] = `
+Object {
+  "page": 1,
+  "results": Array [
+    Object {
+      "genre_ids": Array [
+        13,
+        20,
+        21,
+      ],
+      "id": 2412412,
+      "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry",
+      "poster": "image_path",
+      "title": "Fight club",
+      "vote_average": 8,
+    },
+    Object {
+      "genre_ids": Array [
+        13,
+        18,
+      ],
+      "id": 41412,
+      "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry",
+      "poster": "image_path",
+      "title": "Sopranos",
+      "vote_average_ids": 10,
+    },
+  ],
+  "total_pages": 12,
+  "total_results": 55,
+}
+`;
+
+exports[`HttpService testing getUpcomingRequest should handle error 1`] = `""`;
+
+exports[`HttpService testing getUpcomingRequest should return response 1`] = `
+Object {
+  "page": 1,
+  "results": Array [
+    Object {
+      "genre_ids": Array [
+        13,
+        20,
+        21,
+      ],
+      "id": 2412412,
+      "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry",
+      "poster": "image_path",
+      "title": "Fight club",
+      "vote_average": 8,
+    },
+    Object {
+      "genre_ids": Array [
+        13,
+        18,
+      ],
+      "id": 41412,
+      "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry",
+      "poster": "image_path",
+      "title": "Sopranos",
+      "vote_average_ids": 10,
+    },
+  ],
+  "total_pages": 12,
+  "total_results": 55,
+}
+`;
+
 exports[`HttpService testing movieDetailsRequest should handle error 1`] = `""`;
 
 exports[`HttpService testing movieDetailsRequest should return response 1`] = `
@@ -40,9 +145,9 @@ Object {
 
 exports[`HttpService testing movieVideoRequest should handle error 1`] = `""`;
 
-exports[`HttpService testing movieVideoRequest should replace video url if emty result error has come 1`] = `"https://www.youtube.com/embed/2Q_ZzBGPdqE"`;
+exports[`HttpService testing movieVideoRequest should replace video url if emty result error has come 1`] = `""`;
 
-exports[`HttpService testing movieVideoRequest should return response 1`] = `"https://www.youtube.com/embed/ae8wmdtGkqg"`;
+exports[`HttpService testing movieVideoRequest should return response 1`] = `"https://www.youtube-nocookie.com/embed/ae8wmdtGkqg"`;
 
 exports[`HttpService testing searchMovieRequest should handle error 1`] = `""`;
 

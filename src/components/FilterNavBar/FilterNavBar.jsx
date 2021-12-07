@@ -6,7 +6,7 @@ import {TRENDING,TOPRATED,COMINGSOON,GENRE} from '../../constants';
 import './FilterNavBar.scss';
 const { TabPane } = Tabs;
 
- const FilterNavBar = ({genres, handleGenre,activeGenre,setFilter,filter,setCurrentPage}) => {
+const FilterNavBar = ({genres, setGenre,activeGenre,setFilter,filter,setCurrentPage}) =>{
   function callback(key) {
     if (key === TRENDING) {
       setFilter(TRENDING)
@@ -29,7 +29,7 @@ const { TabPane } = Tabs;
         </TabPane>
         <TabPane tab="Coming Soon" key={COMINGSOON}>
         </TabPane>
-        <TabPane tab={ <DropDown handleGenre={handleGenre} genres={genres}/> } key={GENRE}>
+        <TabPane tab={ <DropDown setGenre={setGenre} genres={genres}/> } key={GENRE}>
         </TabPane>
       </Tabs>
         <span className="genre-status">{activeGenre}</span>
@@ -42,11 +42,11 @@ FilterNavBar.propTypes = {
   genres: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number,
     name: PropTypes.string})),
-  handleGenre: PropTypes.func.isRequired,
+  setGenre: PropTypes.func.isRequired,
   activeGenre: PropTypes.string.isRequired,
   setFilter: PropTypes.func.isRequired,
   filter: PropTypes.string.isRequired,
   setCurrentPage: PropTypes.func.isRequired
 };
 
-export default FilterNavBar;
+export default  FilterNavBar;

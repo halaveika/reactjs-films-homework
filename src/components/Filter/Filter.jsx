@@ -6,12 +6,12 @@ import ColumnsBtn from '../ColumnsBtn'
 import RowsBtn from '../RowsBtn';
 import './Filter.scss';
 
-export default function Filter({handleColumn, handlRow,genres,handleGenre,activeGenre,setFilter,filter,setCurrentPage}) {
+const Filter = ({ setListFlexDirection,genres,setGenre,activeGenre,setFilter,filter,setCurrentPage}) => {
   return (
     <PageHeader ghost className="site-page-header">
       <FilterNavBar
         genres={genres}
-        handleGenre={handleGenre}
+        setGenre={setGenre}
         activeGenre={activeGenre}
         setFilter={setFilter}
         filter={filter}
@@ -19,21 +19,22 @@ export default function Filter({handleColumn, handlRow,genres,handleGenre,active
         >
       </FilterNavBar>
       <div className="btn-container">
-        <RowsBtn handlRow={handlRow}></RowsBtn>
-        <ColumnsBtn handleColumn={handleColumn}></ColumnsBtn>
+        <RowsBtn setListFlexDirection={setListFlexDirection}></RowsBtn>
+        <ColumnsBtn setListFlexDirection={setListFlexDirection}></ColumnsBtn>
       </div>
     </PageHeader>
   );
 }
 
 Filter.propTypes = {
-  handlRow: PropTypes.func.isRequired,
-  handleColumn: PropTypes.func.isRequired,
+  setListFlexDirection: PropTypes.func.isRequired,
   genres: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number,
     name: PropTypes.string})),
-  handleGenre: PropTypes.func.isRequired,
+  setGenre: PropTypes.func.isRequired,
   activeGenre: PropTypes.string.isRequired,
   setFilter: PropTypes.func.isRequired,
   filter: PropTypes.string.isRequired,
 };
+
+export default Filter;

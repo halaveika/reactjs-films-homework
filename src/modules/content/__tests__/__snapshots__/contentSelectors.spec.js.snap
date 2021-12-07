@@ -2,22 +2,40 @@
 
 exports[`contentSelectors testing getDetailsPageSelector should return getDetailsPageSelector props 1`] = `
 Object {
+  "backdrop": undefined,
   "genres": Array [
-    "Adventure",
-    "Family",
-    "Fantasy",
+    undefined,
+    undefined,
+    undefined,
   ],
   "id": 2412412,
-  "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry",
-  "poster": "image_path",
+  "overview": "Lorem Ipsum is simply dummy text of the printing",
   "runtime": 120,
   "title": "Fight club",
   "video": "test_url",
-  "vote_average": 8,
+  "vote_average": 10,
 }
 `;
 
-exports[`contentSelectors testing getInitialisation should return results from state 1`] = `false`;
+exports[`contentSelectors testing getDetailsSelector should return details from state 1`] = `
+Object {
+  "backdrop": "image_path",
+  "genres": Array [
+    "Drama",
+    "Adventure",
+    "Fantasy",
+  ],
+  "id": 2412412,
+  "overview": "Lorem Ipsum is simply dummy text of the printing",
+  "runtime": 120,
+  "title": "Fight club",
+  "vote_average": 10,
+}
+`;
+
+exports[`contentSelectors testing getFilter should return filter from state 1`] = `"TRENDING"`;
+
+exports[`contentSelectors testing getLoadingSelector should return loading status from state 1`] = `true`;
 
 exports[`contentSelectors testing getMoviesGenre should return genres_array from state 1`] = `
 Array [
@@ -39,6 +57,10 @@ Array [
   },
 ]
 `;
+
+exports[`contentSelectors testing getPageSelector should return page  number from state 1`] = `1`;
+
+exports[`contentSelectors testing getPageSizeSelector should return page size from state 1`] = `20`;
 
 exports[`contentSelectors testing getSearchList should correct handl empty result of search 1`] = `Array []`;
 
@@ -97,5 +119,9 @@ Array [
   },
 ]
 `;
+
+exports[`contentSelectors testing getSearchValueSelector should return search value from state 1`] = `""`;
+
+exports[`contentSelectors testing getTotalPageSelector should return total page  number from state 1`] = `12`;
 
 exports[`contentSelectors testing getVideo should return video_url from state 1`] = `"test_url"`;

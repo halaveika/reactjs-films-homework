@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`view actions setGenre actioin change store 1`] = `
+Object {
+  "content": Object {
+    "details": Object {},
+    "filter": "TRENDING",
+    "genres_array": Array [],
+    "isLoading": true,
+    "page": 1,
+    "pageSize": 20,
+    "results": Array [],
+    "searchValue": "",
+    "total_pages": 0,
+    "total_results": 0,
+    "video_url": "",
+  },
+  "view": Object {
+    "genre": "Drama",
+    "isRow": true,
+  },
+}
+`;
+
+exports[`view actions setListFlexDirection actioin change store 1`] = `
+Object {
+  "content": Object {
+    "details": Object {},
+    "filter": "TRENDING",
+    "genres_array": Array [],
+    "isLoading": true,
+    "page": 1,
+    "pageSize": 20,
+    "results": Array [],
+    "searchValue": "",
+    "total_pages": 0,
+    "total_results": 0,
+    "video_url": "",
+  },
+  "view": Object {
+    "genre": "Drama",
+    "isRow": false,
+  },
+}
+`;

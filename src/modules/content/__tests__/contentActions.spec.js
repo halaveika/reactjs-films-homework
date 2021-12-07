@@ -1,15 +1,97 @@
 import {
-  SearchData, GetGenres, GetVideoUrl, getDetails, getInitialisated,
+  GetGenres, GetVideoUrl, getDetails, getContent, setLoading, setFilter, setCurrentPage, setSearchValue
 } from '../contentActions';
 import HttpService from '../../api/httpService';
 import { store } from '../../store';
 
 jest.spyOn(HttpService, 'searchMovieRequest').mockImplementation(() => ({
-  results: [],
+  results: [{
+    id: 2412412,
+    title: 'Fight club',
+    genre_ids: [13, 20, 21],
+    vote_average: 8,
+    poster_path: 'image_path',
+    overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
+  },
+  {
+    id: 41412,
+    title: 'Sopranos',
+    genre_ids: [13, 18],
+    vote_average: 10,
+    poster_path: 'image_path',
+    overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
+  }],
   page: 1,
   total_pages: 12,
   total_results: 55,
 }));
+
+jest.spyOn(HttpService, 'getTrendingRequest').mockImplementation(() => ({
+  results: [{
+    id: 2412412,
+    title: 'Fight club',
+    genre_ids: [13, 20, 21],
+    vote_average: 8,
+    poster_path: 'image_path',
+    overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
+  },
+  {
+    id: 41412,
+    title: 'Sopranos',
+    genre_ids: [13, 18],
+    vote_average: 10,
+    poster_path: 'image_path',
+    overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
+  }],
+  page: 1,
+  total_pages: 12,
+  total_results: 55,
+}));
+
+jest.spyOn(HttpService, 'getTopRatedRequest').mockImplementation(() => ({
+  results: [{
+    id: 2412412,
+    title: 'Fight club',
+    genre_ids: [13, 20, 21],
+    vote_average: 8,
+    poster_path: 'image_path',
+    overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
+  },
+  {
+    id: 41412,
+    title: 'Sopranos',
+    genre_ids: [13, 18],
+    vote_average: 10,
+    poster_path: 'image_path',
+    overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
+  }],
+  page: 1,
+  total_pages: 12,
+  total_results: 55,
+}));
+
+jest.spyOn(HttpService, 'getUpcomingRequest').mockImplementation(() => ({
+  results: [{
+    id: 2412412,
+    title: 'Fight club',
+    genre_ids: [13, 20, 21],
+    vote_average: 8,
+    poster_path: 'image_path',
+    overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
+  },
+  {
+    id: 41412,
+    title: 'Sopranos',
+    genre_ids: [13, 18],
+    vote_average: 10,
+    poster_path: 'image_path',
+    overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
+  }],
+  page: 1,
+  total_pages: 12,
+  total_results: 55,
+}));
+
 
 jest.spyOn(HttpService, 'movieGenresRequest').mockImplementation(() => ({
   genres_array: [{
@@ -44,11 +126,6 @@ describe('actions', () => {
     jest.clearAllMocks();
   });
 
-  test('SearchData actioin change store', async () => {
-    await store.dispatch(SearchData(43));
-    expect(store.getState()).toMatchSnapshot();
-  });
-
   test('GetGenres actioin change store', async () => {
     await store.dispatch(GetGenres());
     expect(store.getState()).toMatchSnapshot();
@@ -64,8 +141,48 @@ describe('actions', () => {
     expect(store.getState()).toMatchSnapshot();
   });
 
-  test('getInitialisated actioin change store', () => {
-    store.dispatch(getInitialisated());
+  test('getContent from search result and  change store', async () => {
+    await store.dispatch({ type: 'SET_SEARCH_VALUE', payload: 'test' });
+    await store.dispatch({ type: 'SET_FILTER', payload: '' });
+    await store.dispatch(getContent());
+    expect(store.getState()).toMatchSnapshot();
+  });
+
+  test('getContent from TRENDING and  change store', async () => {
+    await store.dispatch({ type: 'SET_FILTER', payload: 'TRENDING' });
+    await store.dispatch(getContent());
+    expect(store.getState()).toMatchSnapshot();
+  });
+
+  test('getContent from TOPRATED and  change store', async () => {
+    await store.dispatch({ type: 'SET_FILTER', payload: 'TOPRATED' });
+    await store.dispatch(getContent());
+    expect(store.getState()).toMatchSnapshot();
+  });
+
+  test('getContent from COMINGSOON and  change store', async () => {
+    await store.dispatch({ type: 'SET_FILTER', payload: 'COMINGSOON' });
+    await store.dispatch(getContent());
+    expect(store.getState()).toMatchSnapshot();
+  });
+
+  test('setLoading actioin change store', () => {
+    store.dispatch(setLoading(true));
+    expect(store.getState()).toMatchSnapshot();
+  });
+
+  test('setFilter actioin change store', () => {
+    store.dispatch(setFilter('COMINGSOON'));
+    expect(store.getState()).toMatchSnapshot();
+  });
+
+  test('setCurrentPage actioin change store', () => {
+    store.dispatch(setCurrentPage(5));
+    expect(store.getState()).toMatchSnapshot();
+  });
+
+  test('setSearchValue actioin change store', () => {
+    store.dispatch(setSearchValue('test'));
     expect(store.getState()).toMatchSnapshot();
   });
 });

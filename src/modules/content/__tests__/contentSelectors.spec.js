@@ -1,10 +1,9 @@
 import {
   getSearchMovieResult, getMoviesGenre, getVideo,
-  getSearchList, getDetailsPageSelector, getInitialisation,
+  getSearchList, getDetailsPageSelector, getDetailsSelector, getLoadingSelector, getFilter, getPageSelector, getTotalPageSelector, getSearchValueSelector, getPageSizeSelector
 } from '../contentSelectors';
-/* eslint-disable */
 import mockState from '../../../../config/jest/__mocks__/mockState';
-  /* eslint-enable */
+
 const mockStateEmpty = {
   content: {
     page: 0,
@@ -25,10 +24,6 @@ describe('contentSelectors testing', () => {
 
   test('getSearchMovieResult should return results from state', () => {
     expect(getSearchMovieResult(mockState)).toMatchSnapshot();
-  });
-
-  test('getInitialisation should return results from state', () => {
-    expect(getInitialisation(mockState)).toMatchSnapshot();
   });
 
   test('getMoviesGenre should return genres_array from state', () => {
@@ -75,5 +70,40 @@ describe('contentSelectors testing', () => {
 
   test('getDetailsPageSelector should return getDetailsPageSelector props', () => {
     expect(getDetailsPageSelector(mockState)).toMatchSnapshot();
+  });
+
+  test('getDetailsSelector should return details from state', () => {
+    expect(getDetailsSelector(mockState)).toMatchSnapshot();
+    expect(getDetailsSelector(mockState)).toBeInstanceOf(Object);
+  });
+
+  test('getLoadingSelector should return loading status from state', () => {
+    expect(getLoadingSelector(mockState)).toMatchSnapshot();
+    expect(getLoadingSelector(mockState)).toBe(true);
+  });
+
+  test('getFilter should return filter from state', () => {
+    expect(getFilter(mockState)).toMatchSnapshot();
+    expect(getFilter(mockState)).toBe('TRENDING');
+  });
+
+  test('getPageSelector should return page  number from state', () => {
+    expect(getPageSelector(mockState)).toMatchSnapshot();
+    expect(getPageSelector(mockState)).toBe(1);
+  });
+
+  test('getTotalPageSelector should return total page  number from state', () => {
+    expect(getTotalPageSelector(mockState)).toMatchSnapshot();
+    expect(getTotalPageSelector(mockState)).toBe(12);
+  });
+
+  test('getSearchValueSelector should return search value from state', () => {
+    expect(getSearchValueSelector(mockState)).toMatchSnapshot();
+    expect(getSearchValueSelector(mockState)).toBe('');
+  });
+
+  test('getPageSizeSelector should return page size from state', () => {
+    expect(getPageSizeSelector(mockState)).toMatchSnapshot();
+    expect(getPageSizeSelector(mockState)).toBe(20);
   });
 });

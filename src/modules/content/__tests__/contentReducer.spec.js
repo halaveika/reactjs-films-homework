@@ -72,8 +72,32 @@ describe('content reducer', () => {
     ).toMatchSnapshot();
   });
 
-  it('should handle INITIALISATION', () => {
-    const action = { type: 'INITIALISATION', payload: true };
+  it('should handle SET_LOADING', () => {
+    const action = { type: 'SET_LOADING', payload: false };
+    expect(
+      contentReducer(initialState,
+        action),
+    ).toMatchSnapshot();
+  });
+
+  it('should handle SET_FILTER', () => {
+    const action = { type: 'SET_FILTER', payload: 'COMINGSOON' };
+    expect(
+      contentReducer(initialState,
+        action),
+    ).toMatchSnapshot();
+  });
+
+  it('should handle SET_CURRENT_PAGE', () => {
+    const action = { type: 'SET_CURRENT_PAGE', payload: 2 };
+    expect(
+      contentReducer(initialState,
+        action),
+    ).toMatchSnapshot();
+  });
+
+  it('should handle SET_SEARCH_VALUE', () => {
+    const action = { type: 'SET_SEARCH_VALUE', payload: 'test' };
     expect(
       contentReducer(initialState,
         action),

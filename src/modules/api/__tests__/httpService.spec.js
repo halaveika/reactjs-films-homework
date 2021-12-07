@@ -75,7 +75,6 @@ describe('HttpService testing', () => {
     const result = await HttpService.searchMovieRequest('test');
     expect(result).toMatchSnapshot();
   });
-/* eslint-disable */
   test('searchMovieRequest should handle error', () => {
     global.fetch = jest.fn().mockImplementation(() => Promise.reject());
     expect(async () => {
@@ -128,5 +127,44 @@ describe('HttpService testing', () => {
     }).rejects.toThrowErrorMatchingSnapshot();
   });
 
+  test('getTrendingRequest should return response', async () => {
+    global.fetch = mockFetch(mockSearchMovieResponse);
+    const result = await HttpService.getTrendingRequest('test');
+    expect(result).toMatchSnapshot();
+  });
+
+  test('getTrendingRequest should handle error', () => {
+    global.fetch = jest.fn().mockImplementation(() => Promise.reject());
+    expect(async () => {
+        await HttpService.getTrendingRequest('test');
+    }).rejects.toThrowErrorMatchingSnapshot();
+  });
+
+  test('getTopRatedRequest should return response', async () => {
+    global.fetch = mockFetch(mockSearchMovieResponse);
+    const result = await HttpService.getTopRatedRequest('test');
+    expect(result).toMatchSnapshot();
+  });
+
+  test('getTopRatedRequest should handle error', () => {
+    global.fetch = jest.fn().mockImplementation(() => Promise.reject());
+    expect(async () => {
+        await HttpService.getTopRatedRequest('test');
+    }).rejects.toThrowErrorMatchingSnapshot();
+  });
+
+  test('getUpcomingRequest should return response', async () => {
+    global.fetch = mockFetch(mockSearchMovieResponse);
+    const result = await HttpService.getUpcomingRequest('test');
+    expect(result).toMatchSnapshot();
+  });
+
+  test('getUpcomingRequest should handle error', () => {
+    global.fetch = jest.fn().mockImplementation(() => Promise.reject());
+    expect(async () => {
+        await HttpService.getUpcomingRequest('test');
+    }).rejects.toThrowErrorMatchingSnapshot();
+  });
+
 });
-/* eslint-enable */
+

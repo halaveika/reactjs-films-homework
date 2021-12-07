@@ -3,26 +3,25 @@ import { create, act } from 'react-test-renderer';
 import { BrowserRouter } from 'react-router-dom';
 import Header from '..';
 
-const SearchData = jest.fn();
-const GetGenres = jest.fn();
-const getInitialisated = jest.fn();
+const setCurrentPage = jest.fn().mockImplementation(()=>true);
+const setFilter = jest.fn().mockImplementation(()=>true);
+const setSearchValue = jest.fn().mockImplementation(()=>true);
 
 describe('test Header component', () => {
   afterEach(() => {
     jest.clearAllMocks();
   });
 
-  it('should render Header component no isInitialisated', () => {
+  it('should render Header component', () => {
     let component;
     const isInitialisated = false;
     act(() => {
       component = create(
         <BrowserRouter>
           <Header
-            isInitialisated={isInitialisated}
-            getInitialisated={getInitialisated}
-            GetGenres={GetGenres}
-            SearchData={SearchData}
+            setCurrentPage={setCurrentPage}
+            setFilter={setFilter}
+            setSearchValue={setSearchValue}
           />
         </BrowserRouter>,
       );
@@ -37,10 +36,9 @@ describe('test Header component', () => {
     act(() => {
       component = create(<BrowserRouter>
         <Header
-          isInitialisated={isInitialisated}
-          getInitialisated={getInitialisated}
-          GetGenres={GetGenres}
-          SearchData={SearchData}
+          setCurrentPage={setCurrentPage}
+          setFilter={setFilter}
+          setSearchValue={setSearchValue}
         />
       </BrowserRouter>);
     });
@@ -50,27 +48,10 @@ describe('test Header component', () => {
     (async () => {
       await act(() => {
         button.props.onClick();
+        expect(setCurrentPage).toHaveBeenCalledWith();
+        expect(setFilter).toBeCalled();
+        expect(setSearchValue).toBeCalled();
       });
     });
-    expect(SearchData).toBeCalled();
-  });
-
-  it('should render Header component isInitialisated', () => {
-    let component;
-    const isInitialisated = true;
-    act(() => {
-      component = create(
-        <BrowserRouter>
-          <Header
-            isInitialisated={isInitialisated}
-            getInitialisated={getInitialisated}
-            GetGenres={GetGenres}
-            SearchData={SearchData}
-          />
-        </BrowserRouter>,
-      );
-    });
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
   });
 });

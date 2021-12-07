@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './RowsBtn.scss';
 
-export default function RowsBtn({handlRow}) {
+export default function RowsBtn({setListFlexDirection}) {
   return (
- <div className="rows-btn" onClick={handlRow}>
+ <div className="rows-btn" onClick={()=>setListFlexDirection(true)}>
    <div></div>
    <div></div>
    <div></div>
@@ -13,3 +14,6 @@ export default function RowsBtn({handlRow}) {
 }
 
 
+RowsBtn.propTypes = {
+  setListFlexDirection: PropTypes.func.isRequired,
+};

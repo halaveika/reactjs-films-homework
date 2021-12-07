@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from 'react';
+import React,{useEffect} from 'react';
 import { Layout, Spin } from 'antd';
 import { useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -8,48 +8,30 @@ import MovieListContent from '../../components/MovieListContent'
 import './MovieList.scss';
 
 
-export default function MovieList({
-  items, video, handleVideo, getDetails, genres, getContent, isLoading, isInitialisated, GetGenres, getInitialisated, setFilter, filter, setCurrentPage, page, total_pages,searchValue
-}) {
+const MovieList = ({
+  items, video, handleVideo, getDetails, genres, getContent, isLoading, GetGenres, setFilter, filter, setCurrentPage, page, total_pages,searchValue, isRow, genre, setGenre, setListFlexDirection
+}) => {
  
-  const [isRow, setRow] = useState(true);
-  const [genre, setGenre] = useState('');
   const location = useLocation('/')
+
   useEffect(() => {
-    if (isInitialisated) {
-      getContent()
-    }},[page,filter,searchValue]);
-    
+    GetGenres();
+
+  },[]);
   useEffect(() => {
-    if (!isInitialisated) {
-      GetGenres();
       getContent()
-      getInitialisated();
-    }
-    },[]);
-
-  function handlRow(){
-    setRow(true);
-  }
-
-  function handleColumn(){
-    setRow(false);
-  }
-
-  function handleGenre(name){
-    setGenre(name);
-  }
-
+  },[page,filter,searchValue]);
     
+
+  
   return (
     <>
       <Layout className={`movieList-container${(location.pathname !== '/details') ? ' active' : ''}`}>
         <Filter 
-          handleColumn={handleColumn}
-          handlRow={handlRow}
+          setListFlexDirection={setListFlexDirection}
           genres={genres}
           getContent={getContent}
-          handleGenre={handleGenre}
+          setGenre={setGenre}
           activeGenre={genre}
           setFilter={setFilter}
           filter={filter}
@@ -102,8 +84,12 @@ MovieList.propTypes = {
   page: PropTypes.number.isRequired,
   total_pages: PropTypes.number.isRequired,
   setCurrentPage: PropTypes.func.isRequired,
-  isInitialisated: PropTypes.bool.isRequired,
-  getInitialisated: PropTypes.func.isRequired,
   GetGenres: PropTypes.func.isRequired,
   searchValue: PropTypes.string.isRequired,
+  isRow: PropTypes.bool.isRequired,
+  genre: PropTypes.string.isRequired,
+  setGenre: PropTypes.func.isRequired,
+  setListFlexDirection: PropTypes.func.isRequired,
 };
+
+export default MovieList;

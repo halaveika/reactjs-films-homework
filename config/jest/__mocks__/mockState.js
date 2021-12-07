@@ -36,13 +36,22 @@ const mockState = {
     details: {
       id: 2412412,
       title: 'Fight club',
+      genres: ['Drama','Adventure','Fantasy'],
       runtime: 120,
       vote_average: 10,
-      poster: 'image_path',
+      backdrop: 'image_path',
       overview: 'Lorem Ipsum is simply dummy text of the printing',
     },
-    isInitialisated: false,
+    isLoading: true,
+    filter: 'TRENDING',
+    searchValue: '',
+    pageSize: 20
   },
+  view: {
+    isRow: true,
+    genre:''
+  }
+
 };
 
 export default mockState

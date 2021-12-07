@@ -2,6 +2,28 @@
 
 exports[`ListContainer should show mapStateToProps value 1`] = `
 Object {
+  "filter": "TRENDING",
+  "genre": "",
+  "genres": Array [
+    Object {
+      "id": 13,
+      "name": "Adventure",
+    },
+    Object {
+      "id": 18,
+      "name": "Drama",
+    },
+    Object {
+      "id": 20,
+      "name": "Family",
+    },
+    Object {
+      "id": 21,
+      "name": "Fantasy",
+    },
+  ],
+  "isLoading": true,
+  "isRow": true,
   "items": Array [
     Object {
       "genres": Array [
@@ -27,6 +49,9 @@ Object {
       "vote_average": 10,
     },
   ],
+  "page": 1,
+  "searchValue": "",
+  "total_pages": 12,
   "video": "test_url",
 }
 `;

@@ -54,6 +54,9 @@ describe('test WatchVideoModal component', () => {
 
   it('handleCancel should change stat', () => {
     const mockCallback = jest.spyOn(WatchVideoModal.prototype, 'setState').mockImplementation();
+    let ref = jest.spyOn(React, "createRef").mockImplementation(() => {
+      return { current: { src: 'test'} };
+});
     let component;
     act(() => {
       component = create(
@@ -67,7 +70,28 @@ describe('test WatchVideoModal component', () => {
       );
     });
     const { root } = component;
-    root.instance.handleCancel();
+    act(() =>root.instance.handleCancel());
+    expect(ref).toBeCalled();
+    expect(mockCallback.mock.calls.length).toBe(1);
+    expect(mockCallback.mock.calls[0][0]).toEqual({ isModalVisible: false });
+  });
+
+  it('handleCancel should change stat with video undefined', () => {
+    const mockCallback = jest.spyOn(WatchVideoModal.prototype, 'setState').mockImplementation();
+    let component;
+    act(() => {
+      component = create(
+        <WatchVideoModal
+          video={undefined}
+          handleVideo={WatchVideoModalProps.handleVideo}
+          id={WatchVideoModalProps.id}
+        >
+          <Button />
+        </WatchVideoModal>,
+      );
+    });
+    const { root } = component;
+    act(() =>root.instance.handleCancel());
     expect(mockCallback.mock.calls.length).toBe(1);
     expect(mockCallback.mock.calls[0][0]).toEqual({ isModalVisible: false });
   });

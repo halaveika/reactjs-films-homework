@@ -1,21 +1,21 @@
 import HttpService from '../api/httpService';
 import {getFilter,getPageSelector, getSearchValueSelector } from './contentSelectors';
-import {TRENDING,TOPRATED,COMINGSOON,ADD_GENRES,ADD_VIDEO,ADD_DETAILS,SET_LOADING,ADD_ITEMS,INITIALISATION,SET_FILTER,SET_CURRENT_PAGE,SET_SEARCH_VALUE} from '../../constants';
+import {TRENDING,TOPRATED,COMINGSOON,ADD_GENRES,ADD_VIDEO,ADD_DETAILS,SET_LOADING,ADD_ITEMS,SET_FILTER,SET_CURRENT_PAGE,SET_SEARCH_VALUE} from '../../constants';
 
 export const GetGenres = () => async (dispatch) => {
   const json = await HttpService.movieGenresRequest();
   dispatch({ type: ADD_GENRES, payload: json });
-};
+};//
 
 export const GetVideoUrl = (id) => async (dispatch) => {
   const str = await HttpService.movieVideoRequest(id);
   dispatch({ type: ADD_VIDEO, payload: str });
-};
+};//
 
 export const getDetails = (id) => async (dispatch) => {
   const json = await HttpService.movieDetailsRequest(id);
   dispatch({ type: ADD_DETAILS, payload: json });
-};
+};//
 
 export const getContent = () => async (dispatch,getState) => {
   const state = getState();
@@ -25,7 +25,7 @@ export const getContent = () => async (dispatch,getState) => {
   if (str.trim() && filter==='' ) {
     dispatch({ type: SET_LOADING, payload: true })
     const json = await HttpService.searchMovieRequest(str,page);
-    setTimeout(() => {dispatch({ type: ADD_ITEMS, payload:json });}, 1000);
+    dispatch({ type: ADD_ITEMS, payload:json });
   }
   if(filter === TRENDING) {
     dispatch({ type: SET_LOADING, payload: true })
@@ -45,8 +45,6 @@ export const getContent = () => async (dispatch,getState) => {
 };
 
 export const setLoading = (boolean) => ({ type: SET_LOADING, payload: boolean });
-
-export const getInitialisated = () => ({ type: INITIALISATION, payload: true });
 
 export const setFilter = (filter) => ({ type: SET_FILTER, payload: filter });
 
