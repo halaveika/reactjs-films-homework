@@ -1,17 +1,11 @@
 .header {
-  height: 80px;
+  height: 9vh;
   width: 100vw;
-  position: absolute;
+  position: relative;
   z-index: 10;
   background: linear-gradient(#0c0a0a, #e7e8ec);
   opacity: 0.8;
   padding: 0;
-
-  .title {
-    display: block;
-    text-transform: uppercase;
-    color: #fff;
-  }
 
   .ant-btn:hover,
   .ant-btn:focus {
@@ -20,15 +14,19 @@
   }
 
   h1 {
-    margin: auto;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 32px;
+    margin: 0 auto;
     cursor: pointer;
+    text-transform: uppercase;
+    color: #fff;
   }
 
   .search {
     display: block;
     width: 400px;
-    height: 32px;
     cursor: text;
   }
 }
@@ -36,7 +34,7 @@
 .header-container {
   padding: 0 75px;
   width: 100%;
-  height: 80px;
+  height: 100%;
   max-width: 1200px;
   margin: 0 auto;
   background: transparent;
@@ -44,4 +42,10 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
+  & a {
+    margin: 0;
+    padding: 0;
+    display: block;
+  }
 }

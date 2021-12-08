@@ -1,6 +1,5 @@
 import React,{useEffect} from 'react';
 import { Layout, Spin } from 'antd';
-import { useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Filter from '../../components/Filter';
 import Footer from '../../components/Footer';
@@ -11,13 +10,12 @@ import './MovieList.scss';
 const MovieList = ({
   items, video, handleVideo, getDetails, genres, getContent, isLoading, GetGenres, setFilter, filter, setCurrentPage, page, total_pages,searchValue, isRow, genre, setGenre, setListFlexDirection
 }) => {
- 
-  const location = useLocation('/')
 
   useEffect(() => {
     GetGenres();
 
   },[]);
+  
   useEffect(() => {
       getContent()
   },[page,filter,searchValue]);
@@ -26,7 +24,7 @@ const MovieList = ({
   
   return (
     <>
-      <Layout className={`movieList-container${(location.pathname !== '/details') ? ' active' : ''}`}>
+      <Layout className="movieList-container">
         <Filter 
           setListFlexDirection={setListFlexDirection}
           genres={genres}
@@ -57,7 +55,7 @@ const MovieList = ({
       }
         </Layout>
       </Layout>
-      <Footer isMoved={(location.pathname !== '/details') ? true : false}/>
+      <Footer/>
     </>
   );
 }

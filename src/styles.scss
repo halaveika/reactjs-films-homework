@@ -35,6 +35,8 @@ body {
 
 .ant-popover-inner-content {
   color: #fff;
+  height: 50vh;
+  overflow: scroll;
 }
 
 .ant-popover-arrow {
@@ -67,14 +69,38 @@ body {
   content: unset;
 }
 
+/* Media start 640px */
+
 @media screen and (max-width: 640px) {
   .header {
-    height: 160px;
+    height: 25vh;
+
+    .search {
+      width: 90vw;
+      margin-top: 10px;
+    }
   }
 
   .header-container {
     padding: 0 30px;
     flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .movieDetails-image {
+    width: 100vw;
+    height: 116vh;
+    overflow: hidden;
+  }
+
+  .movieDetails-container {
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .navbar-container {
+    margin-bottom: 20px;
   }
 
   .site-page-header {
@@ -156,5 +182,9 @@ body {
   .genre-status {
     position: relative;
     left: 0;
+  }
+
+  .ant-dropdown {
+    width: 100%;
   }
 }

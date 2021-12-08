@@ -1,5 +1,6 @@
 .navbar-container {
   width: 220px;
+  position: relative;
 
   button {
     background-color: transparent;
@@ -10,7 +11,7 @@
 .ant-popover-inner {
   background-color: black;
   opacity: 0.5;
-  width: 300px;
+  width: 250px;
   height: auto;
   position: relative;
   left: -50px;

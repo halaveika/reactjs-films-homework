@@ -1,18 +1,15 @@
 import React  from 'react';
 import { Layout } from 'antd';
-import PropTypes from 'prop-types';
 import './Footer.scss';
 
-export default function Footer({isMoved}) {
+export default function Footer() {
  
   return (
-    <Layout.Footer className={`footer${(isMoved) ? ' moved' : ''}` }>
+    <Layout.Footer className="footer">
       <span className="title">films</span>
       <span className="copyright">COPYRIGHT © 2021 Films  HALAVEIKA ALIAKSANDR</span>
     </Layout.Footer>
   );
 }
 
-Footer.propTypes = {
-  isMoved: PropTypes.bool.isRequired,
-};
+

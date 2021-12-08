@@ -1,5 +1,4 @@
 import React, {useEffect} from 'react';
-import { BrowserRouter } from 'react-router-dom';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import { act, create} from 'react-test-renderer';
 // import { render, unmountComponentAtNode } from "react-dom";
@@ -64,7 +63,6 @@ describe('test MovieList component', () => {
    let component
   it('should render MovieList component', () => {
     component = create(
-        <BrowserRouter>
           <MovieList
             items={mockMovieListProps.items}
             video={mockMovieListProps.video}
@@ -84,8 +82,7 @@ describe('test MovieList component', () => {
             setCurrentPage={mockMovieListProps.setCurrentPage}
             setGenre={mockMovieListProps.setGenre}
             setListFlexDirection={mockMovieListProps.setListFlexDirection}
-          />
-        </BrowserRouter>,);
+          />,);
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });

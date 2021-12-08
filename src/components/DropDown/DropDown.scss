@@ -20,3 +20,13 @@
     font-weight: bold;
   }
 }
+
+.ant-dropdown-menu-root {
+  background: #f0f2f5;
+}
+
+.ant-dropdown {
+  position: absolute;
+  bottom: 0 !important;
+  transition: none;
+}

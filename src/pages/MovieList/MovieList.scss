@@ -5,12 +5,9 @@
   flex-wrap: nowrap;
   position: relative;
   width: 100vw;
+  align-items: center;
   justify-content: center;
   align-content: center;
-}
-
-.active {
-  top: 70px;
 }
 
 .movieItem-container {

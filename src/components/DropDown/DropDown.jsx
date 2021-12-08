@@ -21,11 +21,14 @@ const DropDown = ({genres, setGenre}) => {
   );
 
   return (
-    <Dropdown overlay={menu} trigger={['click']} placement="bottomCenter">
-      <span className="ant-dropdown-link" onClick={e => e.preventDefault()}>{'Genre '}
+    <>
+    <Dropdown overlay={menu} trigger={['click']}>
+      <span className="ant-dropdown-link" onClick={e => e.preventDefault()} placement="bottomCenter">{'Genre '}
         <DownOutlined />
       </span>
     </Dropdown>
+    <div></div>
+    </>
   );
 }
 
