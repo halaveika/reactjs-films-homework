@@ -26,7 +26,11 @@
 }
 
 .ant-dropdown {
-  position: absolute;
   bottom: 0 !important;
-  transition: none;
+  width: 100%;
+}
+
+.ant-dropdown-menu-title-content {
+  display: flex;
+  justify-content: center;
 }
