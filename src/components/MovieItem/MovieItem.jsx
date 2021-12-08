@@ -9,7 +9,7 @@ import WatchVideoModal from '../WatchVideoModal';
 import './MovieItem.scss';
 
 export default function MovieItem({
-  id, title, genres, vote_average, poster, overview, video, handleVideo, getDetails,
+  id, title, genres, vote_average, poster, overview, getDetails,
 }) {
   const navigate = useNavigate();
   const [ownState, setState] = useState(
@@ -42,14 +42,14 @@ export default function MovieItem({
         ? (!ownState.active)
           ? (
             <>
-              <WatchVideoModal video={video} handleVideo={handleVideo} id={id}>
+              <WatchVideoModal id={id}>
                 <Button className="watch-btn" type="primary" shape="circle"><CaretRightOutlined className="icon" style={{ fontSize: '250%' }} /></Button>
               </WatchVideoModal>
               <Button className="more-btn" onClick={toggleActive}>View Info</Button>
             </>
           )
           : (
-            <WatchVideoModal video={video} handleVideo={handleVideo} id={id}>
+            <WatchVideoModal id={id}>
               <Button className="watch-btn__active" type="primary">Watch Now</Button>
             </WatchVideoModal>
           )
@@ -77,8 +77,6 @@ MovieItem.propTypes = {
   vote_average: PropTypes.number,
   poster: PropTypes.string,
   overview: PropTypes.string,
-  video: PropTypes.string.isRequired,
-  handleVideo: PropTypes.func.isRequired,
   getDetails: PropTypes.func.isRequired,
 };
       /* eslint-enable */

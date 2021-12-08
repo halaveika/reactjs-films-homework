@@ -6,7 +6,6 @@ export const initialState = {
   total_pages: 0,
   total_results: 0,
   genres_array: [],
-  video_url: '',
   details: {},
   isLoading: true,
   filter: TRENDING,
@@ -27,8 +26,6 @@ export const contentReducer = (state = initialState, action) => {
       };
     case ADD_GENRES:
       return { ...state, genres_array: action.payload.genres };
-    case ADD_VIDEO:
-      return { ...state, video_url: action.payload };
     case ADD_DETAILS:
       return { ...state, details: action.payload };
     case SET_LOADING:

@@ -7,8 +7,7 @@ import { BACKDROP_PATH_URL } from '../../constants';
 import './MovieDetailsPage.scss';
 
 export default function MovieDetailsPage({
-  id, title, genres, vote_average, backdrop, overview, runtime, video, GetVideoUrl,
-}) {
+  id, title, genres, vote_average, backdrop, overview, runtime }) {
   return (
     <Layout className="movieDetails">
       <img className="movieDetails-image" 
@@ -22,8 +21,6 @@ export default function MovieDetailsPage({
         />
         <NavBar
           overview={overview}
-          video={video}
-          GetVideoUrl={GetVideoUrl}
           id={id}
         />
       </Layout.Content>
@@ -39,8 +36,6 @@ MovieDetailsPage.propTypes = {
   vote_average: PropTypes.number,
   backdrop: PropTypes.string,
   overview: PropTypes.string,
-  runtime: PropTypes.number,
-  video: PropTypes.string.isRequired,
-  GetVideoUrl: PropTypes.func.isRequired,
+  runtime: PropTypes.number
 };
 /* eslint-enable */

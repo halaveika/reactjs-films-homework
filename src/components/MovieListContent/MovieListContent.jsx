@@ -6,7 +6,7 @@ import itemfilter from '../../utils/itemFilter';
 import './MovieListContent.scss';
 
 
-export default function MovieListContent({items, video, handleVideo, getDetails, setCurrentPage, page, total_results,genre,pageSize}) {
+export default function MovieListContent({items, getDetails, setCurrentPage, page, total_results,genre,pageSize}) {
  
   const itemList = itemfilter(items,genre);
   const list = itemList.map((item) => (
@@ -18,8 +18,6 @@ export default function MovieListContent({items, video, handleVideo, getDetails,
                                           vote_average={item.vote_average}
                                           poster={item.poster}
                                           overview={item.overview}
-                                          video={video}
-                                          handleVideo={handleVideo}
                                           getDetails={getDetails}
                                         />
                                     ));
@@ -47,8 +45,6 @@ MovieListContent.propTypes = {
     poster: PropTypes.string,
     overview: PropTypes.string,
   })).isRequired,
-  video: PropTypes.string.isRequired,
-  handleVideo: PropTypes.func.isRequired,
   getDetails: PropTypes.func.isRequired,
   page: PropTypes.number.isRequired,
   total_results: PropTypes.number.isRequired,

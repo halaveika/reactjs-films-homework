@@ -5,8 +5,6 @@ export const getSearchMovieResult = (state) => state.content.results;
 
 export const getMoviesGenre = (state) => state.content.genres_array;
 
-export const getVideo = (state) => state.content.video_url;
-
 export const getDetailsSelector = (state) => state.content.details;
 
 export const getLoadingSelector = (state) => state.content.isLoading;
@@ -37,8 +35,7 @@ export const getSearchList = createSelector(
 
 export const getDetailsPageSelector = createSelector(
   getDetailsSelector,
-  getVideo,
-  (details, video) => {
+  (details) => {
     return {
       id: details.id,
       title: details.title,
@@ -47,7 +44,6 @@ export const getDetailsPageSelector = createSelector(
       backdrop: details.backdrop_path,
       overview: details.overview,
       runtime: details.runtime,
-      video,
     };
   },
 );

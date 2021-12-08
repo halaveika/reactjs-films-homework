@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Modal } from 'antd';
 import PropTypes from 'prop-types';
+import HttpService from '../../modules/api/httpService';
 import './WatchVideoModal.scss';
 
 export default class WatchVideoModal extends Component {
@@ -8,21 +9,22 @@ export default class WatchVideoModal extends Component {
     super(props);
     this.state = {
       isModalVisible: false,
+      video: '',
     };
     this.videoRef = React.createRef();
   }
 
   handleCancel() {
-    if(this.props.video) {
-    this.videoRef.current.src =`${this.props.video}`;
+    if(this.state.video) {
+    this.videoRef.current.src =`${this.state.video}`;
     }
-    this.setState({ isModalVisible: false });
+    this.setState({...this.state,isModalVisible:false});
   }
 
-  showModal() {
+  async showModal() {
     const { id, handleVideo } = this.props;
-    handleVideo(id);
-    this.setState({ isModalVisible: true });
+    const video = await HttpService.movieVideoRequest(id);
+    this.setState({...this.state,isModalVisible:true,video});
   }
 
   render() {
@@ -32,7 +34,7 @@ export default class WatchVideoModal extends Component {
       { React.cloneElement(this.props.children, { onClick: this.showModal.bind(this) }) }
       <Modal visible={isModalVisible} cancelText="cancel" okButtonProps={{ style: { display: 'none' } }} onCancel={this.handleCancel.bind(this)} closable={false}>
       {
-      (this.props.video) ? <iframe src={`${this.props.video}`} frameBorder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowFullScreen ref={this.videoRef} />
+      (this.state.video) ? <iframe src={`${this.state.video}`} frameBorder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowFullScreen ref={this.videoRef} />
        :
       <img className="image-notfound" src="assets/images/not-found.png" alt="not_found" />
       }
@@ -45,6 +47,4 @@ export default class WatchVideoModal extends Component {
 
 WatchVideoModal.propTypes = {
   id: PropTypes.number,
-  video: PropTypes.string,
-  handleVideo: PropTypes.func,
 };

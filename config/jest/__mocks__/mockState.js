@@ -32,7 +32,6 @@ const mockState = {
       id: 21,
       name: 'Fantasy',
     }],
-    video_url: 'test_url',
     details: {
       id: 2412412,
       title: 'Fight club',

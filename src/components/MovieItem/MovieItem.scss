@@ -31,6 +31,7 @@
     left: 75px;
     top: 50px;
     z-index: 10;
+    cursor: pointer;
 
     &::after {
       content: 'Watch Now';

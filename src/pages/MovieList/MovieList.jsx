@@ -8,7 +8,7 @@ import './MovieList.scss';
 
 
 const MovieList = ({
-  items, video, handleVideo, getDetails, genres, getContent, isLoading, GetGenres, setFilter, filter, setCurrentPage, page, total_results,searchValue, isRow, genre, setGenre, setListFlexDirection,pageSize
+  items, getDetails, genres, getContent, isLoading, GetGenres, setFilter, filter, setCurrentPage, page, total_results,searchValue, isRow, genre, setGenre, setListFlexDirection,pageSize
 }) => {
 
   useEffect(() => {
@@ -42,8 +42,6 @@ const MovieList = ({
       { (!isLoading) ?
         <MovieListContent
           items={items}
-          video={video}
-          handleVideo={handleVideo}
           getDetails={getDetails}
           setCurrentPage={setCurrentPage}
           page={page}
@@ -70,8 +68,6 @@ MovieList.propTypes = {
     poster: PropTypes.string,
     overview: PropTypes.string,
   })).isRequired,
-  video: PropTypes.string.isRequired,
-  handleVideo: PropTypes.func.isRequired,
   getDetails: PropTypes.func.isRequired,
   genres: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number,
