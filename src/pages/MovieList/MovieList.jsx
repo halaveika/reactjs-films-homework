@@ -8,7 +8,7 @@ import './MovieList.scss';
 
 
 const MovieList = ({
-  items, video, handleVideo, getDetails, genres, getContent, isLoading, GetGenres, setFilter, filter, setCurrentPage, page, total_pages,searchValue, isRow, genre, setGenre, setListFlexDirection
+  items, video, handleVideo, getDetails, genres, getContent, isLoading, GetGenres, setFilter, filter, setCurrentPage, page, total_results,searchValue, isRow, genre, setGenre, setListFlexDirection,pageSize
 }) => {
 
   useEffect(() => {
@@ -18,10 +18,10 @@ const MovieList = ({
   
   useEffect(() => {
       getContent()
-  },[page,filter,searchValue]);
+  },[page,filter,searchValue,pageSize]);
     
 
-  
+ 
   return (
     <>
       <Layout className="movieList-container">
@@ -47,8 +47,9 @@ const MovieList = ({
           getDetails={getDetails}
           setCurrentPage={setCurrentPage}
           page={page}
-          total_pages={total_pages}
+          total_results={total_results}
           genre={genre}
+          pageSize={pageSize}
         /> :
         <Spin tip="Loading...">
         </Spin>
@@ -80,7 +81,7 @@ MovieList.propTypes = {
   setFilter: PropTypes.func.isRequired,
   filter: PropTypes.string.isRequired,
   page: PropTypes.number.isRequired,
-  total_pages: PropTypes.number.isRequired,
+  total_results: PropTypes.number.isRequired,
   setCurrentPage: PropTypes.func.isRequired,
   GetGenres: PropTypes.func.isRequired,
   searchValue: PropTypes.string.isRequired,
@@ -88,6 +89,7 @@ MovieList.propTypes = {
   genre: PropTypes.string.isRequired,
   setGenre: PropTypes.func.isRequired,
   setListFlexDirection: PropTypes.func.isRequired,
+  pageSize: PropTypes.number.isRequired,
 };
 
 export default MovieList;

@@ -6,12 +6,12 @@ import itemfilter from '../../utils/itemFilter';
 import './MovieListContent.scss';
 
 
-export default function MovieListContent({items, video, handleVideo, getDetails, setCurrentPage, page, total_pages,genre}) {
+export default function MovieListContent({items, video, handleVideo, getDetails, setCurrentPage, page, total_results,genre,pageSize}) {
  
   const itemList = itemfilter(items,genre);
   const list = itemList.map((item) => (
                                         <MovieItem
-                                          key={item.id}
+                                          key={item.id * Math.random()}
                                           id={item.id}
                                           title={item.title}
                                           genres={item.genres}
@@ -23,14 +23,13 @@ export default function MovieListContent({items, video, handleVideo, getDetails,
                                           getDetails={getDetails}
                                         />
                                     ));
-
   return (
     <>
     {
     (itemList.length) ?
     <>
       {list}
-      <Pagination className="pagination" showSizeChanger={true} current={page} total={total_pages} onChange={setCurrentPage} showSizeChanger={false}/>
+      <Pagination showTotal={(total, range) => `${range[0]}-${range[1]} of ${total} films`} className="pagination" current={page} total={total_results} onChange={setCurrentPage} defaultPageSize={pageSize} pageSizeOptions={[20,40,60]}/>
     </>
     :
       <span className="noresult-msg"> No result! </span>
@@ -52,7 +51,8 @@ MovieListContent.propTypes = {
   handleVideo: PropTypes.func.isRequired,
   getDetails: PropTypes.func.isRequired,
   page: PropTypes.number.isRequired,
-  total_pages: PropTypes.number.isRequired,
+  total_results: PropTypes.number.isRequired,
   setCurrentPage: PropTypes.func.isRequired,
   genre: PropTypes.string.isRequired,
+  pageSize: PropTypes.number.isRequired,
 };

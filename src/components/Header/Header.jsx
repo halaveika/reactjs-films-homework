@@ -4,10 +4,10 @@ import { Layout, Input } from 'antd';
 import PropTypes from 'prop-types';
 import './Header.scss';
 
-export default function Header({setCurrentPage,setFilter,setSearchValue}) {
+export default function Header({setCurrentPage,setFilter,setSearchValue,pageSize}) {
 
   function callback(value) {
-    setCurrentPage(1);
+    setCurrentPage(1,pageSize);
     setFilter('');
     setSearchValue(value.trim());
   }
@@ -30,4 +30,5 @@ Header.propTypes = {
   setCurrentPage: PropTypes.func.isRequired,
   setFilter: PropTypes.func.isRequired,
   setSearchValue: PropTypes.func.isRequired,
+  pageSize: PropTypes.number.isRequired,
 };

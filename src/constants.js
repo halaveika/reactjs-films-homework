@@ -17,3 +17,4 @@ export const SET_SEARCH_VALUE = 'SET_SEARCH_VALUE';
 export const GENRE = 'GENRE';
 export const SET_GENRE='SET_GENRE';
 export const SET_LIST_FLEX_DIRECTION='SET_LIST_FLEX_DIRECTION';
+export const API_PAGE_SIZE=20;

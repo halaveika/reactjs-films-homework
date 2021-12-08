@@ -15,7 +15,7 @@ export const getFilter = (state) => state.content.filter;
 
 export const getPageSelector = (state) => state.content.page;
 
-export const getTotalPageSelector = (state) => state.content.total_pages;
+export const getTotalResultsSelector = (state) => state.content.total_results;
 
 export const getSearchValueSelector = (state) => state.content.searchValue;
 
