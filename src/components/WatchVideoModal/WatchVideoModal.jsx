@@ -15,16 +15,17 @@ export default class WatchVideoModal extends Component {
   }
 
   handleCancel() {
-    if(this.state.video) {
+    // if(this.state.video) {
     this.videoRef.current.src =`${this.state.video}`;
-    }
+    // }
     this.setState({...this.state,isModalVisible:false});
   }
 
   async showModal() {
-    const { id, handleVideo } = this.props;
+    const { id } = this.props;
     const video = await HttpService.movieVideoRequest(id);
     this.setState({...this.state,isModalVisible:true,video});
+    console.dir(this.state);
   }
 
   render() {

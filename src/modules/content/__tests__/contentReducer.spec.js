@@ -46,14 +46,6 @@ describe('content reducer', () => {
     ).toMatchSnapshot();
   });
 
-  it('should handle ADD_VIDEO', () => {
-    const action = { type: 'ADD_VIDEO', payload: 'test_url' };
-    expect(
-      contentReducer(initialState,
-        action),
-    ).toMatchSnapshot();
-  });
-
   it('should handle ADD_DETAILS', () => {
     const action = {
       type: 'AADD_DETAILS',

@@ -1,6 +1,6 @@
 import {
   getSearchMovieResult, getMoviesGenre, getVideo,
-  getSearchList, getDetailsPageSelector, getDetailsSelector, getLoadingSelector, getFilter, getPageSelector, getTotalPageSelector, getSearchValueSelector, getPageSizeSelector
+  getSearchList, getDetailsPageSelector, getDetailsSelector, getLoadingSelector, getFilter, getPageSelector, getTotalResultsSelector, getSearchValueSelector, getPageSizeSelector
 } from '../contentSelectors';
 import mockState from '../../../../config/jest/__mocks__/mockState';
 
@@ -11,7 +11,6 @@ const mockStateEmpty = {
     total_pages: 0,
     total_results: 0,
     genres_array: [],
-    video_url: '',
     details: {},
     poster: 'image_path',
   },
@@ -28,11 +27,6 @@ describe('contentSelectors testing', () => {
 
   test('getMoviesGenre should return genres_array from state', () => {
     expect(getMoviesGenre(mockState)).toMatchSnapshot();
-  });
-
-  test('getVideo should return video_url from state', () => {
-    expect(getVideo(mockState)).toMatchSnapshot();
-    expect(getVideo(mockState)).toBe('test_url');
   });
 
   test('getSearchList should return getSearchList props', () => {
@@ -92,9 +86,9 @@ describe('contentSelectors testing', () => {
     expect(getPageSelector(mockState)).toBe(1);
   });
 
-  test('getTotalPageSelector should return total page  number from state', () => {
-    expect(getTotalPageSelector(mockState)).toMatchSnapshot();
-    expect(getTotalPageSelector(mockState)).toBe(12);
+  test('getTotalResultsSelector should return total results  number from state', () => {
+    expect(getTotalResultsSelector(mockState)).toMatchSnapshot();
+    expect(getTotalResultsSelector(mockState)).toBe(55);
   });
 
   test('getSearchValueSelector should return search value from state', () => {

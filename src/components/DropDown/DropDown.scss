@@ -1,26 +1,3 @@
-.ant-tabs-top {
-  height: 46px;
-}
-
-.filter-navbar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 400px;
-}
-
-.menu-item {
-  color: #1890ff;
-  cursor: pointer;
-
-  &:hover,
-  &:active {
-    text-decoration: underline;
-    font-weight: bold;
-  }
-}
-
 .ant-dropdown-menu-root {
   background: #f0f2f5;
 }

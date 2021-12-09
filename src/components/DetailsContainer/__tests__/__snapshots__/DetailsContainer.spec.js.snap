@@ -12,7 +12,6 @@ Object {
   "overview": "Lorem Ipsum is simply dummy text of the printing",
   "runtime": 120,
   "title": "Fight club",
-  "video": "test_url",
   "vote_average": 10,
 }
 `;

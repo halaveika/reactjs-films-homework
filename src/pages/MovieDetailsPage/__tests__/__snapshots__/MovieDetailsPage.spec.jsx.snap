@@ -25,10 +25,8 @@ exports[`test MovieDetailsPage component should render MovieDetailsPage componen
       vote_average={8}
     />
     <NavBar
-      GetVideoUrl={[MockFunction]}
       id={2412412}
       overview="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry"
-      video="youtube-link"
     />
   </Content>
 </Layout>

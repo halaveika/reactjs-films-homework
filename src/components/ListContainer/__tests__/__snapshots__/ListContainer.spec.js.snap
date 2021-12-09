@@ -50,8 +50,8 @@ Object {
     },
   ],
   "page": 1,
+  "pageSize": 20,
   "searchValue": "",
-  "total_pages": 12,
-  "video": "test_url",
+  "total_results": 55,
 }
 `;

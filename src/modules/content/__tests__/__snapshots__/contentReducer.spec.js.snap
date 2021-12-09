@@ -12,7 +12,6 @@ Object {
   "searchValue": "",
   "total_pages": 0,
   "total_results": 0,
-  "video_url": "",
 }
 `;
 
@@ -45,7 +44,6 @@ Object {
   "searchValue": "",
   "total_pages": 0,
   "total_results": 0,
-  "video_url": "",
 }
 `;
 
@@ -61,23 +59,6 @@ Object {
   "searchValue": "",
   "total_pages": 12,
   "total_results": 55,
-  "video_url": "",
-}
-`;
-
-exports[`content reducer should handle ADD_VIDEO 1`] = `
-Object {
-  "details": Object {},
-  "filter": "TRENDING",
-  "genres_array": Array [],
-  "isLoading": true,
-  "page": 1,
-  "pageSize": 20,
-  "results": Array [],
-  "searchValue": "",
-  "total_pages": 0,
-  "total_results": 0,
-  "video_url": "test_url",
 }
 `;
 
@@ -93,7 +74,6 @@ Object {
   "searchValue": "",
   "total_pages": 0,
   "total_results": 0,
-  "video_url": "",
 }
 `;
 
@@ -109,7 +89,6 @@ Object {
   "searchValue": "",
   "total_pages": 0,
   "total_results": 0,
-  "video_url": "",
 }
 `;
 
@@ -125,7 +104,6 @@ Object {
   "searchValue": "",
   "total_pages": 0,
   "total_results": 0,
-  "video_url": "",
 }
 `;
 
@@ -141,7 +119,6 @@ Object {
   "searchValue": "test",
   "total_pages": 0,
   "total_results": 0,
-  "video_url": "",
 }
 `;
 
@@ -157,6 +134,5 @@ Object {
   "searchValue": "",
   "total_pages": 0,
   "total_results": 0,
-  "video_url": "",
 }
 `;

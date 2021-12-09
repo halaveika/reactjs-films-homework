@@ -13,29 +13,6 @@ Object {
     "searchValue": "",
     "total_pages": 0,
     "total_results": 0,
-    "video_url": "",
-  },
-  "view": Object {
-    "genre": "",
-    "isRow": true,
-  },
-}
-`;
-
-exports[`actions GetVideoUrl actioin change store 1`] = `
-Object {
-  "content": Object {
-    "details": Object {},
-    "filter": "TRENDING",
-    "genres_array": undefined,
-    "isLoading": true,
-    "page": 1,
-    "pageSize": 20,
-    "results": Array [],
-    "searchValue": "",
-    "total_pages": 0,
-    "total_results": 0,
-    "video_url": "test_url",
   },
   "view": Object {
     "genre": "",
@@ -88,7 +65,6 @@ Object {
     "searchValue": "test",
     "total_pages": 12,
     "total_results": 55,
-    "video_url": "test_url",
   },
   "view": Object {
     "genre": "",
@@ -141,7 +117,6 @@ Object {
     "searchValue": "test",
     "total_pages": 12,
     "total_results": 55,
-    "video_url": "test_url",
   },
   "view": Object {
     "genre": "",
@@ -194,7 +169,6 @@ Object {
     "searchValue": "test",
     "total_pages": 12,
     "total_results": 55,
-    "video_url": "test_url",
   },
   "view": Object {
     "genre": "",
@@ -247,7 +221,6 @@ Object {
     "searchValue": "test",
     "total_pages": 12,
     "total_results": 55,
-    "video_url": "test_url",
   },
   "view": Object {
     "genre": "",
@@ -276,7 +249,6 @@ Object {
     "searchValue": "",
     "total_pages": 0,
     "total_results": 0,
-    "video_url": "test_url",
   },
   "view": Object {
     "genre": "",
@@ -329,7 +301,6 @@ Object {
     "searchValue": "test",
     "total_pages": 12,
     "total_results": 55,
-    "video_url": "test_url",
   },
   "view": Object {
     "genre": "",
@@ -382,7 +353,6 @@ Object {
     "searchValue": "test",
     "total_pages": 12,
     "total_results": 55,
-    "video_url": "test_url",
   },
   "view": Object {
     "genre": "",
@@ -435,7 +405,6 @@ Object {
     "searchValue": "test",
     "total_pages": 12,
     "total_results": 55,
-    "video_url": "test_url",
   },
   "view": Object {
     "genre": "",
@@ -488,7 +457,6 @@ Object {
     "searchValue": "test",
     "total_pages": 12,
     "total_results": 55,
-    "video_url": "test_url",
   },
   "view": Object {
     "genre": "",

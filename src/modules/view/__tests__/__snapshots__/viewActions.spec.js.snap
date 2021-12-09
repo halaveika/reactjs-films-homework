@@ -13,7 +13,6 @@ Object {
     "searchValue": "",
     "total_pages": 0,
     "total_results": 0,
-    "video_url": "",
   },
   "view": Object {
     "genre": "Drama",
@@ -35,7 +34,6 @@ Object {
     "searchValue": "",
     "total_pages": 0,
     "total_results": 0,
-    "video_url": "",
   },
   "view": Object {
     "genre": "Drama",

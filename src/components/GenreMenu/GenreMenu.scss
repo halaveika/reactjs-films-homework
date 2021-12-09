@@ -1,0 +1,10 @@
+.menu-item {
+  color: #1890ff;
+  cursor: pointer;
+
+  &:hover,
+  &:active {
+    text-decoration: underline;
+    font-weight: bold;
+  }
+}

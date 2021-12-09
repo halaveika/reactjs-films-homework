@@ -39,10 +39,12 @@ const mockMovieListProps = {
   isLoading: true,
   filter: 'TRENDING',
   page: 1,
+  total_results: 77,
   total_pages: 20,
   searchValue: '',
   isRow: true,
   genre: 'Drama',
+  pageSize: 20,
   handleVideo: jest.fn(),
   getDetails: jest.fn(),
   getContent: jest.fn(),
@@ -82,6 +84,8 @@ describe('test MovieList component', () => {
   //           setCurrentPage={mockMovieListProps.setCurrentPage}
   //           setGenre={mockMovieListProps.setGenre}
   //           setListFlexDirection={mockMovieListProps.setListFlexDirection}
+              // total_results={mockMovieListProps.total_results}
+              // pageSize = {mockMovieListProps.pageSize}
   //         />,);
   //   const tree = component.toJSON();
   //   expect(tree).toMatchSnapshot();
@@ -133,6 +137,8 @@ describe('test MovieList component', () => {
   //         setCurrentPage={mockMovieListProps.setCurrentPage}
   //         setGenre={mockMovieListProps.setGenre}
   //         setListFlexDirection={mockMovieListProps.setListFlexDirection}
+  // total_results={mockMovieListProps.total_results}
+  // pageSize = {mockMovieListProps.pageSize}  
   //       />
   //     , container);
   //   });
@@ -172,6 +178,8 @@ describe('test MovieList component', () => {
           setCurrentPage={mockMovieListProps.setCurrentPage}
           setGenre={mockMovieListProps.setGenre}
           setListFlexDirection={mockMovieListProps.setListFlexDirection}
+          total_results={mockMovieListProps.total_results}
+          pageSize = {mockMovieListProps.pageSize}
         />,
       );
     });

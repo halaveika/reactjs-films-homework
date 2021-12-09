@@ -6,6 +6,7 @@ import Header from '..';
 const setCurrentPage = jest.fn().mockImplementation(()=>true);
 const setFilter = jest.fn().mockImplementation(()=>true);
 const setSearchValue = jest.fn().mockImplementation(()=>true);
+const pageSize = 20;
 
 describe('test Header component', () => {
   afterEach(() => {
@@ -19,6 +20,7 @@ describe('test Header component', () => {
       component = create(
         <BrowserRouter>
           <Header
+            pageSize={pageSize}
             setCurrentPage={setCurrentPage}
             setFilter={setFilter}
             setSearchValue={setSearchValue}
@@ -36,6 +38,7 @@ describe('test Header component', () => {
     act(() => {
       component = create(<BrowserRouter>
         <Header
+          pageSize={pageSize}
           setCurrentPage={setCurrentPage}
           setFilter={setFilter}
           setSearchValue={setSearchValue}

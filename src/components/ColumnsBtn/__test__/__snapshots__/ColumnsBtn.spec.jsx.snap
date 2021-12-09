@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test ColumnsBtn component should handle onClick event 1`] = `
+<div
+  className="columns-btn"
+  onClick={[Function]}
+>
+  <div />
+  <div />
+</div>
+`;
+
+exports[`test ColumnsBtn component should render ColumnsBtn component 1`] = `
+<div
+  className="columns-btn"
+  onClick={[Function]}
+>
+  <div />
+  <div />
+</div>
+`;

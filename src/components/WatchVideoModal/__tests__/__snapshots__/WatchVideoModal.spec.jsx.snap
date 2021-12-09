@@ -1,5 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`test WatchVideoModal component click should change state 1`] = `
+<button
+  className="ant-btn"
+  onClick={[Function]}
+  type="button"
+/>
+`;
+
+exports[`test WatchVideoModal component handleCancel should change stat with video undefined 1`] = `
+<button
+  className="ant-btn"
+  onClick={[Function]}
+  type="button"
+/>
+`;
+
 exports[`test WatchVideoModal component should render WatchVideoModal component 1`] = `
 <button
   className="ant-btn"

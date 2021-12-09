@@ -131,11 +131,6 @@ describe('actions', () => {
     expect(store.getState()).toMatchSnapshot();
   });
 
-  test('GetVideoUrl actioin change store', async () => {
-    await store.dispatch(GetVideoUrl(43));
-    expect(store.getState()).toMatchSnapshot();
-  });
-
   test('getDetails actioin change store', async () => {
     await store.dispatch(getDetails(43));
     expect(store.getState()).toMatchSnapshot();

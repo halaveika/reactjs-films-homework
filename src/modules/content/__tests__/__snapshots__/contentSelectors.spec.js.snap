@@ -12,7 +12,6 @@ Object {
   "overview": "Lorem Ipsum is simply dummy text of the printing",
   "runtime": 120,
   "title": "Fight club",
-  "video": "test_url",
   "vote_average": 10,
 }
 `;
@@ -122,6 +121,4 @@ Array [
 
 exports[`contentSelectors testing getSearchValueSelector should return search value from state 1`] = `""`;
 
-exports[`contentSelectors testing getTotalPageSelector should return total page  number from state 1`] = `12`;
-
-exports[`contentSelectors testing getVideo should return video_url from state 1`] = `"test_url"`;
+exports[`contentSelectors testing getTotalResultsSelector should return total results  number from state 1`] = `55`;
