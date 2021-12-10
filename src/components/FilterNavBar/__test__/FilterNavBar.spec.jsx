@@ -1,7 +1,7 @@
 import React from 'react';
+import { render } from 'react-dom';
+import { act } from 'react-dom/test-utils';
 import FilterNavBar from '..';
-import { render } from "react-dom";
-import { act } from "react-dom/test-utils";
 
 const mockFilterNavBarProps = {
   genres: [{
@@ -27,33 +27,9 @@ const mockFilterNavBarProps = {
 };
 
 describe('test FilterNavBar component', () => {
-  it("FilterNavBar changes value when clicked TRENDING", async() => {
-  let container = null;
-  container = document.createElement("div");
-  document.body.appendChild(container);
-  act(() => {
-    render(
-      <FilterNavBar
-        genres={mockFilterNavBarProps.genres}
-        setGenre={mockFilterNavBarProps.setGenre}
-        activeGenre={mockFilterNavBarProps.activeGenre}
-        setFilter={mockFilterNavBarProps.setFilter}
-        filter={mockFilterNavBarProps.filter}
-        setCurrentPage={mockFilterNavBarProps.setCurrentPage}
-      />, container);
-  });
-
-  const button = document.querySelectorAll(".ant-tabs-tab-btn")[0];
-  await act(async() => {
-    button.dispatchEvent(new MouseEvent("click", { bubbles: true }));
-  });
-  expect(container).toMatchSnapshot();
-  
-  });
-
-  it("FilterNavBar changes value when clicked TOPRATED", async() => {
+  it('FilterNavBar changes value when clicked TRENDING', async () => {
     let container = null;
-    container = document.createElement("div");
+    container = document.createElement('div');
     document.body.appendChild(container);
     act(() => {
       render(
@@ -64,19 +40,20 @@ describe('test FilterNavBar component', () => {
           setFilter={mockFilterNavBarProps.setFilter}
           filter={mockFilterNavBarProps.filter}
           setCurrentPage={mockFilterNavBarProps.setCurrentPage}
-        />, container);
+        />, container,
+      );
     });
-  
-    const button = document.querySelectorAll(".ant-tabs-tab-btn")[1];
-    await act(async() => {
-      button.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+
+    const button = document.querySelectorAll('.ant-tabs-tab-btn')[0];
+    await act(async () => {
+      button.dispatchEvent(new MouseEvent('click', { bubbles: true }));
     });
-    expect(container).toMatchSnapshot();      
+    expect(container).toMatchSnapshot();
   });
 
-  it("FilterNavBar changes value when clicked COMINGSOON", async() => {
+  it('FilterNavBar changes value when clicked TOPRATED', async () => {
     let container = null;
-    container = document.createElement("div");
+    container = document.createElement('div');
     document.body.appendChild(container);
     act(() => {
       render(
@@ -87,19 +64,20 @@ describe('test FilterNavBar component', () => {
           setFilter={mockFilterNavBarProps.setFilter}
           filter={mockFilterNavBarProps.filter}
           setCurrentPage={mockFilterNavBarProps.setCurrentPage}
-        />, container);
+        />, container,
+      );
     });
-  
-    const button = document.querySelectorAll(".ant-tabs-tab-btn")[2];
-    await act(async() => {
-      button.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+
+    const button = document.querySelectorAll('.ant-tabs-tab-btn')[1];
+    await act(async () => {
+      button.dispatchEvent(new MouseEvent('click', { bubbles: true }));
     });
-    expect(container).toMatchSnapshot();      
+    expect(container).toMatchSnapshot();
   });
 
-  it("FilterNavBar changes value when clicked GENRE", async() => {
+  it('FilterNavBar changes value when clicked COMINGSOON', async () => {
     let container = null;
-    container = document.createElement("div");
+    container = document.createElement('div');
     document.body.appendChild(container);
     act(() => {
       render(
@@ -110,14 +88,38 @@ describe('test FilterNavBar component', () => {
           setFilter={mockFilterNavBarProps.setFilter}
           filter={mockFilterNavBarProps.filter}
           setCurrentPage={mockFilterNavBarProps.setCurrentPage}
-        />, container);
+        />, container,
+      );
     });
-  
-    const button = document.querySelectorAll(".ant-tabs-tab-btn")[3];
-    await act(async() => {
-      button.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+
+    const button = document.querySelectorAll('.ant-tabs-tab-btn')[2];
+    await act(async () => {
+      button.dispatchEvent(new MouseEvent('click', { bubbles: true }));
     });
-    expect(container).toMatchSnapshot();      
+    expect(container).toMatchSnapshot();
   });
 
+  it('FilterNavBar changes value when clicked GENRE', async () => {
+    let container = null;
+    container = document.createElement('div');
+    document.body.appendChild(container);
+    act(() => {
+      render(
+        <FilterNavBar
+          genres={mockFilterNavBarProps.genres}
+          setGenre={mockFilterNavBarProps.setGenre}
+          activeGenre={mockFilterNavBarProps.activeGenre}
+          setFilter={mockFilterNavBarProps.setFilter}
+          filter={mockFilterNavBarProps.filter}
+          setCurrentPage={mockFilterNavBarProps.setCurrentPage}
+        />, container,
+      );
+    });
+
+    const button = document.querySelectorAll('.ant-tabs-tab-btn')[3];
+    await act(async () => {
+      button.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+    });
+    expect(container).toMatchSnapshot();
+  });
 });

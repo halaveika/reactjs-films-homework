@@ -1,5 +1,5 @@
 import {
-  GetGenres, getDetails, getContent, setLoading, setFilter, setCurrentPage, setSearchValue
+  GetGenres, getDetails, getContent, setLoading, setFilter, setCurrentPage, setSearchValue,
 } from '../contentActions';
 import HttpService from '../../api/httpService';
 import { store } from '../../store';
@@ -11,7 +11,7 @@ jest.spyOn(HttpService, 'searchMovieRequest').mockImplementation(() => ({
     genre_ids: [13, 20, 21],
     vote_average: 8,
     poster_path: 'image_path',
-    overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
+    overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
   },
   {
     id: 41412,
@@ -19,7 +19,7 @@ jest.spyOn(HttpService, 'searchMovieRequest').mockImplementation(() => ({
     genre_ids: [13, 18],
     vote_average: 10,
     poster_path: 'image_path',
-    overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
+    overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
   }],
   page: 1,
   total_pages: 12,
@@ -33,7 +33,7 @@ jest.spyOn(HttpService, 'getTrendingRequest').mockImplementation(() => ({
     genre_ids: [13, 20, 21],
     vote_average: 8,
     poster_path: 'image_path',
-    overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
+    overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
   },
   {
     id: 41412,
@@ -41,7 +41,7 @@ jest.spyOn(HttpService, 'getTrendingRequest').mockImplementation(() => ({
     genre_ids: [13, 18],
     vote_average: 10,
     poster_path: 'image_path',
-    overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
+    overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
   }],
   page: 1,
   total_pages: 12,
@@ -55,7 +55,7 @@ jest.spyOn(HttpService, 'getTopRatedRequest').mockImplementation(() => ({
     genre_ids: [13, 20, 21],
     vote_average: 8,
     poster_path: 'image_path',
-    overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
+    overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
   },
   {
     id: 41412,
@@ -63,7 +63,7 @@ jest.spyOn(HttpService, 'getTopRatedRequest').mockImplementation(() => ({
     genre_ids: [13, 18],
     vote_average: 10,
     poster_path: 'image_path',
-    overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
+    overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
   }],
   page: 1,
   total_pages: 12,
@@ -77,7 +77,7 @@ jest.spyOn(HttpService, 'getUpcomingRequest').mockImplementation(() => ({
     genre_ids: [13, 20, 21],
     vote_average: 8,
     poster_path: 'image_path',
-    overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
+    overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
   },
   {
     id: 41412,
@@ -85,13 +85,12 @@ jest.spyOn(HttpService, 'getUpcomingRequest').mockImplementation(() => ({
     genre_ids: [13, 18],
     vote_average: 10,
     poster_path: 'image_path',
-    overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
+    overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
   }],
   page: 1,
   total_pages: 12,
   total_results: 55,
 }));
-
 
 jest.spyOn(HttpService, 'movieGenresRequest').mockImplementation(() => ({
   genres_array: [{

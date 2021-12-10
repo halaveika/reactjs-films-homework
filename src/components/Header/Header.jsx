@@ -4,10 +4,11 @@ import { Layout, Input } from 'antd';
 import PropTypes from 'prop-types';
 import './Header.scss';
 
-export default function Header({setCurrentPage,setFilter,setSearchValue,pageSize}) {
-
+export default function Header({
+  setCurrentPage, setFilter, setSearchValue, pageSize,
+}) {
   function callback(value) {
-    setCurrentPage(1,pageSize);
+    setCurrentPage(1, pageSize);
     setFilter('');
     setSearchValue(value.trim());
   }
@@ -15,7 +16,7 @@ export default function Header({setCurrentPage,setFilter,setSearchValue,pageSize
   return (
     <Layout.Header className="header">
       <Layout className="header-container">
-            <Link to="/">
+        <Link to="/">
           <h1 className="title">
             films
           </h1>

@@ -4,7 +4,7 @@ import '../../../utils/matchMedia';
 import NavBar from '../NavBar';
 
 const mockData = {
-  overview: 'There are growing dangers in the wizarding world of 1926 New York. Something mysterious is leaving a path of destruction in the streets, threatening to expose the wizarding',
+  overview: 'There are growing dangers in the wizarding world of 1926 New York.',
 };
 
 afterEach(() => {

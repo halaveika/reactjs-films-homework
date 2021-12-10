@@ -33,16 +33,24 @@ export default function MovieItem({
       onMouseLeave={toggleHover}
     >
       <div className={`overlay${(ownState.active) ? '__active' : ''}`} onClick={handleDetailPageNavigation} />
-      <img className={`poster${(ownState.active) ? '__active' : ''}`} alt="Poster!" 
-      src={poster} />
+      <img
+        className={`poster${(ownState.active) ? '__active' : ''}`}
+        alt="Poster!"
+        src={poster}
+      />
       {
-  
+
       (ownState.hovered)
         ? (!ownState.active)
           ? (
             <>
               <WatchVideoModal id={id}>
-                <Button className="watch-btn" type="primary" shape="circle"><CaretRightOutlined className="icon" style={{ fontSize: '250%' }} /></Button>
+                <Button className="watch-btn" type="primary" shape="circle">
+                  <CaretRightOutlined
+                    className="icon"
+                    style={{ fontSize: '250%' }}
+                  />
+                </Button>
               </WatchVideoModal>
               <Button className="more-btn" onClick={toggleActive}>View Info</Button>
             </>
@@ -58,7 +66,13 @@ export default function MovieItem({
       {(ownState.active)
         ? (
           <>
-            <MovieInfo active className="movie-info__active" title={title} genres={genres} vote_average={vote_average} />
+            <MovieInfo
+              active
+              className="movie-info__active"
+              title={title}
+              genres={genres}
+              vote_average={vote_average}
+            />
             <span className="overview">{overview}</span>
           </>
         )

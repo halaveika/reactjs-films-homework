@@ -1,3 +1,4 @@
-const itemfilter = (item, genre) => item.filter((item) => (genre) ? item.genres.filter(name => name === genre).length > 0 : item);
+const itemfilter = (item, genre) => item
+  .filter((e) => ((genre) ? e.genres.filter((name) => name === genre).length > 0 : e));
 
 export default itemfilter;

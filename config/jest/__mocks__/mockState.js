@@ -6,7 +6,7 @@ const mockState = {
       genre_ids: [13, 20, 21],
       vote_average: 8,
       poster_path: 'image_path',
-      overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
+      overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
     },
     {
       id: 41412,
@@ -14,7 +14,7 @@ const mockState = {
       genre_ids: [13, 18],
       vote_average: 10,
       poster_path: 'image_path',
-      overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
+      overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
     }],
     page: 1,
     total_pages: 12,

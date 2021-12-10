@@ -2,7 +2,7 @@ import React from 'react';
 import { create, act } from 'react-test-renderer';
 import { BrowserRouter } from 'react-router-dom';
 import MovieListContent from '../MovieListContent';
-import '../../../utils/matchMedia'
+import '../../../utils/matchMedia';
 
 const mockMovieListContentProps = {
   items: [{
@@ -11,7 +11,7 @@ const mockMovieListContentProps = {
     genres: ['Drama', 'Sport', 'Comedy'],
     vote_average: 8,
     poster: 'image_path',
-    overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
+    overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
   },
   {
     id: 41412,
@@ -19,7 +19,7 @@ const mockMovieListContentProps = {
     genres: ['Drama', 'Criminal', 'Comedy'],
     vote_average: 10,
     poster: 'image_path',
-    overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
+    overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
   }],
   page: 1,
   total_results: 77,
@@ -33,18 +33,18 @@ describe('test MovieListContent component', () => {
   afterEach(() => {
     jest.clearAllMocks();
   });
-  let component
-  it('should render MovieListContent component with results', async() => {
-   await act(async()=> component = create(
+  let component;
+  it('should render MovieListContent component with results', async () => {
+    await act(async () => component = create(
       <BrowserRouter>
         <MovieListContent
-        items={mockMovieListContentProps.items}
-        getDetails={mockMovieListContentProps.getDetails}
-        setCurrentPage={mockMovieListContentProps.setCurrentPage}
-        page={mockMovieListContentProps.page}
-        total_results={mockMovieListContentProps.total_results}
-        genre={mockMovieListContentProps.genre}
-        pageSize={mockMovieListContentProps.pageSize}
+          items={mockMovieListContentProps.items}
+          getDetails={mockMovieListContentProps.getDetails}
+          setCurrentPage={mockMovieListContentProps.setCurrentPage}
+          page={mockMovieListContentProps.page}
+          total_results={mockMovieListContentProps.total_results}
+          genre={mockMovieListContentProps.genre}
+          pageSize={mockMovieListContentProps.pageSize}
         />
       </BrowserRouter>,
     ));
@@ -52,17 +52,17 @@ describe('test MovieListContent component', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render MovieListContent no result', async() => {
-    await act(async()=>  component = create(
+  it('should render MovieListContent no result', async () => {
+    await act(async () => component = create(
       <BrowserRouter>
         <MovieListContent
-        items={mockMovieListContentProps.items}
-        getDetails={mockMovieListContentProps.getDetails}
-        setCurrentPage={mockMovieListContentProps.setCurrentPage}
-        page={mockMovieListContentProps.page}
-        total_results={mockMovieListContentProps.total_results}
-        genre={'History'}
-        pageSize={mockMovieListContentProps.pageSize}
+          items={mockMovieListContentProps.items}
+          getDetails={mockMovieListContentProps.getDetails}
+          setCurrentPage={mockMovieListContentProps.setCurrentPage}
+          page={mockMovieListContentProps.page}
+          total_results={mockMovieListContentProps.total_results}
+          genre="History"
+          pageSize={mockMovieListContentProps.pageSize}
         />
       </BrowserRouter>,
     ));

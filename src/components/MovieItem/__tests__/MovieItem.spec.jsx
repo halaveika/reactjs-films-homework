@@ -9,7 +9,7 @@ const mockMovieItemProps = {
   genres: ['drama', 'sport', 'comedy'],
   vote_average: 8,
   poster: 'image_path',
-  overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
+  overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
   video: 'youtube-link',
   handleVideo: jest.fn(),
   getDetails: jest.fn(),

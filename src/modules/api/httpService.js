@@ -1,9 +1,10 @@
 import { URL, API_KEY_V3, URL_YOUTUBE } from '../../constants';
 
 class HttpService {
-  static async searchMovieRequest(str,page) {
+  static async searchMovieRequest(str, page) {
     try {
-      const response = await fetch(`${URL}search/movie?api_key=${API_KEY_V3}&query=${str}&page=${page}`, { method: 'GET' });
+      const response = await fetch(`${URL}search/movie?api_key=${API_KEY_V3}&query=${str}&page=${page}`,
+        { method: 'GET' });
       return await response.json();
     } catch (error) {
       throw new Error(error);

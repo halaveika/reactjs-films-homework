@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './ColumnsBtn.scss';
 
-export default function ColumnsBtn({setListFlexDirection}) {
+export default function ColumnsBtn({ setListFlexDirection }) {
   return (
- <div className="columns-btn" onClick={()=>setListFlexDirection(false)}>
-   <div></div>
-   <div></div>
- </div>
+    <div className="columns-btn" onClick={() => setListFlexDirection(false)}>
+      <div />
+      <div />
+    </div>
   );
 }
 

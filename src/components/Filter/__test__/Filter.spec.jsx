@@ -23,25 +23,23 @@ const mockFilterProps = {
   setFilter: jest.fn(),
   setCurrentPage: jest.fn(),
   setGenre: jest.fn(),
-  setListFlexDirection: jest.fn()
+  setListFlexDirection: jest.fn(),
 };
 
 describe('test Filter component', () => {
-
   it('should render Filter component', () => {
     const component = create(
-          <Filter
-            genres={mockFilterProps.genres}
-            setGenre={mockFilterProps.setGenre}
-            activeGenre={mockFilterProps.activeGenre}
-            setFilter={mockFilterProps.setFilter}
-            filter={mockFilterProps.filter}
-            setCurrentPage={mockFilterProps.setCurrentPage}
-            setListFlexDirection={mockFilterProps.setListFlexDirection}
-          />,
-      );
-     const tree = component.toJSON();
+      <Filter
+        genres={mockFilterProps.genres}
+        setGenre={mockFilterProps.setGenre}
+        activeGenre={mockFilterProps.activeGenre}
+        setFilter={mockFilterProps.setFilter}
+        filter={mockFilterProps.filter}
+        setCurrentPage={mockFilterProps.setCurrentPage}
+        setListFlexDirection={mockFilterProps.setListFlexDirection}
+      />,
+    );
+    const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
-
 });

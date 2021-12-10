@@ -25,7 +25,7 @@ exports[`test MovieDetailsPage component should render MovieDetailsPage componen
     />
     <NavBar
       id={2412412}
-      overview="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry"
+      overview="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
     />
   </Content>
 </Layout>

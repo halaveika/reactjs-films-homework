@@ -1,5 +1,5 @@
 import React from 'react';
-import TestRenderer from 'react-test-renderer'; 
+import TestRenderer from 'react-test-renderer';
 import { Button } from 'antd';
 import WatchVideoModal from '../WatchVideoModal';
 import HttpService from '../../../modules/api/httpService';
@@ -13,8 +13,8 @@ describe('test WatchVideoModal component', () => {
     jest.clearAllMocks();
   });
 
-  it('click should change state', async() => {
-    jest.spyOn(HttpService, 'movieVideoRequest').mockImplementation(() =>Promise.resolve('test_url'));
+  it('click should change state', async () => {
+    jest.spyOn(HttpService, 'movieVideoRequest').mockImplementation(() => Promise.resolve('test_url'));
     const mockCallback = jest.spyOn(WatchVideoModal.prototype, 'setState').mockImplementation();
     let component;
     TestRenderer.act(() => {
@@ -28,7 +28,7 @@ describe('test WatchVideoModal component', () => {
     });
     const { root } = component;
     expect(root.instance.state).toEqual({ isModalVisible: false, video: '' });
-    await TestRenderer.act(async() => {root.findAllByType('button')[0].props.onClick();});
+    await TestRenderer.act(async () => { root.findAllByType('button')[0].props.onClick(); });
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
     expect(mockCallback.mock.calls.length).toBe(1);
@@ -37,9 +37,7 @@ describe('test WatchVideoModal component', () => {
 
   it('handleCancel should change state', () => {
     const mockCallback = jest.spyOn(WatchVideoModal.prototype, 'setState').mockImplementation();
-    let ref = jest.spyOn(React, "createRef").mockImplementation(() => {
-      return { current: { src: 'test'} };
-});
+    const ref = jest.spyOn(React, 'createRef').mockImplementation(() => ({ current: { src: 'test' } }));
     let component;
     TestRenderer.act(() => {
       component = TestRenderer.create(
@@ -51,12 +49,11 @@ describe('test WatchVideoModal component', () => {
       );
     });
     const { root } = component;
-    TestRenderer.act(() =>root.instance.handleCancel());
+    TestRenderer.act(() => root.instance.handleCancel());
     expect(ref).toBeCalled();
     expect(mockCallback.mock.calls.length).toBe(1);
     expect(mockCallback.mock.calls[0][0]).toEqual({ isModalVisible: false, video: '' });
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
-
   });
 });

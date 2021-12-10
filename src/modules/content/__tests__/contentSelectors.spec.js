@@ -1,8 +1,10 @@
 import {
-  getSearchMovieResult, getMoviesGenre, getVideo,
-  getSearchList, getDetailsPageSelector, getDetailsSelector, getLoadingSelector, getFilter, getPageSelector, getTotalResultsSelector, getSearchValueSelector, getPageSizeSelector
+  getSearchMovieResult, getMoviesGenre, getSearchList, getDetailsPageSelector, getDetailsSelector,
+  getLoadingSelector, getFilter, getPageSelector, getTotalResultsSelector,
+  getSearchValueSelector, getPageSizeSelector,
 } from '../contentSelectors';
 import mockState from '../../../../config/jest/__mocks__/mockState';
+
 const testState = {
   content: {
     results: [{
@@ -11,7 +13,7 @@ const testState = {
       genre_ids: [13, 20, 21],
       vote_average: 8,
       poster_path: '',
-      overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
+      overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
     },
     {
       id: 41412,
@@ -19,7 +21,7 @@ const testState = {
       genre_ids: [13, 18],
       vote_average: 10,
       poster_path: '',
-      overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
+      overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
     }],
     page: 1,
     total_pages: 12,
@@ -40,7 +42,7 @@ const testState = {
     details: {
       id: 2412412,
       title: 'Fight club',
-      genres: ['Drama','Adventure','Fantasy'],
+      genres: ['Drama', 'Adventure', 'Fantasy'],
       runtime: 120,
       vote_average: 10,
       backdrop_path: '',
@@ -49,12 +51,12 @@ const testState = {
     isLoading: true,
     filter: 'TRENDING',
     searchValue: '',
-    pageSize: 20
+    pageSize: 20,
   },
   view: {
     isRow: true,
-    genre:''
-  }
+    genre: '',
+  },
 
 };
 const mockStateEmpty = {
@@ -92,7 +94,7 @@ describe('contentSelectors testing', () => {
           'Fantasy',
         ],
         id: 2412412,
-        overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
+        overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
         poster: 'https://image.tmdb.org/t/p/w500/image_path',
         title: 'Fight club',
         vote_average: 8,
@@ -103,7 +105,7 @@ describe('contentSelectors testing', () => {
           'Drama',
         ],
         id: 41412,
-        overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
+        overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
         poster: 'https://image.tmdb.org/t/p/w500/image_path',
         title: 'Sopranos',
         vote_average: 10,
@@ -113,13 +115,12 @@ describe('contentSelectors testing', () => {
 
   test('getSearchList should return getSearchList props with default poster', () => {
     expect(getSearchList(testState)).toMatchSnapshot();
-    // expect(getSearchList(testState)).toMatchObject({poster:'assets/images/not-found.png'});
   });
 
   test('getSearchList should correct handl empty result of search', () => {
     expect(getSearchList(mockStateEmpty)).toMatchSnapshot();
   });
-  
+
   test('getDetailsPageSelector should return getDetailsPageSelector props', () => {
     expect(getDetailsPageSelector(mockState)).toMatchSnapshot();
   });

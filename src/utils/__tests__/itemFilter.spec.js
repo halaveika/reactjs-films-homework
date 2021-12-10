@@ -6,7 +6,7 @@ const item = [{
   genres: ['drama', 'sport', 'comedy'],
   vote_average: 8,
   poster: 'image_path',
-  overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
+  overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
 },
 {
   id: 41412,
@@ -14,9 +14,8 @@ const item = [{
   genres: ['drama', 'Criminal', 'comedy'],
   vote_average: 10,
   poster: 'image_path',
-  overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
+  overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
 }];
-
 
 describe('itemfilter', () => {
   test('itemfilter should filter array', async () => {

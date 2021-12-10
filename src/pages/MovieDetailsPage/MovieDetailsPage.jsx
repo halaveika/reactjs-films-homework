@@ -6,10 +6,11 @@ import NavBar from '../../components/NavBar';
 import './MovieDetailsPage.scss';
 
 export default function MovieDetailsPage({
-  id, title, genres, vote_average, backdrop, overview, runtime }) {
+  id, title, genres, vote_average, backdrop, overview, runtime,
+}) {
   return (
     <Layout className="movieDetails">
-      <img className="movieDetails-image" src={backdrop} alt="wallpaper"/>
+      <img className="movieDetails-image" src={backdrop} alt="wallpaper" />
       <Layout.Content className="movieDetails-container">
         <InfoBar
           title={title}
@@ -33,5 +34,5 @@ MovieDetailsPage.propTypes = {
   vote_average: PropTypes.number,
   backdrop: PropTypes.string,
   overview: PropTypes.string,
-  runtime: PropTypes.number
+  runtime: PropTypes.number,
 };

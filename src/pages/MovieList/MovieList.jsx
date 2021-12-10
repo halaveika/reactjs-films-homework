@@ -3,29 +3,25 @@ import { Layout, Spin } from 'antd';
 import PropTypes from 'prop-types';
 import Filter from '../../components/Filter';
 import Footer from '../../components/Footer';
-import MovieListContent from '../../components/MovieListContent'
+import MovieListContent from '../../components/MovieListContent';
 import './MovieList.scss';
 
-
 const MovieList = ({
-  items, getDetails, genres, getContent, isLoading, GetGenres, setFilter, filter, setCurrentPage, page, total_results,searchValue, isRow, genre, setGenre, setListFlexDirection,pageSize
+  items, getDetails, genres, getContent, isLoading, GetGenres, setFilter, filter,
+  setCurrentPage, page, total_results, searchValue, isRow, genre, setGenre, setListFlexDirection, pageSize,
 }) => {
-
   React.useEffect(() => {
     GetGenres();
+  }, []);
 
-  },[]);
-  
   React.useEffect(() => {
-      getContent()
-  },[page,filter,searchValue,pageSize]);
-    
+    getContent();
+  }, [page, filter, searchValue, pageSize]);
 
- 
   return (
     <>
       <Layout className="movieList-container">
-        <Filter 
+        <Filter
           setListFlexDirection={setListFlexDirection}
           genres={genres}
           getContent={getContent}
@@ -34,30 +30,31 @@ const MovieList = ({
           setFilter={setFilter}
           filter={filter}
           setCurrentPage={setCurrentPage}
-          >
-        </Filter>
-        <Layout className="movieItem-container" style={(isRow) ? { flexDirection: 'row',alignItems: 'center'}
-         :
-         { flexDirection: 'column',alignItems: 'center' }}>
-      { (!isLoading) ?
-        <MovieListContent
-          items={items}
-          getDetails={getDetails}
-          setCurrentPage={setCurrentPage}
-          page={page}
-          total_results={total_results}
-          genre={genre}
-          pageSize={pageSize}
-        /> :
-        <Spin tip="Loading...">
-        </Spin>
-      }
+        />
+        <Layout
+          className="movieItem-container"
+          style={(isRow) ? { flexDirection: 'row', alignItems: 'center' }
+            : { flexDirection: 'column', alignItems: 'center' }}
+        >
+          { (!isLoading)
+            ? (
+              <MovieListContent
+                items={items}
+                getDetails={getDetails}
+                setCurrentPage={setCurrentPage}
+                page={page}
+                total_results={total_results}
+                genre={genre}
+                pageSize={pageSize}
+              />
+            )
+            : <Spin tip="Loading..." />}
         </Layout>
       </Layout>
-      <Footer/>
+      <Footer />
     </>
   );
-}
+};
 
 MovieList.propTypes = {
   items: PropTypes.arrayOf(PropTypes.shape({
@@ -71,7 +68,8 @@ MovieList.propTypes = {
   getDetails: PropTypes.func.isRequired,
   genres: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number,
-    name: PropTypes.string})),
+    name: PropTypes.string,
+  })),
   getContent: PropTypes.func.isRequired,
   isLoading: PropTypes.bool.isRequired,
   setFilter: PropTypes.func.isRequired,

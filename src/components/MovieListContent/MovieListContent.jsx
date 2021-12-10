@@ -5,32 +5,41 @@ import MovieItem from '../MovieItem';
 import itemfilter from '../../utils/itemFilter';
 import './MovieListContent.scss';
 
-
-export default function MovieListContent({items, getDetails, setCurrentPage, page, total_results,genre,pageSize}) {
- 
-  const itemList = itemfilter(items,genre);
+export default function MovieListContent({
+  items, getDetails, setCurrentPage, page, total_results, genre, pageSize,
+}) {
+  const itemList = itemfilter(items, genre);
   const list = itemList.map((item) => (
-                                        <MovieItem
-                                          key={item.id * Math.random()}
-                                          id={item.id}
-                                          title={item.title}
-                                          genres={item.genres}
-                                          vote_average={item.vote_average}
-                                          poster={item.poster}
-                                          overview={item.overview}
-                                          getDetails={getDetails}
-                                        />
-                                    ));
+    <MovieItem
+      key={item.id * Math.random()}
+      id={item.id}
+      title={item.title}
+      genres={item.genres}
+      vote_average={item.vote_average}
+      poster={item.poster}
+      overview={item.overview}
+      getDetails={getDetails}
+    />
+  ));
   return (
     <>
-    {
-    (itemList.length) ?
-    <>
-      {list}
-      <Pagination showTotal={(total, range) => `${range[0]}-${range[1]} of ${total} films`} className="pagination" current={page} total={total_results} onChange={setCurrentPage} defaultPageSize={pageSize} pageSizeOptions={[20,40,60]}/>
-    </>
-    :
-      <span className="noresult-msg"> No result! </span>
+      {
+    (itemList.length)
+      ? (
+        <>
+          {list}
+          <Pagination
+            showTotal={(total, range) => `${range[0]}-${range[1]} of ${total} films`}
+            className="pagination"
+            current={page}
+            total={total_results}
+            onChange={setCurrentPage}
+            defaultPageSize={pageSize}
+            pageSizeOptions={[20, 40, 60]}
+          />
+        </>
+      )
+      : <span className="noresult-msg"> No result! </span>
   }
     </>
   );

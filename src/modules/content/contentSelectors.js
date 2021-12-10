@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect';
 import transformArray from '../../utils/transformArray';
-import { BACKDROP_PATH_URL} from '../../constants';
+import { BACKDROP_PATH_URL } from '../../constants';
 
 export const getSearchMovieResult = (state) => state.content.results;
 
@@ -20,7 +20,6 @@ export const getSearchValueSelector = (state) => state.content.searchValue;
 
 export const getPageSizeSelector = (state) => state.content.pageSize;
 
-
 export const getSearchList = createSelector(
   getSearchMovieResult,
   getMoviesGenre,
@@ -36,15 +35,14 @@ export const getSearchList = createSelector(
 
 export const getDetailsPageSelector = createSelector(
   getDetailsSelector,
-  (details) => {
-    return {
-      id: details.id,
-      title: details.title,
-      genres: details.genres.map(item => item.name),
-      vote_average: details.vote_average,
-      backdrop: (details.backdrop_path) ? `${BACKDROP_PATH_URL}${details.backdrop_path}` : 'assets/images/cover-image.jpg',
-      overview: details.overview,
-      runtime: details.runtime,
-    };
-  },
+  (details) => ({
+    id: details.id,
+    title: details.title,
+    genres: details.genres.map((item) => item.name),
+    vote_average: details.vote_average,
+    backdrop: (details.backdrop_path)
+      ? `${BACKDROP_PATH_URL}${details.backdrop_path}` : 'assets/images/cover-image.jpg',
+    overview: details.overview,
+    runtime: details.runtime,
+  }),
 );

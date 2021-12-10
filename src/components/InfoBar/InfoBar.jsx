@@ -15,7 +15,9 @@ export default function InfoBar({
         {`${genres.join('  ')} | ${secondsToHoursMinutes(runtime)}`}
       </span>
       <div className="popularity">
-        {Array(Math.round(vote_average)).fill(1).map((e, i) => <div className="star" key={i} />)}
+        {Array(Math.round(vote_average))
+          .fill(1)
+          .map((e, i) => <img className="star" key={i} src="assets/images/star.svg" alt="superstar" />)}
         <span>
           {vote_average}
         </span>

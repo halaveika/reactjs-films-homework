@@ -1,4 +1,6 @@
-import {TRENDING,ADD_GENRES,ADD_VIDEO,ADD_DETAILS,SET_LOADING,ADD_ITEMS,SET_FILTER,SET_CURRENT_PAGE,SET_SEARCH_VALUE} from '../../constants';
+import {
+  TRENDING, ADD_GENRES, ADD_DETAILS, SET_LOADING, ADD_ITEMS, SET_FILTER, SET_CURRENT_PAGE, SET_SEARCH_VALUE,
+} from '../../constants';
 
 export const initialState = {
   page: 1,
@@ -10,7 +12,7 @@ export const initialState = {
   isLoading: true,
   filter: TRENDING,
   searchValue: '',
-  pageSize: 20
+  pageSize: 20,
 };
 
 export const contentReducer = (state = initialState, action) => {
@@ -22,7 +24,7 @@ export const contentReducer = (state = initialState, action) => {
         page: action.payload.page,
         total_pages: action.payload.total_pages,
         total_results: action.payload.total_results,
-        isLoading: false
+        isLoading: false,
       };
     case ADD_GENRES:
       return { ...state, genres_array: action.payload.genres };

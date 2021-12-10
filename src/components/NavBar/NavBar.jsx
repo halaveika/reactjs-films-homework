@@ -15,12 +15,13 @@ export default class NavBar extends Component {
   handleVisibleChange(visible) {
     this.setState({ visible });
   }
+
   render() {
-    const { overview, id , video, GetVideoUrl } = this.props;
+    const { overview, id } = this.props;
     const { visible } = this.state;
     return (
       <Row className="navbar-container" justify="space-between">
-        <WatchVideoModal video={video} handleVideo={GetVideoUrl} id={id}>
+        <WatchVideoModal id={id}>
           <Button>Watch Now</Button>
         </WatchVideoModal>
         <Popover
@@ -37,4 +38,5 @@ export default class NavBar extends Component {
 }
 NavBar.propTypes = {
   overview: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
 };

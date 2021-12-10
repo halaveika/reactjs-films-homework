@@ -2,8 +2,7 @@ import React from 'react';
 import { create, act } from 'react-test-renderer';
 import RowsBtn from '../RowsBtn';
 
-  const setListFlexDirection = jest.fn();
-
+const setListFlexDirection = jest.fn();
 
 describe('test RowsBtn component', () => {
   afterEach(() => {
@@ -11,16 +10,17 @@ describe('test RowsBtn component', () => {
   });
 
   const component = create(
-      <RowsBtn
+    <RowsBtn
       setListFlexDirection={setListFlexDirection}
-      />,);
+    />,
+  );
 
   it('should render RowsBtn component', () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-  it('should handle onClick event',  () => {
+  it('should handle onClick event', () => {
     const { root } = component;
     const clickable = root.findByProps({ className: 'rows-btn' });
     act(() => { clickable.props.onClick(); });

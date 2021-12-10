@@ -23,7 +23,7 @@ const mockSearchMovieResponse = {
     genre_ids: [13, 20, 21],
     vote_average: 8,
     poster: 'image_path',
-    overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
+    overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
   },
   {
     id: 41412,
@@ -31,7 +31,7 @@ const mockSearchMovieResponse = {
     genre_ids: [13, 18],
     vote_average_ids: 10,
     poster: 'image_path',
-    overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
+    overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
   }],
   page: 1,
   total_pages: 12,
@@ -41,9 +41,27 @@ const mockSearchMovieResponse = {
 const mockVideoResponse = {
   id: 14030,
   results: [{
-    iso_639_1: 'en', iso_3166_1: 'US', name: 'Hello, Dolly! (1969) Trailer', key: 'ae8wmdtGkqg', published_at: '2017-12-24 05:20:31 UTC', site: 'YouTube', size: 1080, type: 'Trailer', official: false, id: '5a3f3931c3a36858e400455a',
+    iso_639_1: 'en',
+    iso_3166_1: 'US',
+    name: 'Hello, Dolly! (1969) Trailer',
+    key: 'ae8wmdtGkqg',
+    published_at: '2017-12-24 05:20:31 UTC',
+    site: 'YouTube',
+    size: 1080,
+    type: 'Trailer',
+    official: false,
+    id: '5a3f3931c3a36858e400455a',
   }, {
-    iso_639_1: 'en', iso_3166_1: 'US', name: 'Hello, Dolly! - Trailer', key: '8Dm4GhaYj84', published_at: '2014-07-15 22:35:10 UTC', site: 'YouTube', size: 720, type: 'Trailer', official: false, id: '58f1c9fa9251412fb1004ca2',
+    iso_639_1: 'en',
+    iso_3166_1: 'US',
+    name: 'Hello, Dolly! - Trailer',
+    key: '8Dm4GhaYj84',
+    published_at: '2014-07-15 22:35:10 UTC',
+    site: 'YouTube',
+    size: 720,
+    type: 'Trailer',
+    official: false,
+    id: '58f1c9fa9251412fb1004ca2',
   }],
 };
 
@@ -75,55 +93,54 @@ describe('HttpService testing', () => {
     const result = await HttpService.searchMovieRequest('test');
     expect(result).toMatchSnapshot();
   });
+
   test('searchMovieRequest should handle error', () => {
     global.fetch = jest.fn().mockImplementation(() => Promise.reject());
-    expect(async () => {
-        await HttpService.searchMovieRequest('test');
-    }).rejects.toThrowErrorMatchingSnapshot();
+    expect(async () => await HttpService.searchMovieRequest('test')).rejects.toThrowErrorMatchingSnapshot();
   });
 
   test('movieGenresRequest should return response', async () => {
-      global.fetch = mockFetch(mockMovieGenresResponse);
-      const result = await HttpService.movieGenresRequest();
-      expect(result).toMatchSnapshot();
+    global.fetch = mockFetch(mockMovieGenresResponse);
+    const result = await HttpService.movieGenresRequest();
+    expect(result).toMatchSnapshot();
   });
 
   test('movieGenresRequest should handle error', () => {
     global.fetch = jest.fn().mockImplementation(() => Promise.reject());
     expect(async () => {
-        await HttpService.movieGenresRequest();
+      await HttpService.movieGenresRequest();
     }).rejects.toThrowErrorMatchingSnapshot();
   });
 
   test('movieVideoRequest should return response', async () => {
-      global.fetch = mockFetch(mockVideoResponse);
-      const result = await HttpService.movieVideoRequest('test');
-      expect(result).toMatchSnapshot();
+    global.fetch = mockFetch(mockVideoResponse);
+    const result = await HttpService.movieVideoRequest('test');
+    expect(result).toMatchSnapshot();
   });
 
   test('movieVideoRequest should replace video url if emty result error has come', async () => {
-      global.fetch = mockFetch(mockVideoResponseEmpty);
-      const result = await HttpService.movieVideoRequest('test');
-      expect(result).toMatchSnapshot();
+    global.fetch = mockFetch(mockVideoResponseEmpty);
+    const result = await HttpService.movieVideoRequest('test');
+    expect(result).toMatchSnapshot();
   });
 
   test('movieVideoRequest should handle error', () => {
     global.fetch = jest.fn().mockImplementation(() => Promise.reject());
     expect(async () => {
-        await HttpService.movieVideoRequest('test');
+      await HttpService.movieVideoRequest('test');
     }).rejects.toThrowErrorMatchingSnapshot();
   });
 
   test('movieDetailsRequest should return response', async () => {
-      global.fetch = mockFetch(mockMovieDetailsResponse);
-      const result = await HttpService.movieDetailsRequest('test');
-      expect(result).toMatchSnapshot();
+    global.fetch = mockFetch(mockMovieDetailsResponse);
+    const result = await HttpService.movieDetailsRequest('test');
+    expect(result).toMatchSnapshot();
   });
 
   test('movieDetailsRequest should handle error', () => {
     global.fetch = jest.fn().mockImplementation(() => Promise.reject());
     expect(async () => {
-        await HttpService.movieDetailsRequest('test');
+      await HttpService.movieDetailsRequest('test');
     }).rejects.toThrowErrorMatchingSnapshot();
   });
 
@@ -136,7 +153,7 @@ describe('HttpService testing', () => {
   test('getTrendingRequest should handle error', () => {
     global.fetch = jest.fn().mockImplementation(() => Promise.reject());
     expect(async () => {
-        await HttpService.getTrendingRequest('test');
+      await HttpService.getTrendingRequest('test');
     }).rejects.toThrowErrorMatchingSnapshot();
   });
 
@@ -149,7 +166,7 @@ describe('HttpService testing', () => {
   test('getTopRatedRequest should handle error', () => {
     global.fetch = jest.fn().mockImplementation(() => Promise.reject());
     expect(async () => {
-        await HttpService.getTopRatedRequest('test');
+      await HttpService.getTopRatedRequest('test');
     }).rejects.toThrowErrorMatchingSnapshot();
   });
 
@@ -162,9 +179,7 @@ describe('HttpService testing', () => {
   test('getUpcomingRequest should handle error', () => {
     global.fetch = jest.fn().mockImplementation(() => Promise.reject());
     expect(async () => {
-        await HttpService.getUpcomingRequest('test');
+      await HttpService.getUpcomingRequest('test');
     }).rejects.toThrowErrorMatchingSnapshot();
   });
-
 });
-

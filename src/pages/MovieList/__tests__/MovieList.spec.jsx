@@ -1,6 +1,6 @@
 import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
-import TestRenderer from 'react-test-renderer'; 
+import TestRenderer from 'react-test-renderer';
 import '../../../utils/matchMedia';
 import MovieList from '..';
 
@@ -11,7 +11,7 @@ const mockMovieListProps = {
     genres: ['Drama', 'Sport', 'Comedy'],
     vote_average: 8,
     poster: 'image_path',
-    overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
+    overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
   },
   {
     id: 41412,
@@ -19,7 +19,7 @@ const mockMovieListProps = {
     genres: ['Drama', 'Criminal', 'comedy'],
     vote_average: 10,
     poster: 'image_path',
-    overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
+    overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
   }],
   genres: [{
     id: 13,
@@ -50,26 +50,25 @@ const mockMovieListProps = {
   setFilter: jest.fn(),
   setCurrentPage: jest.fn(),
   setGenre: jest.fn(),
-  setListFlexDirection: jest.fn()
+  setListFlexDirection: jest.fn(),
 };
 
 describe('test MovieList component', () => {
-
   let useEffect;
   const mockUseEffect = () => {
-    useEffect.mockImplementationOnce(f => f());
-  }
-  
-  beforeEach(()=> {
-    useEffect = jest.spyOn(React, "useEffect");
+    useEffect.mockImplementationOnce((f) => f());
+  };
+
+  beforeEach(() => {
+    useEffect = jest.spyOn(React, 'useEffect');
     mockUseEffect();
     mockUseEffect();
   });
 
-  it('should render MovieList component loaded', async() => {
+  it('should render MovieList component loaded', async () => {
     const renderer = new ShallowRenderer();
     let result;
-    await TestRenderer.act(async() => {
+    await TestRenderer.act(async () => {
       result = renderer.render(
         <MovieList
           items={mockMovieListProps.items}
@@ -91,23 +90,23 @@ describe('test MovieList component', () => {
           setGenre={mockMovieListProps.setGenre}
           setListFlexDirection={mockMovieListProps.setListFlexDirection}
           total_results={mockMovieListProps.total_results}
-          pageSize = {mockMovieListProps.pageSize}
+          pageSize={mockMovieListProps.pageSize}
         />,
       );
     });
     expect(result).toMatchSnapshot();
   });
 
-  it('should render MovieList component loading', async() => {
+  it('should render MovieList component loading', async () => {
     const renderer = new ShallowRenderer();
     let result;
-    await TestRenderer.act(async() => {
+    await TestRenderer.act(async () => {
       result = renderer.render(
         <MovieList
           items={mockMovieListProps.items}
           video={mockMovieListProps.video}
           genres={mockMovieListProps.genres}
-          isLoading={true}
+          isLoading
           filter={mockMovieListProps.filter}
           page={mockMovieListProps.page}
           total_pages={mockMovieListProps.total_pages}
@@ -123,23 +122,23 @@ describe('test MovieList component', () => {
           setGenre={mockMovieListProps.setGenre}
           setListFlexDirection={mockMovieListProps.setListFlexDirection}
           total_results={mockMovieListProps.total_results}
-          pageSize = {mockMovieListProps.pageSize}
+          pageSize={mockMovieListProps.pageSize}
         />,
       );
     });
     expect(result).toMatchSnapshot();
   });
 
-  it('should render MovieList component in Column oder', async() => {
+  it('should render MovieList component in Column oder', async () => {
     const renderer = new ShallowRenderer();
     let result;
-    await TestRenderer.act(async() => {
+    await TestRenderer.act(async () => {
       result = renderer.render(
         <MovieList
           items={mockMovieListProps.items}
           video={mockMovieListProps.video}
           genres={mockMovieListProps.genres}
-          isLoading={true}
+          isLoading
           filter={mockMovieListProps.filter}
           page={mockMovieListProps.page}
           total_pages={mockMovieListProps.total_pages}
@@ -155,11 +154,10 @@ describe('test MovieList component', () => {
           setGenre={mockMovieListProps.setGenre}
           setListFlexDirection={mockMovieListProps.setListFlexDirection}
           total_results={mockMovieListProps.total_results}
-          pageSize = {mockMovieListProps.pageSize}
+          pageSize={mockMovieListProps.pageSize}
         />,
       );
     });
     expect(result).toMatchSnapshot();
   });
-
 });

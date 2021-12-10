@@ -19,7 +19,7 @@ describe('viewt reducer', () => {
   it('should handle SET_GENRE', () => {
     const action = {
       type: 'SET_GENRE',
-      payload: 'Drama'
+      payload: 'Drama',
     };
     expect(
       viewReducer(initialState,

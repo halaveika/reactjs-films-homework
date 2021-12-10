@@ -16,7 +16,7 @@ describe('Application root', () => {
     const div = document.createElement('div');
     div.id = 'root';
     document.body.appendChild(div);
-    await act(async()=>{require('../index')});
+    await act(async () => { require('../index'); });
 
     expect(ReactDOM.render).toHaveBeenCalledWith(
       <Provider store={store}>

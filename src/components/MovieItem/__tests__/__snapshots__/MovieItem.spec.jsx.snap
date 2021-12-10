@@ -50,7 +50,7 @@ exports[`test MovieItem component handleDetailPageNavigation should execut 1`] =
     <span
       className="overview"
     >
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
     </span>
   </div>
 </div>
@@ -149,7 +149,7 @@ exports[`test MovieItem component toggleActive should change state 1`] = `
     <span
       className="overview"
     >
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
     </span>
   </div>
 </div>
