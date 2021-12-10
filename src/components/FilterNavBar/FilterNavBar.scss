@@ -3,10 +3,6 @@
 }
 
 .filter-navbar {
-  // display: flex;
-  // flex-direction: row;
-  // justify-content: space-between;
-  // align-items: center;
   width: 400px;
 }
 
@@ -23,6 +19,7 @@
 
 .genre-status {
   position: absolute;
+  top: 10px;
   left: 440px;
   background: #1890ff;
   color: #fff;

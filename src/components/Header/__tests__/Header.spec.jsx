@@ -1,7 +1,8 @@
 import React from 'react';
-import { create, act } from 'react-test-renderer';
 import { BrowserRouter } from 'react-router-dom';
 import Header from '..';
+import { render } from "react-dom";
+import { act } from "react-dom/test-utils";
 
 const setCurrentPage = jest.fn().mockImplementation(()=>true);
 const setFilter = jest.fn().mockImplementation(()=>true);
@@ -9,15 +10,12 @@ const setSearchValue = jest.fn().mockImplementation(()=>true);
 const pageSize = 20;
 
 describe('test Header component', () => {
-  afterEach(() => {
-    jest.clearAllMocks();
-  });
-
-  it('should render Header component', () => {
-    let component;
-    const isInitialisated = false;
+  let container = null;
+  it("render Header and handle click", async() => {
+    container = document.createElement("div");
+    document.body.appendChild(container);
     act(() => {
-      component = create(
+      render(
         <BrowserRouter>
           <Header
             pageSize={pageSize}
@@ -25,36 +23,15 @@ describe('test Header component', () => {
             setFilter={setFilter}
             setSearchValue={setSearchValue}
           />
-        </BrowserRouter>,
-      );
+        </BrowserRouter>
+      , container);
     });
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+  
+    const button = document.querySelector(".ant-input-search-button");
+    await act(async() => {
+      button.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+    });
+    expect(container).toMatchSnapshot();
   });
 
-  it('input should handle onclick', () => {
-    let component;
-    const isInitialisated = false;
-    act(() => {
-      component = create(<BrowserRouter>
-        <Header
-          pageSize={pageSize}
-          setCurrentPage={setCurrentPage}
-          setFilter={setFilter}
-          setSearchValue={setSearchValue}
-        />
-      </BrowserRouter>);
-    });
-    const { root } = component;
-    const button = root.findAllByType('button')[0];
-
-    (async () => {
-      await act(() => {
-        button.props.onClick();
-        expect(setCurrentPage).toHaveBeenCalledWith();
-        expect(setFilter).toBeCalled();
-        expect(setSearchValue).toBeCalled();
-      });
-    });
-  });
 });

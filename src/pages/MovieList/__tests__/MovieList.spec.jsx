@@ -22,7 +22,6 @@ const mockMovieListProps = {
     poster: 'image_path',
     overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
   }],
-  video: 'youtube-link',
   genres: [{
     id: 13,
     name: 'Adventure',

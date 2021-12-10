@@ -30,18 +30,14 @@ export default class WatchVideoModal extends Component {
 
   render() {
     const { isModalVisible } = this.state;
-  return (
-    <>
-      { React.cloneElement(this.props.children, { onClick: this.showModal.bind(this) }) }
-      <Modal visible={isModalVisible} cancelText="cancel" okButtonProps={{ style: { display: 'none' } }} onCancel={this.handleCancel.bind(this)} closable={false}>
-      {
-      (this.state.video) ? <iframe src={`${this.state.video}`} frameBorder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowFullScreen ref={this.videoRef} />
-       :
-      <img className="image-notfound" src="assets/images/not-found.png" alt="not_found" />
-      }
-      </Modal>
-    </>
-  );
+    return (
+      <>
+        { React.cloneElement(this.props.children, { onClick: this.showModal.bind(this) }) }
+        <Modal visible={isModalVisible} cancelText="cancel" okButtonProps={{ style: { display: 'none' } }} onCancel={this.handleCancel.bind(this)} closable={false}>
+        <iframe src={`${this.state.video}`} frameBorder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowFullScreen ref={this.videoRef} />
+        </Modal>
+      </>
+    );
 
   }
 }
