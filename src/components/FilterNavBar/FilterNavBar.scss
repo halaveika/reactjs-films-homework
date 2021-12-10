@@ -3,7 +3,7 @@
 }
 
 .filter-navbar {
-  width: 400px;
+  width: 100%;
 }
 
 .menu-item {
@@ -25,4 +25,14 @@
   color: #fff;
   padding: 0 1px;
   border-radius: 25%;
+}
+
+.ant-tabs-nav-wrap {
+  width: 100%;
+}
+
+.ant-tabs-nav-list {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
 }
