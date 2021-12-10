@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { Card, Button } from 'antd';
 import { CaretRightOutlined } from '@ant-design/icons';
 import PropTypes from 'prop-types';
-import { BACKDROP_PATH_URL } from '../../constants';
 import MovieInfo from '../MovieInfo';
 import WatchVideoModal from '../WatchVideoModal';
 import './MovieItem.scss';
@@ -35,7 +34,7 @@ export default function MovieItem({
     >
       <div className={`overlay${(ownState.active) ? '__active' : ''}`} onClick={handleDetailPageNavigation} />
       <img className={`poster${(ownState.active) ? '__active' : ''}`} alt="Poster!" 
-      src={(poster) ? `${BACKDROP_PATH_URL}${poster}` : 'assets/images/not-found.png'} />
+      src={poster} />
       {
   
       (ownState.hovered)

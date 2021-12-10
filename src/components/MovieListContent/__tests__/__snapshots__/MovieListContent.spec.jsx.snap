@@ -18,7 +18,7 @@ Array [
       <img
         alt="Poster!"
         className="poster"
-        src="https://image.tmdb.org/t/p/w500/image_path"
+        src="image_path"
       />
       
       <div
@@ -58,7 +58,7 @@ Array [
       <img
         alt="Poster!"
         className="poster"
-        src="https://image.tmdb.org/t/p/w500/image_path"
+        src="image_path"
       />
       
       <div

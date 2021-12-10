@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react';
+import React from 'react';
 import { Layout, Spin } from 'antd';
 import PropTypes from 'prop-types';
 import Filter from '../../components/Filter';
@@ -11,12 +11,12 @@ const MovieList = ({
   items, getDetails, genres, getContent, isLoading, GetGenres, setFilter, filter, setCurrentPage, page, total_results,searchValue, isRow, genre, setGenre, setListFlexDirection,pageSize
 }) => {
 
-  useEffect(() => {
+  React.useEffect(() => {
     GetGenres();
 
   },[]);
   
-  useEffect(() => {
+  React.useEffect(() => {
       getContent()
   },[page,filter,searchValue,pageSize]);
     

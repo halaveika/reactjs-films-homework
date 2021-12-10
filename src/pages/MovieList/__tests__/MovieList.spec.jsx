@@ -1,15 +1,14 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
-import { act, create} from 'react-test-renderer';
-// import { render, unmountComponentAtNode } from "react-dom";
-// import { act } from "react-dom/test-utils";
+import TestRenderer from 'react-test-renderer'; 
+import '../../../utils/matchMedia';
 import MovieList from '..';
 
 const mockMovieListProps = {
   items: [{
     id: 2412412,
     title: 'Fight club',
-    genres: ['drama', 'sport', 'comedy'],
+    genres: ['Drama', 'Sport', 'Comedy'],
     vote_average: 8,
     poster: 'image_path',
     overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
@@ -17,7 +16,7 @@ const mockMovieListProps = {
   {
     id: 41412,
     title: 'Sopranos',
-    genres: ['drama', 'Criminal', 'comedy'],
+    genres: ['Drama', 'Criminal', 'comedy'],
     vote_average: 10,
     poster: 'image_path',
     overview: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
@@ -35,11 +34,11 @@ const mockMovieListProps = {
     id: 21,
     name: 'Fantasy',
   }],
-  isLoading: true,
+  isLoading: false,
   filter: 'TRENDING',
   page: 1,
-  total_results: 77,
-  total_pages: 20,
+  total_results: 2,
+  total_pages: 1,
   searchValue: '',
   isRow: true,
   genre: 'Drama',
@@ -54,109 +53,23 @@ const mockMovieListProps = {
   setListFlexDirection: jest.fn()
 };
 
-let cleanupFunc;
-
-const useeffect = jest.spyOn(React, "useEffect").mockImplementationOnce(func => {
-    cleanupFunc = func();
-});
 describe('test MovieList component', () => {
 
-  //  let component
-  // it('should render MovieList component', () => {
-  //   component = create(
-  //         <MovieList
-  //           items={mockMovieListProps.items}
-  //           video={mockMovieListProps.video}
-  //           genres={mockMovieListProps.genres}
-  //           isLoading={mockMovieListProps.isLoading}
-  //           filter={mockMovieListProps.filter}
-  //           page={mockMovieListProps.page}
-  //           total_pages={mockMovieListProps.total_pages}
-  //           searchValue={mockMovieListProps.searchValue}
-  //           isRow={mockMovieListProps.isRow}
-  //           genre={mockMovieListProps.genre}
-  //           handleVideo={mockMovieListProps.handleVideo}
-  //           getDetails={mockMovieListProps.getDetails}
-  //           getContent={mockMovieListProps.getContent}
-  //           GetGenres={mockMovieListProps.GetGenres}
-  //           setFilter={mockMovieListProps.setFilter}
-  //           setCurrentPage={mockMovieListProps.setCurrentPage}
-  //           setGenre={mockMovieListProps.setGenre}
-  //           setListFlexDirection={mockMovieListProps.setListFlexDirection}
-              // total_results={mockMovieListProps.total_results}
-              // pageSize = {mockMovieListProps.pageSize}
-  //         />,);
-  //   const tree = component.toJSON();
-  //   expect(tree).toMatchSnapshot();
-  // });
-
-
-
-  // it('should handle handleColumn from columns-btn', () => {
-  //   const useStateSpy = jest.spyOn(React, 'useState').mockImplementation(initState => [initState, jest.fn()]);
-  //   const { root } = component;
-  //   const clickable = root.findByProps({ className: 'columns-btn' });
-  //   clickable.props.onClick();
-  //   const tree = component.toJSON();
-  //   expect(tree).toMatchSnapshot();
-  // });
-
-  // it('should handle change filter', () => {
-  //   const { root } = component;
-  //   const clickable = root.findAllByProps({ className: 'ant-tabs-tab' })[1];
-  //   console.dir(clickable);
-  //   act(() => {clickable.props.onClick();});
-  //   const tree = component.toJSON();
-  //   expect(useeffect).toBeCalled();
-  // });
-
-  // it("changes value when clicked", () => {
-  //   let container = null;
-  //   container = document.createElement("div");
-  //   document.body.appendChild(container);
-  //   const onChange = jest.fn();
-  //   act(() => {
-  //     render(
-  //       <MovieList
-  //         items={mockMovieListProps.items}
-  //         video={mockMovieListProps.video}
-  //         genres={mockMovieListProps.genres}
-  //         isLoading={mockMovieListProps.isLoading}
-  //         filter={mockMovieListProps.filter}
-  //         page={mockMovieListProps.page}
-  //         total_pages={mockMovieListProps.total_pages}
-  //         searchValue={mockMovieListProps.searchValue}
-  //         isRow={mockMovieListProps.isRow}
-  //         genre={mockMovieListProps.genre}
-  //         handleVideo={mockMovieListProps.handleVideo}
-  //         getDetails={mockMovieListProps.getDetails}
-  //         getContent={mockMovieListProps.getContent}
-  //         GetGenres={mockMovieListProps.GetGenres}
-  //         setFilter={mockMovieListProps.setFilter}
-  //         setCurrentPage={mockMovieListProps.setCurrentPage}
-  //         setGenre={mockMovieListProps.setGenre}
-  //         setListFlexDirection={mockMovieListProps.setListFlexDirection}
-  // total_results={mockMovieListProps.total_results}
-  // pageSize = {mockMovieListProps.pageSize}  
-  //       />
-  //     , container);
-  //   });
+  let useEffect;
+  const mockUseEffect = () => {
+    useEffect.mockImplementationOnce(f => f());
+  }
   
-  //   // get a hold of the button element, and trigger some clicks on it
-  //   const button = document.querySelectorAll(".ant-tabs-tab")[0];
-     
-  //   act(() => {
-  //     button.dispatchEvent(new MouseEvent("click", { bubbles: true }));
-  //   });
-  
-  //   expect(useeffect).toHaveBeenCalledTimes(1);
-    
-    // });
+  beforeEach(()=> {
+    useEffect = jest.spyOn(React, "useEffect");
+    mockUseEffect();
+    mockUseEffect();
+  });
 
-  it('should render MovieDetailsPage component', () => {
+  it('should render MovieList component loaded', async() => {
     const renderer = new ShallowRenderer();
     let result;
-    act(() => {
+    await TestRenderer.act(async() => {
       result = renderer.render(
         <MovieList
           items={mockMovieListProps.items}
@@ -184,4 +97,69 @@ describe('test MovieList component', () => {
     });
     expect(result).toMatchSnapshot();
   });
+
+  it('should render MovieList component loading', async() => {
+    const renderer = new ShallowRenderer();
+    let result;
+    await TestRenderer.act(async() => {
+      result = renderer.render(
+        <MovieList
+          items={mockMovieListProps.items}
+          video={mockMovieListProps.video}
+          genres={mockMovieListProps.genres}
+          isLoading={true}
+          filter={mockMovieListProps.filter}
+          page={mockMovieListProps.page}
+          total_pages={mockMovieListProps.total_pages}
+          searchValue={mockMovieListProps.searchValue}
+          isRow={mockMovieListProps.isRow}
+          genre={mockMovieListProps.genre}
+          handleVideo={mockMovieListProps.handleVideo}
+          getDetails={mockMovieListProps.getDetails}
+          getContent={mockMovieListProps.getContent}
+          GetGenres={mockMovieListProps.GetGenres}
+          setFilter={mockMovieListProps.setFilter}
+          setCurrentPage={mockMovieListProps.setCurrentPage}
+          setGenre={mockMovieListProps.setGenre}
+          setListFlexDirection={mockMovieListProps.setListFlexDirection}
+          total_results={mockMovieListProps.total_results}
+          pageSize = {mockMovieListProps.pageSize}
+        />,
+      );
+    });
+    expect(result).toMatchSnapshot();
+  });
+
+  it('should render MovieList component in Column oder', async() => {
+    const renderer = new ShallowRenderer();
+    let result;
+    await TestRenderer.act(async() => {
+      result = renderer.render(
+        <MovieList
+          items={mockMovieListProps.items}
+          video={mockMovieListProps.video}
+          genres={mockMovieListProps.genres}
+          isLoading={true}
+          filter={mockMovieListProps.filter}
+          page={mockMovieListProps.page}
+          total_pages={mockMovieListProps.total_pages}
+          searchValue={mockMovieListProps.searchValue}
+          isRow={false}
+          genre={mockMovieListProps.genre}
+          handleVideo={mockMovieListProps.handleVideo}
+          getDetails={mockMovieListProps.getDetails}
+          getContent={mockMovieListProps.getContent}
+          GetGenres={mockMovieListProps.GetGenres}
+          setFilter={mockMovieListProps.setFilter}
+          setCurrentPage={mockMovieListProps.setCurrentPage}
+          setGenre={mockMovieListProps.setGenre}
+          setListFlexDirection={mockMovieListProps.setListFlexDirection}
+          total_results={mockMovieListProps.total_results}
+          pageSize = {mockMovieListProps.pageSize}
+        />,
+      );
+    });
+    expect(result).toMatchSnapshot();
+  });
+
 });

@@ -1,5 +1,5 @@
 import {
-  GetGenres, GetVideoUrl, getDetails, getContent, setLoading, setFilter, setCurrentPage, setSearchValue
+  GetGenres, getDetails, getContent, setLoading, setFilter, setCurrentPage, setSearchValue
 } from '../contentActions';
 import HttpService from '../../api/httpService';
 import { store } from '../../store';

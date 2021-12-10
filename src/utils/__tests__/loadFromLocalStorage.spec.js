@@ -12,9 +12,8 @@ describe('loadFromLocalStorage', () => {
   it('should load from localstorage and return object', () => {
     const serializedState = JSON.stringify(mockState);
     localStorage.setItem('teststate', serializedState);
-    /* eslint-disable */
+
     jest.spyOn(localStorage.__proto__, 'getItem').mockImplementation(() => serializedState);
-      /* eslint-enable */
     const result = loadFromLocalStorage();
     localStorage.removeItem('teststate');
     expect(result).toEqual(mockState);

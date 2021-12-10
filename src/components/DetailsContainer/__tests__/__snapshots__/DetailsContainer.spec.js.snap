@@ -2,7 +2,7 @@
 
 exports[`DetailsContainer should show mapStateToProps value 1`] = `
 Object {
-  "backdrop": undefined,
+  "backdrop": "https://image.tmdb.org/t/p/w500/image_path",
   "genres": Array [
     undefined,
     undefined,

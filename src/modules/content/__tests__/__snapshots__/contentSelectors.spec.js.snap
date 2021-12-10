@@ -2,7 +2,39 @@
 
 exports[`contentSelectors testing getDetailsPageSelector should return getDetailsPageSelector props 1`] = `
 Object {
-  "backdrop": undefined,
+  "backdrop": "https://image.tmdb.org/t/p/w500/image_path",
+  "genres": Array [
+    undefined,
+    undefined,
+    undefined,
+  ],
+  "id": 2412412,
+  "overview": "Lorem Ipsum is simply dummy text of the printing",
+  "runtime": 120,
+  "title": "Fight club",
+  "vote_average": 10,
+}
+`;
+
+exports[`contentSelectors testing getDetailsPageSelector should return props DetailsPageSelecto from state 1`] = `
+Object {
+  "backdrop": "https://image.tmdb.org/t/p/w500/image_path",
+  "genres": Array [
+    undefined,
+    undefined,
+    undefined,
+  ],
+  "id": 2412412,
+  "overview": "Lorem Ipsum is simply dummy text of the printing",
+  "runtime": 120,
+  "title": "Fight club",
+  "vote_average": 10,
+}
+`;
+
+exports[`contentSelectors testing getDetailsPageSelector should return value with backdrop default 1`] = `
+Object {
+  "backdrop": "assets/images/cover-image.jpg",
   "genres": Array [
     undefined,
     undefined,
@@ -18,7 +50,7 @@ Object {
 
 exports[`contentSelectors testing getDetailsSelector should return details from state 1`] = `
 Object {
-  "backdrop": "image_path",
+  "backdrop_path": "image_path",
   "genres": Array [
     "Drama",
     "Adventure",
@@ -73,7 +105,7 @@ Array [
     ],
     "id": 2412412,
     "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry",
-    "poster": "image_path",
+    "poster": "https://image.tmdb.org/t/p/w500/image_path",
     "title": "Fight club",
     "vote_average": 8,
   },
@@ -84,7 +116,35 @@ Array [
     ],
     "id": 41412,
     "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry",
-    "poster": "image_path",
+    "poster": "https://image.tmdb.org/t/p/w500/image_path",
+    "title": "Sopranos",
+    "vote_average": 10,
+  },
+]
+`;
+
+exports[`contentSelectors testing getSearchList should return getSearchList props with default poster 1`] = `
+Array [
+  Object {
+    "genres": Array [
+      "Adventure",
+      "Family",
+      "Fantasy",
+    ],
+    "id": 2412412,
+    "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry",
+    "poster": "assets/images/not-found.png",
+    "title": "Fight club",
+    "vote_average": 8,
+  },
+  Object {
+    "genres": Array [
+      "Adventure",
+      "Drama",
+    ],
+    "id": 41412,
+    "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry",
+    "poster": "assets/images/not-found.png",
     "title": "Sopranos",
     "vote_average": 10,
   },

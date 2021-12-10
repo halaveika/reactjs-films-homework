@@ -16,6 +16,7 @@ const mockFilterProps = {
     id: 21,
     name: 'Fantasy',
   }],
+  activeGenre: '',
   filter: 'TRENDING',
   getContent: jest.fn(),
   GetGenres: jest.fn(),

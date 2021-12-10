@@ -7,7 +7,6 @@ exports[`test MovieDetailsPage component should render MovieDetailsPage componen
   <img
     alt="wallpaper"
     className="movieDetails-image"
-    src="assets/images/cover-image.jpg"
   />
   <Content
     className="movieDetails-container"

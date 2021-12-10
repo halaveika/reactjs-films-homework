@@ -15,9 +15,7 @@ export default class WatchVideoModal extends Component {
   }
 
   handleCancel() {
-    // if(this.state.video) {
     this.videoRef.current.src =`${this.state.video}`;
-    // }
     this.setState({...this.state,isModalVisible:false});
   }
 

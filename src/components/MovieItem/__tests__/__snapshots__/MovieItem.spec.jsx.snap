@@ -17,7 +17,7 @@ exports[`test MovieItem component handleDetailPageNavigation should execut 1`] =
     <img
       alt="Poster!"
       className="poster__active"
-      src="https://image.tmdb.org/t/p/w500/image_path"
+      src="image_path"
     />
     <button
       className="ant-btn ant-btn-primary watch-btn__active"
@@ -73,7 +73,7 @@ exports[`test MovieItem component should render MovieItem component 1`] = `
     <img
       alt="Poster!"
       className="poster"
-      src="https://image.tmdb.org/t/p/w500/image_path"
+      src="image_path"
     />
     
     <div
@@ -116,7 +116,7 @@ exports[`test MovieItem component toggleActive should change state 1`] = `
     <img
       alt="Poster!"
       className="poster__active"
-      src="https://image.tmdb.org/t/p/w500/image_path"
+      src="image_path"
     />
     <button
       className="ant-btn ant-btn-primary watch-btn__active"
@@ -172,7 +172,7 @@ exports[`test MovieItem component toggleHover should change state 1`] = `
     <img
       alt="Poster!"
       className="poster"
-      src="https://image.tmdb.org/t/p/w500/image_path"
+      src="image_path"
     />
     <button
       className="ant-btn ant-btn-primary ant-btn-circle watch-btn"

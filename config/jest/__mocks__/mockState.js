@@ -38,7 +38,7 @@ const mockState = {
       genres: ['Drama','Adventure','Fantasy'],
       runtime: 120,
       vote_average: 10,
-      backdrop: 'image_path',
+      backdrop_path: 'image_path',
       overview: 'Lorem Ipsum is simply dummy text of the printing',
     },
     isLoading: true,

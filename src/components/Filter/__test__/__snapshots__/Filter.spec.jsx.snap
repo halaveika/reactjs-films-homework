@@ -255,7 +255,9 @@ exports[`test Filter component should render Filter component 1`] = `
       </div>
       <span
         className="genre-status"
-      />
+      >
+        
+      </span>
     </div>
     <div
       className="btn-container"

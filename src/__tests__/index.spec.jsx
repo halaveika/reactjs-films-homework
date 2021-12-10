@@ -16,10 +16,8 @@ describe('Application root', () => {
     const div = document.createElement('div');
     div.id = 'root';
     document.body.appendChild(div);
-    /* eslint-disable */
     await act(async()=>{require('../index')});
-    
-            /* eslint-enable */
+
     expect(ReactDOM.render).toHaveBeenCalledWith(
       <Provider store={store}>
         <BrowserRouter>

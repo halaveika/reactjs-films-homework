@@ -34,8 +34,8 @@ describe('test MovieListContent component', () => {
     jest.clearAllMocks();
   });
   let component
-  it('should render MovieListContent component with results', () => {
-   act(()=> component = create(
+  it('should render MovieListContent component with results', async() => {
+   await act(async()=> component = create(
       <BrowserRouter>
         <MovieListContent
         items={mockMovieListContentProps.items}
@@ -52,8 +52,8 @@ describe('test MovieListContent component', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render MovieListContent no result', () => {
-    act(()=>  component = create(
+  it('should render MovieListContent no result', async() => {
+    await act(async()=>  component = create(
       <BrowserRouter>
         <MovieListContent
         items={mockMovieListContentProps.items}

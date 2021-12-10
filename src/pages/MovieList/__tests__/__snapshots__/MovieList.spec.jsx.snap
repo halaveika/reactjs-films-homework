@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`test MovieList component should render MovieDetailsPage component 1`] = `
+exports[`test MovieList component should render MovieList component in Column oder 1`] = `
 <React.Fragment>
   <Layout
     className="movieList-container"
@@ -28,7 +28,198 @@ exports[`test MovieList component should render MovieDetailsPage component 1`] =
           },
         ]
       }
-      getContent={[MockFunction]}
+      getContent={
+        [MockFunction] {
+          "calls": Array [
+            Array [],
+            Array [],
+            Array [],
+          ],
+          "results": Array [
+            Object {
+              "type": "return",
+              "value": undefined,
+            },
+            Object {
+              "type": "return",
+              "value": undefined,
+            },
+            Object {
+              "type": "return",
+              "value": undefined,
+            },
+          ],
+        }
+      }
+      setCurrentPage={[MockFunction]}
+      setFilter={[MockFunction]}
+      setGenre={[MockFunction]}
+      setListFlexDirection={[MockFunction]}
+    />
+    <Layout
+      className="movieItem-container"
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "column",
+        }
+      }
+    >
+      <Spin
+        size="default"
+        spinning={true}
+        tip="Loading..."
+        wrapperClassName=""
+      />
+    </Layout>
+  </Layout>
+  <Footer />
+</React.Fragment>
+`;
+
+exports[`test MovieList component should render MovieList component loaded 1`] = `
+<React.Fragment>
+  <Layout
+    className="movieList-container"
+  >
+    <Filter
+      activeGenre="Drama"
+      filter="TRENDING"
+      genres={
+        Array [
+          Object {
+            "id": 13,
+            "name": "Adventure",
+          },
+          Object {
+            "id": 18,
+            "name": "Drama",
+          },
+          Object {
+            "id": 20,
+            "name": "Family",
+          },
+          Object {
+            "id": 21,
+            "name": "Fantasy",
+          },
+        ]
+      }
+      getContent={
+        [MockFunction] {
+          "calls": Array [
+            Array [],
+          ],
+          "results": Array [
+            Object {
+              "type": "return",
+              "value": undefined,
+            },
+          ],
+        }
+      }
+      setCurrentPage={[MockFunction]}
+      setFilter={[MockFunction]}
+      setGenre={[MockFunction]}
+      setListFlexDirection={[MockFunction]}
+    />
+    <Layout
+      className="movieItem-container"
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+        }
+      }
+    >
+      <MovieListContent
+        genre="Drama"
+        getDetails={[MockFunction]}
+        items={
+          Array [
+            Object {
+              "genres": Array [
+                "Drama",
+                "Sport",
+                "Comedy",
+              ],
+              "id": 2412412,
+              "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry",
+              "poster": "image_path",
+              "title": "Fight club",
+              "vote_average": 8,
+            },
+            Object {
+              "genres": Array [
+                "Drama",
+                "Criminal",
+                "comedy",
+              ],
+              "id": 41412,
+              "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry",
+              "poster": "image_path",
+              "title": "Sopranos",
+              "vote_average": 10,
+            },
+          ]
+        }
+        page={1}
+        pageSize={20}
+        setCurrentPage={[MockFunction]}
+        total_results={2}
+      />
+    </Layout>
+  </Layout>
+  <Footer />
+</React.Fragment>
+`;
+
+exports[`test MovieList component should render MovieList component loading 1`] = `
+<React.Fragment>
+  <Layout
+    className="movieList-container"
+  >
+    <Filter
+      activeGenre="Drama"
+      filter="TRENDING"
+      genres={
+        Array [
+          Object {
+            "id": 13,
+            "name": "Adventure",
+          },
+          Object {
+            "id": 18,
+            "name": "Drama",
+          },
+          Object {
+            "id": 20,
+            "name": "Family",
+          },
+          Object {
+            "id": 21,
+            "name": "Fantasy",
+          },
+        ]
+      }
+      getContent={
+        [MockFunction] {
+          "calls": Array [
+            Array [],
+            Array [],
+          ],
+          "results": Array [
+            Object {
+              "type": "return",
+              "value": undefined,
+            },
+            Object {
+              "type": "return",
+              "value": undefined,
+            },
+          ],
+        }
+      }
       setCurrentPage={[MockFunction]}
       setFilter={[MockFunction]}
       setGenre={[MockFunction]}
