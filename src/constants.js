@@ -21,3 +21,5 @@ export const GENRE = 'GENRE';
 export const SET_GENRE = 'SET_GENRE';
 export const SET_LIST_FLEX_DIRECTION = 'SET_LIST_FLEX_DIRECTION';
 export const API_PAGE_SIZE = 20;
+export const MAX_SEARCH_RESULT = 10000;
+export const MAX_PAGE = 500;

@@ -37,14 +37,26 @@ export default class WatchVideoModal extends Component {
           onCancel={this.handleCancel.bind(this)}
           closable={false}
         >
-          <iframe
-            src={`${this.state.video}`}
-            frameBorder="0"
-            allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            ref={this.videoRef}
-            title="trailer"
-          />
+          {' '}
+          {
+          (this.state.video)
+
+            ? (
+              <iframe
+                src={`${this.state.video}`}
+                scrolling="no"
+                frameBorder="0"
+                allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                ref={this.videoRef}
+                title="trailer"
+              />
+            )
+
+            : <img className="image-notfound" ref={this.videoRef} src="assets/images/not-found.png" alt="notfound" />
+
+        }
+
         </Modal>
       </>
     );

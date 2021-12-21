@@ -7,7 +7,7 @@ import RowsBtn from '../RowsBtn';
 import './Filter.scss';
 
 const Filter = ({
-  setListFlexDirection, genres, setGenre, activeGenre, setFilter, filter, setCurrentPage,
+  setListFlexDirection, genres, setGenre, activeGenre, setFilter, filter, setCurrentPage, isRow,
 }) => (
   <PageHeader ghost className="site-page-header">
     <FilterNavBar
@@ -19,8 +19,8 @@ const Filter = ({
       setCurrentPage={setCurrentPage}
     />
     <div className="btn-container">
-      <RowsBtn setListFlexDirection={setListFlexDirection} />
-      <ColumnsBtn setListFlexDirection={setListFlexDirection} />
+      <RowsBtn setListFlexDirection={setListFlexDirection} isRow={isRow} />
+      <ColumnsBtn setListFlexDirection={setListFlexDirection} isRow={isRow} />
     </div>
   </PageHeader>
 );
@@ -36,6 +36,7 @@ Filter.propTypes = {
   setFilter: PropTypes.func.isRequired,
   filter: PropTypes.string.isRequired,
   setCurrentPage: PropTypes.func.isRequired,
+  isRow: PropTypes.bool.isRequired,
 };
 
 export default Filter;

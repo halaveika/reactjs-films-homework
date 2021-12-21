@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './ColumnsBtn.scss';
 
-export default function ColumnsBtn({ setListFlexDirection }) {
+export default function ColumnsBtn({ setListFlexDirection, isRow }) {
   return (
-    <div className="columns-btn" onClick={() => setListFlexDirection(false)}>
+    <div className={`columns-btn${(isRow) ? '' : '_active'}`} onClick={() => setListFlexDirection(false)}>
       <div />
       <div />
     </div>
@@ -13,4 +13,5 @@ export default function ColumnsBtn({ setListFlexDirection }) {
 
 ColumnsBtn.propTypes = {
   setListFlexDirection: PropTypes.func.isRequired,
+  isRow: PropTypes.bool.isRequired,
 };

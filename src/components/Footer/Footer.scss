@@ -1,22 +1,31 @@
 .footer {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-  align-content: space-between;
   height: 120px;
   width: 100vw;
   position: relative;
   padding: 20px;
-}
 
-.title {
-  display: block;
-  text-transform: uppercase;
-  color: #1890ff;
-}
+  & span {
+    display: block;
+    color: #8a8c8d;
+    margin-right: 5px;
 
-.copyright {
-  display: block;
-  color: #8a8c8d;
+    & a {
+      color: #8a8c8d;
+      text-decoration: none;
+    }
+  }
+
+  .title {
+    width: 100%;
+    display: block;
+    text-transform: uppercase;
+    color: #1890ff;
+    text-align: center;
+    cursor: pointer;
+  }
 }

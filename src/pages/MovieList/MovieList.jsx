@@ -18,6 +18,8 @@ const MovieList = ({
     getContent();
   }, [page, filter, searchValue, pageSize]);
 
+  window.matchMedia('(min-width: 640px)').addEventListener('change', () => setListFlexDirection(true));
+
   return (
     <>
       <Layout className="movieList-container">
@@ -30,6 +32,7 @@ const MovieList = ({
           setFilter={setFilter}
           filter={filter}
           setCurrentPage={setCurrentPage}
+          isRow={isRow}
         />
         <Layout
           className="movieItem-container"
@@ -46,6 +49,7 @@ const MovieList = ({
                 total_results={total_results}
                 genre={genre}
                 pageSize={pageSize}
+                isRow={isRow}
               />
             )
             : <Spin tip="Loading..." />}

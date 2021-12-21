@@ -1,4 +1,5 @@
-.rows-btn {
+.rows-btn,
+.rows-btn_active {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -14,8 +15,11 @@
     background-color: #ced1d4;
   }
 
-  &:hover div,
-  &:active div {
+  &_active div {
+    background-color: #1890ff;
+  }
+
+  &:hover div {
     background-color: #1890ff;
   }
 }

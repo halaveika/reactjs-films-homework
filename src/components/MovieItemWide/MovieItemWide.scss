@@ -1,0 +1,87 @@
+.overlay {
+  position: absolute;
+  display: none;
+  width: 200px;
+  height: 250px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.movie-item-wide-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+  width: 100%;
+  height: auto;
+  padding: 0;
+  margin: 30px;
+
+  & .watch-btn {
+    display: none;
+  }
+
+  &:hover .overlay {
+    display: block;
+  }
+
+  &:hover .watch-btn {
+    display: block;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 75px;
+    top: 50px;
+    z-index: 10;
+    cursor: pointer;
+
+    &::after {
+      content: 'Watch Now';
+      position: absolute;
+      top: 80px;
+      left: -20px;
+      font-size: 16px;
+      color: #fff;
+    }
+
+    & .icon {
+      position: absolute;
+      top: 7px;
+      left: 8px;
+    }
+  }
+
+  & .overview {
+    display: block;
+    position: relative;
+    width: auto;
+    height: 100%;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.85);
+    top: 0;
+    left: 0;
+  }
+}
+
+.movie-item-wide {
+  position: relative;
+  width: 200px;
+  height: 305px;
+  padding: 0;
+  margin-right: 30px;
+}
+
+.poster {
+  width: 200px;
+  height: 250px;
+
+  &__active {
+    width: 200px;
+    height: 250px;
+  }
+}

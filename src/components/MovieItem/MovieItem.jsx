@@ -24,6 +24,7 @@ export default function MovieItem({
   const handleDetailPageNavigation = async () => {
     await getDetails(id);
     navigate('/details');
+    window.scrollTo(0, 0);
   };
 
   return (
@@ -82,7 +83,6 @@ export default function MovieItem({
   );
 }
 
-/* eslint-disable */
 MovieItem.propTypes = {
   id: PropTypes.number.isRequired,
   title: PropTypes.string,
@@ -92,4 +92,3 @@ MovieItem.propTypes = {
   overview: PropTypes.string,
   getDetails: PropTypes.func.isRequired,
 };
-      /* eslint-enable */

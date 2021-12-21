@@ -2,25 +2,40 @@ import React from 'react';
 import { Pagination } from 'antd';
 import PropTypes from 'prop-types';
 import MovieItem from '../MovieItem';
+import MovieItemWide from '../MovieItemWide/MovieItemWide';
 import itemfilter from '../../utils/itemFilter';
 import './MovieListContent.scss';
 
 export default function MovieListContent({
-  items, getDetails, setCurrentPage, page, total_results, genre, pageSize,
+  items, getDetails, setCurrentPage, page, total_results, genre, pageSize, isRow,
 }) {
   const itemList = itemfilter(items, genre);
-  const list = itemList.map((item) => (
-    <MovieItem
-      key={item.id * Math.random()}
-      id={item.id}
-      title={item.title}
-      genres={item.genres}
-      vote_average={item.vote_average}
-      poster={item.poster}
-      overview={item.overview}
-      getDetails={getDetails}
-    />
-  ));
+  const list = itemList.map((item) => ((isRow)
+    ? (
+      <MovieItem
+        key={item.id * Math.random()}
+        id={item.id}
+        title={item.title}
+        genres={item.genres}
+        vote_average={item.vote_average}
+        poster={item.poster}
+        overview={item.overview}
+        getDetails={getDetails}
+      />
+    )
+    : (
+      <MovieItemWide
+        key={item.id * Math.random()}
+        id={item.id}
+        title={item.title}
+        genres={item.genres}
+        vote_average={item.vote_average}
+        poster={item.poster}
+        overview={item.overview}
+        getDetails={getDetails}
+      />
+    )));
+
   return (
     <>
       {
@@ -36,6 +51,7 @@ export default function MovieListContent({
             onChange={setCurrentPage}
             defaultPageSize={pageSize}
             pageSizeOptions={[20, 40, 60]}
+            responsive
           />
         </>
       )
@@ -60,4 +76,5 @@ MovieListContent.propTypes = {
   setCurrentPage: PropTypes.func.isRequired,
   genre: PropTypes.string.isRequired,
   pageSize: PropTypes.number.isRequired,
+  isRow: PropTypes.bool.isRequired,
 };
