@@ -13,6 +13,8 @@ const mockMovieItemProps = {
   getDetails: jest.fn(),
 };
 
+jest.spyOn(window, 'scrollTo').mockImplementation();
+
 describe('test MovieItemWide component', () => {
   afterEach(() => {
     jest.clearAllMocks();

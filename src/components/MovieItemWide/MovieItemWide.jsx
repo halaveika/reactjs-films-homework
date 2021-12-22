@@ -15,6 +15,7 @@ export default function MovieItemWide({
   const handleDetailPageNavigation = async () => {
     await getDetails(id);
     navigate('/details');
+    window.scrollTo(0, 0);
   };
 
   return (
