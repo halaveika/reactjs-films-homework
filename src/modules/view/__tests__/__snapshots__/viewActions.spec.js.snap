@@ -5,7 +5,84 @@ Object {
   "content": Object {
     "details": Object {},
     "filter": "TRENDING",
-    "genres_array": Array [],
+    "genres_array": Array [
+      Object {
+        "id": 28,
+        "name": "Action",
+      },
+      Object {
+        "id": 12,
+        "name": "Adventure",
+      },
+      Object {
+        "id": 16,
+        "name": "Animation",
+      },
+      Object {
+        "id": 35,
+        "name": "Comedy",
+      },
+      Object {
+        "id": 80,
+        "name": "Crime",
+      },
+      Object {
+        "id": 99,
+        "name": "Documentary",
+      },
+      Object {
+        "id": 18,
+        "name": "Drama",
+      },
+      Object {
+        "id": 10751,
+        "name": "Family",
+      },
+      Object {
+        "id": 14,
+        "name": "Fantasy",
+      },
+      Object {
+        "id": 36,
+        "name": "History",
+      },
+      Object {
+        "id": 27,
+        "name": "Horror",
+      },
+      Object {
+        "id": 10402,
+        "name": "Music",
+      },
+      Object {
+        "id": 9648,
+        "name": "Mystery",
+      },
+      Object {
+        "id": 10749,
+        "name": "Romance",
+      },
+      Object {
+        "id": 878,
+        "name": "Science Fiction",
+      },
+      Object {
+        "id": 10770,
+        "name": "TV Movie",
+      },
+      Object {
+        "id": 53,
+        "name": "Thriller",
+      },
+      Object {
+        "id": 10752,
+        "name": "War",
+      },
+      Object {
+        "id": 37,
+        "name": "Western",
+      },
+    ],
     "isLoading": true,
     "page": 1,
     "pageSize": 20,
@@ -26,7 +103,84 @@ Object {
   "content": Object {
     "details": Object {},
     "filter": "TRENDING",
-    "genres_array": Array [],
+    "genres_array": Array [
+      Object {
+        "id": 28,
+        "name": "Action",
+      },
+      Object {
+        "id": 12,
+        "name": "Adventure",
+      },
+      Object {
+        "id": 16,
+        "name": "Animation",
+      },
+      Object {
+        "id": 35,
+        "name": "Comedy",
+      },
+      Object {
+        "id": 80,
+        "name": "Crime",
+      },
+      Object {
+        "id": 99,
+        "name": "Documentary",
+      },
+      Object {
+        "id": 18,
+        "name": "Drama",
+      },
+      Object {
+        "id": 10751,
+        "name": "Family",
+      },
+      Object {
+        "id": 14,
+        "name": "Fantasy",
+      },
+      Object {
+        "id": 36,
+        "name": "History",
+      },
+      Object {
+        "id": 27,
+        "name": "Horror",
+      },
+      Object {
+        "id": 10402,
+        "name": "Music",
+      },
+      Object {
+        "id": 9648,
+        "name": "Mystery",
+      },
+      Object {
+        "id": 10749,
+        "name": "Romance",
+      },
+      Object {
+        "id": 878,
+        "name": "Science Fiction",
+      },
+      Object {
+        "id": 10770,
+        "name": "TV Movie",
+      },
+      Object {
+        "id": 53,
+        "name": "Thriller",
+      },
+      Object {
+        "id": 10752,
+        "name": "War",
+      },
+      Object {
+        "id": 37,
+        "name": "Western",
+      },
+    ],
     "isLoading": true,
     "page": 1,
     "pageSize": 20,
@@ -47,7 +201,84 @@ Object {
   "content": Object {
     "details": Object {},
     "filter": "TRENDING",
-    "genres_array": Array [],
+    "genres_array": Array [
+      Object {
+        "id": 28,
+        "name": "Action",
+      },
+      Object {
+        "id": 12,
+        "name": "Adventure",
+      },
+      Object {
+        "id": 16,
+        "name": "Animation",
+      },
+      Object {
+        "id": 35,
+        "name": "Comedy",
+      },
+      Object {
+        "id": 80,
+        "name": "Crime",
+      },
+      Object {
+        "id": 99,
+        "name": "Documentary",
+      },
+      Object {
+        "id": 18,
+        "name": "Drama",
+      },
+      Object {
+        "id": 10751,
+        "name": "Family",
+      },
+      Object {
+        "id": 14,
+        "name": "Fantasy",
+      },
+      Object {
+        "id": 36,
+        "name": "History",
+      },
+      Object {
+        "id": 27,
+        "name": "Horror",
+      },
+      Object {
+        "id": 10402,
+        "name": "Music",
+      },
+      Object {
+        "id": 9648,
+        "name": "Mystery",
+      },
+      Object {
+        "id": 10749,
+        "name": "Romance",
+      },
+      Object {
+        "id": 878,
+        "name": "Science Fiction",
+      },
+      Object {
+        "id": 10770,
+        "name": "TV Movie",
+      },
+      Object {
+        "id": 53,
+        "name": "Thriller",
+      },
+      Object {
+        "id": 10752,
+        "name": "War",
+      },
+      Object {
+        "id": 37,
+        "name": "Western",
+      },
+    ],
     "isLoading": true,
     "page": 1,
     "pageSize": 20,
@@ -68,7 +299,84 @@ Object {
   "content": Object {
     "details": Object {},
     "filter": "TRENDING",
-    "genres_array": Array [],
+    "genres_array": Array [
+      Object {
+        "id": 28,
+        "name": "Action",
+      },
+      Object {
+        "id": 12,
+        "name": "Adventure",
+      },
+      Object {
+        "id": 16,
+        "name": "Animation",
+      },
+      Object {
+        "id": 35,
+        "name": "Comedy",
+      },
+      Object {
+        "id": 80,
+        "name": "Crime",
+      },
+      Object {
+        "id": 99,
+        "name": "Documentary",
+      },
+      Object {
+        "id": 18,
+        "name": "Drama",
+      },
+      Object {
+        "id": 10751,
+        "name": "Family",
+      },
+      Object {
+        "id": 14,
+        "name": "Fantasy",
+      },
+      Object {
+        "id": 36,
+        "name": "History",
+      },
+      Object {
+        "id": 27,
+        "name": "Horror",
+      },
+      Object {
+        "id": 10402,
+        "name": "Music",
+      },
+      Object {
+        "id": 9648,
+        "name": "Mystery",
+      },
+      Object {
+        "id": 10749,
+        "name": "Romance",
+      },
+      Object {
+        "id": 878,
+        "name": "Science Fiction",
+      },
+      Object {
+        "id": 10770,
+        "name": "TV Movie",
+      },
+      Object {
+        "id": 53,
+        "name": "Thriller",
+      },
+      Object {
+        "id": 10752,
+        "name": "War",
+      },
+      Object {
+        "id": 37,
+        "name": "Western",
+      },
+    ],
     "isLoading": true,
     "page": 1,
     "pageSize": 20,
