@@ -23,5 +23,6 @@ describe('loadFromLocalStorage', () => {
   it('if localstorage is empty should return undefined', () => {
     const result = loadFromLocalStorage();
     expect(result).toBeUndefined();
+    expect(result).toMatchSnapshot();
   });
 });

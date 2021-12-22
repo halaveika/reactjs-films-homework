@@ -24,6 +24,7 @@ const mockFilterProps = {
   setCurrentPage: jest.fn(),
   setGenre: jest.fn(),
   setListFlexDirection: jest.fn(),
+  isRow: true,
 };
 
 describe('test Filter component', () => {
@@ -37,6 +38,7 @@ describe('test Filter component', () => {
         filter={mockFilterProps.filter}
         setCurrentPage={mockFilterProps.setCurrentPage}
         setListFlexDirection={mockFilterProps.setListFlexDirection}
+        isRow={mockFilterProps.isRow}
       />,
     );
     const tree = component.toJSON();

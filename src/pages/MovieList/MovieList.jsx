@@ -18,7 +18,10 @@ const MovieList = ({
     getContent();
   }, [page, filter, searchValue, pageSize]);
 
-  window.matchMedia('(min-width: 640px)').addEventListener('change', () => setListFlexDirection(true));
+  React.useEffect(() => {
+    const mql = window.matchMedia('(min-width:640px)');
+    mql.addEventListener('change', setListFlexDirection);
+  }, []);
 
   return (
     <>

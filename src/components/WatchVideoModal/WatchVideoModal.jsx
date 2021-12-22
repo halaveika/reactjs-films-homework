@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Modal } from 'antd';
 import PropTypes from 'prop-types';
 import HttpService from '../../modules/api/httpService';
+import ModalContent from '../ModalContent';
 import './WatchVideoModal.scss';
 
 export default class WatchVideoModal extends Component {
@@ -38,25 +39,7 @@ export default class WatchVideoModal extends Component {
           closable={false}
         >
           {' '}
-          {
-          (this.state.video)
-
-            ? (
-              <iframe
-                src={`${this.state.video}`}
-                scrolling="no"
-                frameBorder="0"
-                allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                ref={this.videoRef}
-                title="trailer"
-              />
-            )
-
-            : <img className="image-notfound" ref={this.videoRef} src="assets/images/not-found.png" alt="notfound" />
-
-        }
-
+          <ModalContent videoRef={this.videoRef} video={this.state.video} />
         </Modal>
       </>
     );

@@ -12,10 +12,11 @@ describe('test RowsBtn component', () => {
   const component = create(
     <RowsBtn
       setListFlexDirection={setListFlexDirection}
+      isRow={false}
     />,
   );
 
-  it('should render RowsBtn component', () => {
+  it('should render RowsBtn component no active', () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
@@ -27,5 +28,19 @@ describe('test RowsBtn component', () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
     expect(setListFlexDirection).toBeCalled();
+  });
+
+  it('should render RowsBtn component active', () => {
+    const component2 = create(
+      <RowsBtn
+        setListFlexDirection={setListFlexDirection}
+        isRow
+      />,
+    );
+    const tree = component2.toJSON();
+    expect(tree).toMatchSnapshot();
+    const { root } = component2;
+    const button = root.findByProps({ className: 'rows-btn_active' });
+    expect(button).toBeTruthy();
   });
 });

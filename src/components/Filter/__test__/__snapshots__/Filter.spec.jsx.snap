@@ -263,7 +263,7 @@ exports[`test Filter component should render Filter component 1`] = `
       className="btn-container"
     >
       <div
-        className="rows-btn"
+        className="rows-btn_active"
         onClick={[Function]}
       >
         <div />

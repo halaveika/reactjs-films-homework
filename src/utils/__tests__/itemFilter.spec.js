@@ -21,10 +21,12 @@ describe('itemfilter', () => {
   test('itemfilter should filter array', async () => {
     const result = itemfilter(item, 'Criminal');
     expect(result).toEqual([item[1]]);
+    expect(result).toMatchSnapshot();
   });
 
   test('itemfilter should not filter array if there are not pass genre', async () => {
     const result = itemfilter(item, '');
     expect(result).toEqual(item);
+    expect(result).toMatchSnapshot();
   });
 });

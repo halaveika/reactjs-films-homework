@@ -34,7 +34,7 @@ describe('test MovieListContent component', () => {
     jest.clearAllMocks();
   });
   let component;
-  it('should render MovieListContent component with results', async () => {
+  it('should render MovieListContent component with results as rows', async () => {
     await act(async () => component = create(
       <BrowserRouter>
         <MovieListContent
@@ -45,6 +45,7 @@ describe('test MovieListContent component', () => {
           total_results={mockMovieListContentProps.total_results}
           genre={mockMovieListContentProps.genre}
           pageSize={mockMovieListContentProps.pageSize}
+          isRow
         />
       </BrowserRouter>,
     ));
@@ -63,6 +64,26 @@ describe('test MovieListContent component', () => {
           total_results={mockMovieListContentProps.total_results}
           genre="History"
           pageSize={mockMovieListContentProps.pageSize}
+          isRow
+        />
+      </BrowserRouter>,
+    ));
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render MovieListContent component with results as columns', async () => {
+    await act(async () => component = create(
+      <BrowserRouter>
+        <MovieListContent
+          items={mockMovieListContentProps.items}
+          getDetails={mockMovieListContentProps.getDetails}
+          setCurrentPage={mockMovieListContentProps.setCurrentPage}
+          page={mockMovieListContentProps.page}
+          total_results={mockMovieListContentProps.total_results}
+          genre={mockMovieListContentProps.genre}
+          pageSize={mockMovieListContentProps.pageSize}
+          isRow={false}
         />
       </BrowserRouter>,
     ));

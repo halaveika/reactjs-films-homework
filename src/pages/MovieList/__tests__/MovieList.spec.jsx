@@ -2,7 +2,14 @@ import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import TestRenderer from 'react-test-renderer';
 import '../../../utils/matchMedia';
+import { render } from 'react-dom';
+import { act } from 'react-dom/test-utils';
 import MovieList from '..';
+
+const resizeWindow = (x) => {
+  window.innerWidth = x;
+  window.dispatchEvent(new Event('resize'));
+};
 
 const mockMovieListProps = {
   items: [{
@@ -159,5 +166,40 @@ describe('test MovieList component', () => {
       );
     });
     expect(result).toMatchSnapshot();
+  });
+
+  it('should listen change resize screen less then 640px', async () => {
+    let container = null;
+    container = document.createElement('div');
+    document.body.appendChild(container);
+    act(() => {
+      render(
+        <MovieList
+          items={mockMovieListProps.items}
+          video={mockMovieListProps.video}
+          genres={mockMovieListProps.genres}
+          isLoading
+          filter={mockMovieListProps.filter}
+          page={mockMovieListProps.page}
+          total_pages={mockMovieListProps.total_pages}
+          searchValue={mockMovieListProps.searchValue}
+          isRow={false}
+          genre={mockMovieListProps.genre}
+          handleVideo={mockMovieListProps.handleVideo}
+          getDetails={mockMovieListProps.getDetails}
+          getContent={mockMovieListProps.getContent}
+          GetGenres={mockMovieListProps.GetGenres}
+          setFilter={mockMovieListProps.setFilter}
+          setCurrentPage={mockMovieListProps.setCurrentPage}
+          setGenre={mockMovieListProps.setGenre}
+          setListFlexDirection={mockMovieListProps.setListFlexDirection}
+          total_results={mockMovieListProps.total_results}
+          pageSize={mockMovieListProps.pageSize}
+        />, container,
+      );
+    });
+    resizeWindow(320);
+    expect(window.innerWidth).toBe(320);
+    expect(container).toMatchSnapshot();
   });
 });

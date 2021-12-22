@@ -17,20 +17,30 @@ exports[`test InfoBar component should render InfoBar component 1`] = `
   <div
     className="popularity"
   >
-    <div
+    <img
+      alt="superstar"
       className="star"
+      src="assets/images/star.svg"
     />
-    <div
+    <img
+      alt="superstar"
       className="star"
+      src="assets/images/star.svg"
     />
-    <div
+    <img
+      alt="superstar"
       className="star"
+      src="assets/images/star.svg"
     />
-    <div
+    <img
+      alt="superstar"
       className="star"
+      src="assets/images/star.svg"
     />
-    <div
+    <img
+      alt="superstar"
       className="star"
+      src="assets/images/star.svg"
     />
     <span>
       4.8

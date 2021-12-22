@@ -10,7 +10,17 @@ exports[`test ColumnsBtn component should handle onClick event 1`] = `
 </div>
 `;
 
-exports[`test ColumnsBtn component should render ColumnsBtn component 1`] = `
+exports[`test ColumnsBtn component should render ColumnsBtn component active 1`] = `
+<div
+  className="columns-btn_active"
+  onClick={[Function]}
+>
+  <div />
+  <div />
+</div>
+`;
+
+exports[`test ColumnsBtn component should render ColumnsBtn component not active 1`] = `
 <div
   className="columns-btn"
   onClick={[Function]}

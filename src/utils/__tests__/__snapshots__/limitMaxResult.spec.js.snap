@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`limitMaxResult limitMaxResult should return result 1`] = `
+Object {
+  "total_pages": 20,
+  "total_results": 400,
+}
+`;
+
+exports[`limitMaxResult limitMaxResult should return result lower than max 1`] = `
+Object {
+  "total_pages": 500,
+  "total_results": 10000,
+}
+`;

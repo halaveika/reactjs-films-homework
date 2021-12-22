@@ -1,7 +1,7 @@
 import React from 'react';
 import { create, act } from 'react-test-renderer';
 import { BrowserRouter } from 'react-router-dom';
-import MovieItem from '../MovieItem';
+import MovieItemWide from '../MovieItemWide';
 
 const mockMovieItemProps = {
   id: 2412412,
@@ -13,16 +13,14 @@ const mockMovieItemProps = {
   getDetails: jest.fn(),
 };
 
-jest.spyOn(window, 'scrollTo').mockImplementation();
-
-describe('test MovieItem component', () => {
+describe('test MovieItemWide component', () => {
   afterEach(() => {
     jest.clearAllMocks();
   });
 
   const component = create(
     <BrowserRouter>
-      <MovieItem
+      <MovieItemWide
         id={mockMovieItemProps.id}
         title={mockMovieItemProps.title}
         genres={mockMovieItemProps.genres}
@@ -35,34 +33,14 @@ describe('test MovieItem component', () => {
     ,
   );
 
-  it('should render MovieItem component', () => {
+  it('should render MovieItemWide component', () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-  it('toggleHover should change state', async () => {
+  it('handleDetailPageNavigation should change state', async () => {
     const { root } = component;
-    const moveiItem = root.findByType('div');
-    await act(async () => { moveiItem.props.onMouseEnter(); });
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('toggleActive should change state', async () => {
-    const { root } = component;
-
-    const buttons = root.findAllByType('button');
-
-    await act(async () => { buttons[1].props.onClick(); });
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('handleDetailPageNavigation should execut', async () => {
-    const { root } = component;
-
-    const clickable = root.findByProps({ className: 'overlay__active' });
-
+    const clickable = root.findByProps({ className: 'overlay' });
     await act(async () => { clickable.props.onClick(); });
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();

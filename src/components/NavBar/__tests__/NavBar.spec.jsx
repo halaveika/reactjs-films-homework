@@ -4,6 +4,7 @@ import '../../../utils/matchMedia';
 import NavBar from '../NavBar';
 
 const mockData = {
+  id: 55456,
   overview: 'There are growing dangers in the wizarding world of 1926 New York.',
 };
 
@@ -17,6 +18,7 @@ describe('test NavBar component', () => {
     act(() => {
       component = create(
         <NavBar
+          id={mockData.id}
           overview={mockData.overview}
         />,
       );
@@ -31,6 +33,7 @@ describe('test NavBar component', () => {
     act(() => {
       component = create(
         <NavBar
+          id={mockData.id}
           overview={mockData.overview}
         />,
       );
@@ -47,6 +50,7 @@ describe('test NavBar component', () => {
     act(() => {
       component = create(
         <NavBar
+          id={mockData.id}
           overview={mockData.overview}
         />,
       );
