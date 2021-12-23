@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './ModalContent.scss';
+import { NOT_FOUND_IMG_PATH } from '../../constants';
 
 export default function ModalContent({ video, videoRef }) {
   return (
-    (video)
+    (video !== NOT_FOUND_IMG_PATH)
 
       ? (
         <iframe
@@ -18,7 +19,14 @@ export default function ModalContent({ video, videoRef }) {
         />
       )
 
-      : <img className="image-notfound" ref={videoRef} src="assets/images/not-found.png" alt="notfound" />
+      : (
+        <img
+          ref={videoRef}
+          src={video}
+          alt="notfound"
+          style={{ height: 'auto', width: '90%', margin: '20% auto auto auto' }}
+        />
+      )
   );
 }
 

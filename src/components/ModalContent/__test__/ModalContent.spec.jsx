@@ -1,6 +1,7 @@
 import React from 'react';
 import { create } from 'react-test-renderer';
 import ModalContent from '../ModalContent';
+import { NOT_FOUND_IMG_PATH } from '../../../constants';
 
 const videoRef = { current: null };
 
@@ -23,7 +24,7 @@ describe('test ModalContent component', () => {
   it('sshould render ModalContent as image', () => {
     const component = create(
       <ModalContent
-        video=""
+        video={NOT_FOUND_IMG_PATH}
         videoRef={videoRef}
       />,
     );

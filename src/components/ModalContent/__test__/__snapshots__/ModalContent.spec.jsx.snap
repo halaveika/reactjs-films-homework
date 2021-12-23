@@ -14,7 +14,13 @@ exports[`test ModalContent component should render ModalContent as iframe 1`] = 
 exports[`test ModalContent component sshould render ModalContent as image 1`] = `
 <img
   alt="notfound"
-  className="image-notfound"
   src="assets/images/not-found.png"
+  style={
+    Object {
+      "height": "auto",
+      "margin": "20% auto auto auto",
+      "width": "90%",
+    }
+  }
 />
 `;

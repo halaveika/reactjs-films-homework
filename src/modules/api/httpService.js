@@ -1,4 +1,6 @@
-import { URL, API_KEY_V3, URL_YOUTUBE } from '../../constants';
+import {
+  URL, API_KEY_V3, URL_YOUTUBE, NOT_FOUND_IMG_PATH,
+} from '../../constants';
 
 class HttpService {
   static async searchMovieRequest(str, page) {
@@ -51,7 +53,7 @@ class HttpService {
     try {
       const videoInfo = await fetch(`${URL}movie/${id}/videos?api_key=${API_KEY_V3}`, { method: 'GET' });
       const json = await videoInfo.json();
-      if (json.results.length === 0) { return ''; }
+      if (json.results.length === 0) { return NOT_FOUND_IMG_PATH; }
       return `${URL_YOUTUBE}${json.results[0].key}`;
     } catch (error) {
       throw new Error(error);

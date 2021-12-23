@@ -23,3 +23,5 @@ export const SET_LIST_FLEX_DIRECTION = 'SET_LIST_FLEX_DIRECTION';
 export const API_PAGE_SIZE = 20;
 export const MAX_SEARCH_RESULT = 10000;
 export const MAX_PAGE = 500;
+export const NOT_FOUND_IMG_PATH = 'assets/images/not-found.png';
+export const NOT_FOUND_BACKDROP_PATH = 'assets/images/cover-image.jpg';

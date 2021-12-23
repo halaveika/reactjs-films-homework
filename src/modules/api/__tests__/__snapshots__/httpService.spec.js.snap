@@ -145,7 +145,7 @@ Object {
 
 exports[`HttpService testing movieVideoRequest should handle error 1`] = `""`;
 
-exports[`HttpService testing movieVideoRequest should replace video url if emty result error has come 1`] = `""`;
+exports[`HttpService testing movieVideoRequest should replace video url if emty result error has come: assets/images/not-found.png 1`] = `"assets/images/not-found.png"`;
 
 exports[`HttpService testing movieVideoRequest should return response 1`] = `"https://www.youtube-nocookie.com/embed/ae8wmdtGkqg"`;
 

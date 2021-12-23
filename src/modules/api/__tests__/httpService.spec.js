@@ -1,4 +1,5 @@
 import HttpService from '../httpService';
+import { NOT_FOUND_IMG_PATH } from '../../../constants';
 
 const mockMovieGenresResponse = {
   genres: [{
@@ -121,7 +122,7 @@ describe('HttpService testing', () => {
   test('movieVideoRequest should replace video url if emty result error has come', async () => {
     global.fetch = mockFetch(mockVideoResponseEmpty);
     const result = await HttpService.movieVideoRequest('test');
-    expect(result).toMatchSnapshot();
+    expect(result).toMatchSnapshot(NOT_FOUND_IMG_PATH);
   });
 
   test('movieVideoRequest should handle error', () => {
