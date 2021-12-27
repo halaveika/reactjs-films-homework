@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`actions GetGenres actioin change store 1`] = `
+Object {
+  "content": Object {
+    "genres_array": undefined,
+    "page": 1,
+    "results": Array [],
+    "total_pages": 12,
+    "total_results": 55,
+    "video_url": "",
+  },
+}
+`;
+
+exports[`actions GetVideoUrl actioin change store 1`] = `
+Object {
+  "content": Object {
+    "genres_array": undefined,
+    "page": 1,
+    "results": Array [],
+    "total_pages": 12,
+    "total_results": 55,
+    "video_url": "test_url",
+  },
+}
+`;
+
+exports[`actions SearchData actioin change store 1`] = `
+Object {
+  "content": Object {
+    "genres_array": Array [],
+    "page": 1,
+    "results": Array [],
+    "total_pages": 12,
+    "total_results": 55,
+    "video_url": "",
+  },
+}
+`;

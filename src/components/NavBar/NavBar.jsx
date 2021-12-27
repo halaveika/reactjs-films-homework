@@ -11,10 +11,10 @@ export default class NavBar extends Component {
     };
   }
 
-  handleVisibleChange = (visible) => {
+  handleVisibleChange(visible) {
     this.setState({ visible });
-  };
-
+  }
+/* eslint-disable */
   render() {
     const { overview } = this.props;
     const { visible } = this.state;
@@ -25,7 +25,7 @@ export default class NavBar extends Component {
           content={overview}
           trigger="click"
           visible={visible}
-          onVisibleChange={this.handleVisibleChange}
+          onVisibleChange={this.handleVisibleChange.bind(this)}
         >
           <Button>View Info</Button>
         </Popover>
@@ -33,7 +33,7 @@ export default class NavBar extends Component {
     );
   }
 }
-
+/* eslint-enable */
 NavBar.propTypes = {
   overview: PropTypes.string.isRequired,
 };

@@ -48,3 +48,16 @@ body {
 .ant-input-group-addon {
   background-color: transparent;
 }
+
+.ant-card-body {
+  padding: 0;
+}
+
+.ant-modal {
+  max-width: unset;
+  margin: unset;
+}
+
+.ant-modal-centered::before {
+  content: unset;
+}

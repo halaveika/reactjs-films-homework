@@ -3,16 +3,28 @@
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MovieDetailsPage from '../pages/MovieDetailsPage';
+import { Provider } from 'react-redux';
+import App from '../app';
+import { store } from '../modules/store';
 
 jest.mock('react-dom', () => ({ render: jest.fn() }));
 
-test('renders with MovieDetailsPage and root div', () => {
-  const root = document.createElement('div');
-  root.id = 'root';
-  document.body.appendChild(root);
-  /* eslint-disable */
-  require('../index');
-        /* eslint-enable */
-  expect(ReactDOM.render).toHaveBeenCalledWith(<MovieDetailsPage />, root);
+afterEach(() => {
+  jest.clearAllMocks();
+});
+
+describe('Application root', () => {
+  it('should render without crashing', () => {
+    const div = document.createElement('div');
+    div.id = 'root';
+    document.body.appendChild(div);
+    /* eslint-disable */
+    require('../index');
+            /* eslint-enable */
+    expect(ReactDOM.render).toHaveBeenCalledWith(
+      <Provider store={store}>
+        <App />
+      </Provider>, div,
+    );
+  });
 });

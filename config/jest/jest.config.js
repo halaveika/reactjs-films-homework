@@ -27,6 +27,5 @@ module.exports = {
         lines: 100,
         statements: 100
       }
-    },
-    // transform: { "^.+\\.(ts|tsx|js|jsx)?$": "ts-jest" }
+    }
 };
