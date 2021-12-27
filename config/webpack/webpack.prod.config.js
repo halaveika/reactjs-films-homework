@@ -9,7 +9,7 @@ const ESLintPlugin = require('eslint-webpack-plugin');
 module.exports = {
   mode: 'production',
   context: __dirname,
-  entry: ['../../src/index.jsx'],
+  entry: ['../../src/index.js'],
   module: {
     rules: [
       {
@@ -35,17 +35,11 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader,     {
-          loader: "css-loader",
-          options: { modules: true}
-        }],
+        use: [MiniCssExtractPlugin.loader,"css-loader"],
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [MiniCssExtractPlugin.loader,     {
-          loader: "css-loader",
-          options: { modules: true }
-        }, 'sass-loader']
+        use: [MiniCssExtractPlugin.loader,"css-loader", "sass-loader"]
       }
     ],
   },
@@ -62,11 +56,11 @@ module.exports = {
     new MiniCssExtractPlugin({ filename: 'css/[name].[contenthash].css' }),
     new CopyPlugin({
       patterns: [
-        { from: path.resolve(__dirname, '../../public/images') , to: 'assets/images'},
-        // { from: path.resolve(__dirname, '../../public/fonts') , to: 'assets/fonts'},
+        { from: path.resolve(__dirname, '../../public/assets/images') , to: path.resolve(__dirname, '../../build/assets/images')},
+        { from: path.resolve(__dirname, '../../public/manifest.json') , to: path.resolve(__dirname, '../../build/manifest.json')},
       ],
     }),
-    new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
+    new CleanWebpackPlugin(),
     new ESLintPlugin({
       extensions: ["js", "jsx"],
     }),

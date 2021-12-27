@@ -1,0 +1,184 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`contentSelectors testing getDetailsPageSelector should return getDetailsPageSelector props 1`] = `
+Object {
+  "backdrop": "https://image.tmdb.org/t/p/w500/image_path",
+  "genres": Array [
+    undefined,
+    undefined,
+    undefined,
+  ],
+  "id": 2412412,
+  "overview": "Lorem Ipsum is simply dummy text of the printing",
+  "runtime": 120,
+  "title": "Fight club",
+  "vote_average": 10,
+}
+`;
+
+exports[`contentSelectors testing getDetailsPageSelector should return props DetailsPageSelecto from state 1`] = `
+Object {
+  "backdrop": "https://image.tmdb.org/t/p/w500/image_path",
+  "genres": Array [
+    undefined,
+    undefined,
+    undefined,
+  ],
+  "id": 2412412,
+  "overview": "Lorem Ipsum is simply dummy text of the printing",
+  "runtime": 120,
+  "title": "Fight club",
+  "vote_average": 10,
+}
+`;
+
+exports[`contentSelectors testing getDetailsPageSelector should return value with backdrop default 1`] = `
+Object {
+  "backdrop": "assets/images/cover-image.jpg",
+  "genres": Array [
+    undefined,
+    undefined,
+    undefined,
+  ],
+  "id": 2412412,
+  "overview": "Lorem Ipsum is simply dummy text of the printing",
+  "runtime": 120,
+  "title": "Fight club",
+  "vote_average": 10,
+}
+`;
+
+exports[`contentSelectors testing getDetailsSelector should return details from state 1`] = `
+Object {
+  "backdrop_path": "image_path",
+  "genres": Array [
+    "Drama",
+    "Adventure",
+    "Fantasy",
+  ],
+  "id": 2412412,
+  "overview": "Lorem Ipsum is simply dummy text of the printing",
+  "runtime": 120,
+  "title": "Fight club",
+  "vote_average": 10,
+}
+`;
+
+exports[`contentSelectors testing getFilter should return filter from state 1`] = `"TRENDING"`;
+
+exports[`contentSelectors testing getLoadingSelector should return loading status from state 1`] = `true`;
+
+exports[`contentSelectors testing getMoviesGenre should return genres_array from state 1`] = `
+Array [
+  Object {
+    "id": 13,
+    "name": "Adventure",
+  },
+  Object {
+    "id": 18,
+    "name": "Drama",
+  },
+  Object {
+    "id": 20,
+    "name": "Family",
+  },
+  Object {
+    "id": 21,
+    "name": "Fantasy",
+  },
+]
+`;
+
+exports[`contentSelectors testing getPageSelector should return page  number from state 1`] = `1`;
+
+exports[`contentSelectors testing getPageSizeSelector should return page size from state 1`] = `20`;
+
+exports[`contentSelectors testing getSearchList should correct handl empty result of search 1`] = `Array []`;
+
+exports[`contentSelectors testing getSearchList should return getSearchList props 1`] = `
+Array [
+  Object {
+    "genres": Array [
+      "Adventure",
+      "Family",
+      "Fantasy",
+    ],
+    "id": 2412412,
+    "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    "poster": "https://image.tmdb.org/t/p/w500/image_path",
+    "title": "Fight club",
+    "vote_average": 8,
+  },
+  Object {
+    "genres": Array [
+      "Adventure",
+      "Drama",
+    ],
+    "id": 41412,
+    "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    "poster": "https://image.tmdb.org/t/p/w500/image_path",
+    "title": "Sopranos",
+    "vote_average": 10,
+  },
+]
+`;
+
+exports[`contentSelectors testing getSearchList should return getSearchList props with default poster 1`] = `
+Array [
+  Object {
+    "genres": Array [
+      "Adventure",
+      "Family",
+      "Fantasy",
+    ],
+    "id": 2412412,
+    "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    "poster": "assets/images/not-found.png",
+    "title": "Fight club",
+    "vote_average": 8,
+  },
+  Object {
+    "genres": Array [
+      "Adventure",
+      "Drama",
+    ],
+    "id": 41412,
+    "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    "poster": "assets/images/not-found.png",
+    "title": "Sopranos",
+    "vote_average": 10,
+  },
+]
+`;
+
+exports[`contentSelectors testing getSearchMovieResult should return results from state 1`] = `
+Array [
+  Object {
+    "genre_ids": Array [
+      13,
+      20,
+      21,
+    ],
+    "id": 2412412,
+    "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    "poster_path": "image_path",
+    "title": "Fight club",
+    "vote_average": 8,
+  },
+  Object {
+    "genre_ids": Array [
+      13,
+      18,
+    ],
+    "id": 41412,
+    "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    "poster_path": "image_path",
+    "title": "Sopranos",
+    "vote_average": 10,
+  },
+]
+`;
+
+exports[`contentSelectors testing getSearchValueSelector should return search value from state 1`] = `""`;
+
+exports[`contentSelectors testing getTotalResultsSelector should return total results  number from state 1`] = `55`;

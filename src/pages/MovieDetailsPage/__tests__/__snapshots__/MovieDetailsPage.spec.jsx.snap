@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test MovieDetailsPage component should render MovieDetailsPage component 1`] = `
+<Layout
+  className="movieDetails"
+>
+  <img
+    alt="wallpaper"
+    className="movieDetails-image"
+  />
+  <Content
+    className="movieDetails-container"
+  >
+    <InfoBar
+      genres={
+        Array [
+          "drama",
+          "sport",
+          "comedy",
+        ]
+      }
+      runtime={120}
+      title="Fight club"
+      vote_average={8}
+    />
+    <NavBar
+      id={2412412}
+      overview="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    />
+  </Content>
+</Layout>
+`;

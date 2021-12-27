@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test RowsBtn component should handle onClick event 1`] = `
+<div
+  className="rows-btn"
+  onClick={[Function]}
+>
+  <div />
+  <div />
+  <div />
+  <div />
+</div>
+`;
+
+exports[`test RowsBtn component should render RowsBtn component active 1`] = `
+<div
+  className="rows-btn_active"
+  onClick={[Function]}
+>
+  <div />
+  <div />
+  <div />
+  <div />
+</div>
+`;
+
+exports[`test RowsBtn component should render RowsBtn component no active 1`] = `
+<div
+  className="rows-btn"
+  onClick={[Function]}
+>
+  <div />
+  <div />
+  <div />
+  <div />
+</div>
+`;

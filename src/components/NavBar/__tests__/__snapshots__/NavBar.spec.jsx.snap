@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test NavBar component should render NavBar component 1`] = `
+<div
+  className="ant-row ant-row-space-between navbar-container"
+  style={Object {}}
+>
+  <button
+    className="ant-btn"
+    onClick={[Function]}
+    type="button"
+  >
+    <span>
+      Watch Now
+    </span>
+  </button>
+  <button
+    className="ant-btn"
+    onClick={[Function]}
+    onMouseDown={[Function]}
+    onTouchStart={[Function]}
+    type="button"
+  >
+    <span>
+      View Info
+    </span>
+  </button>
+</div>
+`;

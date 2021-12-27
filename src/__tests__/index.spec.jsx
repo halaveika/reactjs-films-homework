@@ -3,16 +3,27 @@
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Signature from '../components/signature';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+import { act } from 'react-test-renderer';
+import App from '../app';
+import { store } from '../modules/store';
 
 jest.mock('react-dom', () => ({ render: jest.fn() }));
 
-test('renders with Signature and root div', () => {
-  const root = document.createElement('div');
-  root.id = 'root';
-  document.body.appendChild(root);
-  /* eslint-disable */
-  require('../index');
-        /* eslint-enable */
-  expect(ReactDOM.render).toHaveBeenCalledWith(<Signature name="Aliaksandr Halaveika" />, root);
+describe('Application root', () => {
+  it('should render without crashing', async () => {
+    const div = document.createElement('div');
+    div.id = 'root';
+    document.body.appendChild(div);
+    await act(async () => { require('../index'); });
+
+    expect(ReactDOM.render).toHaveBeenCalledWith(
+      <Provider store={store}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </Provider>, div,
+    );
+  });
 });

@@ -1,0 +1,466 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`actions GetGenres actioin change store 1`] = `
+Object {
+  "content": Object {
+    "details": Object {},
+    "filter": "TRENDING",
+    "genres_array": undefined,
+    "isLoading": true,
+    "page": 1,
+    "pageSize": 20,
+    "results": Array [],
+    "searchValue": "",
+    "total_pages": 0,
+    "total_results": 0,
+  },
+  "view": Object {
+    "genre": "",
+    "isRow": true,
+  },
+}
+`;
+
+exports[`actions getContent from COMINGSOON and  change store 1`] = `
+Object {
+  "content": Object {
+    "details": Object {
+      "id": 14030,
+      "overview": "Lorem Ipsum is simply dummy text of the printing",
+      "poster": "image_path",
+      "runtime": 120,
+      "title": "Sopranos",
+      "vote_average_ids": 10,
+    },
+    "filter": "COMINGSOON",
+    "genres_array": undefined,
+    "isLoading": false,
+    "page": 1,
+    "pageSize": 20,
+    "results": Array [
+      Object {
+        "genre_ids": Array [
+          13,
+          20,
+          21,
+        ],
+        "id": 2412412,
+        "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "poster_path": "image_path",
+        "title": "Fight club",
+        "vote_average": 8,
+      },
+      Object {
+        "genre_ids": Array [
+          13,
+          18,
+        ],
+        "id": 41412,
+        "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "poster_path": "image_path",
+        "title": "Sopranos",
+        "vote_average": 10,
+      },
+    ],
+    "searchValue": "test",
+    "total_pages": 12,
+    "total_results": 55,
+  },
+  "view": Object {
+    "genre": "",
+    "isRow": true,
+  },
+}
+`;
+
+exports[`actions getContent from TOPRATED and  change store 1`] = `
+Object {
+  "content": Object {
+    "details": Object {
+      "id": 14030,
+      "overview": "Lorem Ipsum is simply dummy text of the printing",
+      "poster": "image_path",
+      "runtime": 120,
+      "title": "Sopranos",
+      "vote_average_ids": 10,
+    },
+    "filter": "TOPRATED",
+    "genres_array": undefined,
+    "isLoading": false,
+    "page": 1,
+    "pageSize": 20,
+    "results": Array [
+      Object {
+        "genre_ids": Array [
+          13,
+          20,
+          21,
+        ],
+        "id": 2412412,
+        "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "poster_path": "image_path",
+        "title": "Fight club",
+        "vote_average": 8,
+      },
+      Object {
+        "genre_ids": Array [
+          13,
+          18,
+        ],
+        "id": 41412,
+        "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "poster_path": "image_path",
+        "title": "Sopranos",
+        "vote_average": 10,
+      },
+    ],
+    "searchValue": "test",
+    "total_pages": 12,
+    "total_results": 55,
+  },
+  "view": Object {
+    "genre": "",
+    "isRow": true,
+  },
+}
+`;
+
+exports[`actions getContent from TRENDING and  change store 1`] = `
+Object {
+  "content": Object {
+    "details": Object {
+      "id": 14030,
+      "overview": "Lorem Ipsum is simply dummy text of the printing",
+      "poster": "image_path",
+      "runtime": 120,
+      "title": "Sopranos",
+      "vote_average_ids": 10,
+    },
+    "filter": "TRENDING",
+    "genres_array": undefined,
+    "isLoading": false,
+    "page": 1,
+    "pageSize": 20,
+    "results": Array [
+      Object {
+        "genre_ids": Array [
+          13,
+          20,
+          21,
+        ],
+        "id": 2412412,
+        "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "poster_path": "image_path",
+        "title": "Fight club",
+        "vote_average": 8,
+      },
+      Object {
+        "genre_ids": Array [
+          13,
+          18,
+        ],
+        "id": 41412,
+        "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "poster_path": "image_path",
+        "title": "Sopranos",
+        "vote_average": 10,
+      },
+    ],
+    "searchValue": "test",
+    "total_pages": 12,
+    "total_results": 55,
+  },
+  "view": Object {
+    "genre": "",
+    "isRow": true,
+  },
+}
+`;
+
+exports[`actions getContent from search result and  change store 1`] = `
+Object {
+  "content": Object {
+    "details": Object {
+      "id": 14030,
+      "overview": "Lorem Ipsum is simply dummy text of the printing",
+      "poster": "image_path",
+      "runtime": 120,
+      "title": "Sopranos",
+      "vote_average_ids": 10,
+    },
+    "filter": "",
+    "genres_array": undefined,
+    "isLoading": false,
+    "page": 1,
+    "pageSize": 20,
+    "results": Array [
+      Object {
+        "genre_ids": Array [
+          13,
+          20,
+          21,
+        ],
+        "id": 2412412,
+        "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "poster_path": "image_path",
+        "title": "Fight club",
+        "vote_average": 8,
+      },
+      Object {
+        "genre_ids": Array [
+          13,
+          18,
+        ],
+        "id": 41412,
+        "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "poster_path": "image_path",
+        "title": "Sopranos",
+        "vote_average": 10,
+      },
+    ],
+    "searchValue": "test",
+    "total_pages": 12,
+    "total_results": 55,
+  },
+  "view": Object {
+    "genre": "",
+    "isRow": true,
+  },
+}
+`;
+
+exports[`actions getDetails actioin change store 1`] = `
+Object {
+  "content": Object {
+    "details": Object {
+      "id": 14030,
+      "overview": "Lorem Ipsum is simply dummy text of the printing",
+      "poster": "image_path",
+      "runtime": 120,
+      "title": "Sopranos",
+      "vote_average_ids": 10,
+    },
+    "filter": "TRENDING",
+    "genres_array": undefined,
+    "isLoading": true,
+    "page": 1,
+    "pageSize": 20,
+    "results": Array [],
+    "searchValue": "",
+    "total_pages": 0,
+    "total_results": 0,
+  },
+  "view": Object {
+    "genre": "",
+    "isRow": true,
+  },
+}
+`;
+
+exports[`actions setCurrentPage actioin change store 1`] = `
+Object {
+  "content": Object {
+    "details": Object {
+      "id": 14030,
+      "overview": "Lorem Ipsum is simply dummy text of the printing",
+      "poster": "image_path",
+      "runtime": 120,
+      "title": "Sopranos",
+      "vote_average_ids": 10,
+    },
+    "filter": "COMINGSOON",
+    "genres_array": undefined,
+    "isLoading": true,
+    "page": 5,
+    "pageSize": 20,
+    "results": Array [
+      Object {
+        "genre_ids": Array [
+          13,
+          20,
+          21,
+        ],
+        "id": 2412412,
+        "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "poster_path": "image_path",
+        "title": "Fight club",
+        "vote_average": 8,
+      },
+      Object {
+        "genre_ids": Array [
+          13,
+          18,
+        ],
+        "id": 41412,
+        "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "poster_path": "image_path",
+        "title": "Sopranos",
+        "vote_average": 10,
+      },
+    ],
+    "searchValue": "test",
+    "total_pages": 12,
+    "total_results": 55,
+  },
+  "view": Object {
+    "genre": "",
+    "isRow": true,
+  },
+}
+`;
+
+exports[`actions setFilter actioin change store 1`] = `
+Object {
+  "content": Object {
+    "details": Object {
+      "id": 14030,
+      "overview": "Lorem Ipsum is simply dummy text of the printing",
+      "poster": "image_path",
+      "runtime": 120,
+      "title": "Sopranos",
+      "vote_average_ids": 10,
+    },
+    "filter": "COMINGSOON",
+    "genres_array": undefined,
+    "isLoading": true,
+    "page": 1,
+    "pageSize": 20,
+    "results": Array [
+      Object {
+        "genre_ids": Array [
+          13,
+          20,
+          21,
+        ],
+        "id": 2412412,
+        "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "poster_path": "image_path",
+        "title": "Fight club",
+        "vote_average": 8,
+      },
+      Object {
+        "genre_ids": Array [
+          13,
+          18,
+        ],
+        "id": 41412,
+        "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "poster_path": "image_path",
+        "title": "Sopranos",
+        "vote_average": 10,
+      },
+    ],
+    "searchValue": "test",
+    "total_pages": 12,
+    "total_results": 55,
+  },
+  "view": Object {
+    "genre": "",
+    "isRow": true,
+  },
+}
+`;
+
+exports[`actions setLoading actioin change store 1`] = `
+Object {
+  "content": Object {
+    "details": Object {
+      "id": 14030,
+      "overview": "Lorem Ipsum is simply dummy text of the printing",
+      "poster": "image_path",
+      "runtime": 120,
+      "title": "Sopranos",
+      "vote_average_ids": 10,
+    },
+    "filter": "COMINGSOON",
+    "genres_array": undefined,
+    "isLoading": true,
+    "page": 1,
+    "pageSize": 20,
+    "results": Array [
+      Object {
+        "genre_ids": Array [
+          13,
+          20,
+          21,
+        ],
+        "id": 2412412,
+        "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "poster_path": "image_path",
+        "title": "Fight club",
+        "vote_average": 8,
+      },
+      Object {
+        "genre_ids": Array [
+          13,
+          18,
+        ],
+        "id": 41412,
+        "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "poster_path": "image_path",
+        "title": "Sopranos",
+        "vote_average": 10,
+      },
+    ],
+    "searchValue": "test",
+    "total_pages": 12,
+    "total_results": 55,
+  },
+  "view": Object {
+    "genre": "",
+    "isRow": true,
+  },
+}
+`;
+
+exports[`actions setSearchValue actioin change store 1`] = `
+Object {
+  "content": Object {
+    "details": Object {
+      "id": 14030,
+      "overview": "Lorem Ipsum is simply dummy text of the printing",
+      "poster": "image_path",
+      "runtime": 120,
+      "title": "Sopranos",
+      "vote_average_ids": 10,
+    },
+    "filter": "COMINGSOON",
+    "genres_array": undefined,
+    "isLoading": true,
+    "page": 5,
+    "pageSize": 20,
+    "results": Array [
+      Object {
+        "genre_ids": Array [
+          13,
+          20,
+          21,
+        ],
+        "id": 2412412,
+        "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "poster_path": "image_path",
+        "title": "Fight club",
+        "vote_average": 8,
+      },
+      Object {
+        "genre_ids": Array [
+          13,
+          18,
+        ],
+        "id": 41412,
+        "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "poster_path": "image_path",
+        "title": "Sopranos",
+        "vote_average": 10,
+      },
+    ],
+    "searchValue": "test",
+    "total_pages": 12,
+    "total_results": 55,
+  },
+  "view": Object {
+    "genre": "",
+    "isRow": true,
+  },
+}
+`;

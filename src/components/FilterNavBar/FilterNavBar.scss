@@ -1,0 +1,38 @@
+.ant-tabs-top {
+  height: 46px;
+}
+
+.filter-navbar {
+  width: 100%;
+}
+
+.menu-item {
+  color: #1890ff;
+  cursor: pointer;
+
+  &:hover,
+  &:active {
+    text-decoration: underline;
+    font-weight: bold;
+  }
+}
+
+.genre-status {
+  position: absolute;
+  top: 10px;
+  left: 440px;
+  background: #1890ff;
+  color: #fff;
+  padding: 0 1px;
+  border-radius: 25%;
+}
+
+.ant-tabs-nav-wrap {
+  width: 100%;
+}
+
+.ant-tabs-nav-list {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}

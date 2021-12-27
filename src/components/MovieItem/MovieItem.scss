@@ -1,0 +1,106 @@
+.overlay {
+  position: absolute;
+  display: none;
+  width: 200px;
+  height: 250px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.movie-item,
+.movie-item__hovered {
+  position: relative;
+  width: 200px;
+  height: 305px;
+  margin: 30px;
+  padding: 0;
+
+  &__hovered .overlay {
+    display: block;
+  }
+
+  &__hovered .watch-btn {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 75px;
+    top: 50px;
+    z-index: 10;
+    cursor: pointer;
+
+    &::after {
+      content: 'Watch Now';
+      position: absolute;
+      top: 80px;
+      left: -20px;
+      font-size: 16px;
+      color: #fff;
+    }
+
+    & .icon {
+      position: absolute;
+      top: 7px;
+      left: 8px;
+    }
+  }
+
+  &__hovered .more-btn {
+    position: absolute;
+    left: 55px;
+    top: 190px;
+    z-index: 10;
+    background-color: transparent;
+    color: #fff;
+  }
+}
+
+.poster {
+  width: 200px;
+  height: 250px;
+
+  &__active {
+    width: 200px;
+    height: 250px;
+  }
+}
+
+.overlay__active {
+  position: absolute;
+  display: block;
+  width: 200px;
+  height: 300px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.overview {
+  display: block;
+  position: absolute;
+  width: 90%;
+  height: 150px;
+  font-size: 12px;
+  top: 57px;
+  left: 15px;
+  overflow: hidden;
+  color: #fff;
+  z-index: 10;
+}
+
+.watch-btn__active {
+  position: absolute;
+  left: 15px;
+  bottom: 20px;
+  background-color: transparent;
+  color: #fff;
+  z-index: 10;
+}

@@ -11,7 +11,7 @@ module.exports = {
   context: __dirname,
   entry: [
     'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
-    '../../src/index.jsx',
+    '../../src/index.js',
   ],
   module: {
     rules: [
@@ -53,6 +53,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template:  path.resolve(__dirname, '../../src/index.html'),
+      favicon:  path.resolve(__dirname, '../../public/assets/images/favicon.png')
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),

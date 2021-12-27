@@ -1,0 +1,528 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test MovieList component should listen change resize screen less then 640px 1`] = `
+<div>
+  <section
+    class="ant-layout movieList-container"
+  >
+    <div
+      class="ant-page-header site-page-header ant-page-header-ghost"
+    >
+      <div
+        class="ant-page-header-content"
+      >
+        <div
+          class="filter-navbar"
+        >
+          <div
+            class="ant-tabs ant-tabs-top"
+          >
+            <div
+              class="ant-tabs-nav"
+              role="tablist"
+            >
+              <div
+                class="ant-tabs-nav-wrap"
+              >
+                <div
+                  class="ant-tabs-nav-list"
+                  style="transform: translate(0px, 0px);"
+                >
+                  <div
+                    class="ant-tabs-tab ant-tabs-tab-active"
+                  >
+                    <div
+                      aria-controls="rc-tabs-test-panel-TRENDING"
+                      aria-selected="true"
+                      class="ant-tabs-tab-btn"
+                      id="rc-tabs-test-tab-TRENDING"
+                      role="tab"
+                      tabindex="0"
+                    >
+                      Trending
+                    </div>
+                  </div>
+                  <div
+                    class="ant-tabs-tab"
+                  >
+                    <div
+                      aria-controls="rc-tabs-test-panel-TOPRATED"
+                      aria-selected="false"
+                      class="ant-tabs-tab-btn"
+                      id="rc-tabs-test-tab-TOPRATED"
+                      role="tab"
+                      tabindex="0"
+                    >
+                      Top Rated
+                    </div>
+                  </div>
+                  <div
+                    class="ant-tabs-tab"
+                  >
+                    <div
+                      aria-controls="rc-tabs-test-panel-COMINGSOON"
+                      aria-selected="false"
+                      class="ant-tabs-tab-btn"
+                      id="rc-tabs-test-tab-COMINGSOON"
+                      role="tab"
+                      tabindex="0"
+                    >
+                      Coming Soon
+                    </div>
+                  </div>
+                  <div
+                    class="ant-tabs-tab"
+                  >
+                    <div
+                      aria-controls="rc-tabs-test-panel-GENRE"
+                      aria-selected="false"
+                      class="ant-tabs-tab-btn"
+                      id="rc-tabs-test-tab-GENRE"
+                      role="tab"
+                      tabindex="0"
+                    >
+                      <span
+                        class="ant-dropdown-trigger ant-dropdown-link"
+                        placement="bottomCenter"
+                      >
+                        Genre 
+                        <span
+                          aria-label="down"
+                          class="anticon anticon-down"
+                          role="img"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            data-icon="down"
+                            fill="currentColor"
+                            focusable="false"
+                            height="1em"
+                            viewBox="64 64 896 896"
+                            width="1em"
+                          >
+                            <path
+                              d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <div />
+                    </div>
+                  </div>
+                  <div
+                    class="ant-tabs-ink-bar ant-tabs-ink-bar-animated"
+                  />
+                </div>
+              </div>
+              <div
+                class="ant-tabs-nav-operations ant-tabs-nav-operations-hidden"
+              >
+                <button
+                  aria-controls="rc-tabs-test-more-popup"
+                  aria-expanded="false"
+                  aria-haspopup="listbox"
+                  aria-hidden="true"
+                  class="ant-tabs-nav-more"
+                  id="rc-tabs-test-more"
+                  style="visibility: hidden; order: 1;"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-label="ellipsis"
+                    class="anticon anticon-ellipsis"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="ellipsis"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M176 511a56 56 0 10112 0 56 56 0 10-112 0zm280 0a56 56 0 10112 0 56 56 0 10-112 0zm280 0a56 56 0 10112 0 56 56 0 10-112 0z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+            <div
+              class="ant-tabs-content-holder"
+            >
+              <div
+                class="ant-tabs-content ant-tabs-content-top"
+              >
+                <div
+                  aria-hidden="false"
+                  aria-labelledby="rc-tabs-test-tab-TRENDING"
+                  class="ant-tabs-tabpane ant-tabs-tabpane-active"
+                  id="rc-tabs-test-panel-TRENDING"
+                  role="tabpanel"
+                  tabindex="0"
+                />
+                <div
+                  aria-hidden="true"
+                  aria-labelledby="rc-tabs-test-tab-TOPRATED"
+                  class="ant-tabs-tabpane"
+                  id="rc-tabs-test-panel-TOPRATED"
+                  role="tabpanel"
+                  style="display: none;"
+                  tabindex="-1"
+                />
+                <div
+                  aria-hidden="true"
+                  aria-labelledby="rc-tabs-test-tab-COMINGSOON"
+                  class="ant-tabs-tabpane"
+                  id="rc-tabs-test-panel-COMINGSOON"
+                  role="tabpanel"
+                  style="display: none;"
+                  tabindex="-1"
+                />
+                <div
+                  aria-hidden="true"
+                  aria-labelledby="rc-tabs-test-tab-GENRE"
+                  class="ant-tabs-tabpane"
+                  id="rc-tabs-test-panel-GENRE"
+                  role="tabpanel"
+                  style="display: none;"
+                  tabindex="-1"
+                />
+              </div>
+            </div>
+          </div>
+          <span
+            class="genre-status"
+          >
+            Drama
+          </span>
+        </div>
+        <div
+          class="btn-container"
+        >
+          <div
+            class="rows-btn"
+          >
+            <div />
+            <div />
+            <div />
+            <div />
+          </div>
+          <div
+            class="columns-btn_active"
+          >
+            <div />
+            <div />
+          </div>
+        </div>
+      </div>
+    </div>
+    <section
+      class="ant-layout movieItem-container"
+      style="flex-direction: column; align-items: center;"
+    >
+      <div
+        class="ant-spin ant-spin-spinning ant-spin-show-text"
+      >
+        <span
+          class="ant-spin-dot ant-spin-dot-spin"
+        >
+          <i
+            class="ant-spin-dot-item"
+          />
+          <i
+            class="ant-spin-dot-item"
+          />
+          <i
+            class="ant-spin-dot-item"
+          />
+          <i
+            class="ant-spin-dot-item"
+          />
+        </span>
+        <div
+          class="ant-spin-text"
+        >
+          Loading...
+        </div>
+      </div>
+    </section>
+  </section>
+  <footer
+    class="ant-layout-footer footer"
+  >
+    <span
+      class="title"
+    >
+      films
+    </span>
+    <span
+      class="copyright"
+    >
+      COPYRIGHT © 2021 Films
+    </span>
+    <span>
+      <a
+        href="https://github.com/halaveika"
+        rel="noreferrer"
+        target="_blank"
+      >
+        HALAVEIKA ALIAKSANDR
+      </a>
+    </span>
+  </footer>
+</div>
+`;
+
+exports[`test MovieList component should render MovieList component in Column oder 1`] = `
+<React.Fragment>
+  <Layout
+    className="movieList-container"
+  >
+    <Filter
+      activeGenre="Drama"
+      filter="TRENDING"
+      genres={
+        Array [
+          Object {
+            "id": 13,
+            "name": "Adventure",
+          },
+          Object {
+            "id": 18,
+            "name": "Drama",
+          },
+          Object {
+            "id": 20,
+            "name": "Family",
+          },
+          Object {
+            "id": 21,
+            "name": "Fantasy",
+          },
+        ]
+      }
+      getContent={
+        [MockFunction] {
+          "calls": Array [
+            Array [],
+            Array [],
+            Array [],
+          ],
+          "results": Array [
+            Object {
+              "type": "return",
+              "value": undefined,
+            },
+            Object {
+              "type": "return",
+              "value": undefined,
+            },
+            Object {
+              "type": "return",
+              "value": undefined,
+            },
+          ],
+        }
+      }
+      isRow={false}
+      setCurrentPage={[MockFunction]}
+      setFilter={[MockFunction]}
+      setGenre={[MockFunction]}
+      setListFlexDirection={[MockFunction]}
+    />
+    <Layout
+      className="movieItem-container"
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "column",
+        }
+      }
+    >
+      <Spin
+        size="default"
+        spinning={true}
+        tip="Loading..."
+        wrapperClassName=""
+      />
+    </Layout>
+  </Layout>
+  <Footer />
+</React.Fragment>
+`;
+
+exports[`test MovieList component should render MovieList component loaded 1`] = `
+<React.Fragment>
+  <Layout
+    className="movieList-container"
+  >
+    <Filter
+      activeGenre="Drama"
+      filter="TRENDING"
+      genres={
+        Array [
+          Object {
+            "id": 13,
+            "name": "Adventure",
+          },
+          Object {
+            "id": 18,
+            "name": "Drama",
+          },
+          Object {
+            "id": 20,
+            "name": "Family",
+          },
+          Object {
+            "id": 21,
+            "name": "Fantasy",
+          },
+        ]
+      }
+      getContent={
+        [MockFunction] {
+          "calls": Array [
+            Array [],
+          ],
+          "results": Array [
+            Object {
+              "type": "return",
+              "value": undefined,
+            },
+          ],
+        }
+      }
+      isRow={true}
+      setCurrentPage={[MockFunction]}
+      setFilter={[MockFunction]}
+      setGenre={[MockFunction]}
+      setListFlexDirection={[MockFunction]}
+    />
+    <Layout
+      className="movieItem-container"
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+        }
+      }
+    >
+      <MovieListContent
+        genre="Drama"
+        getDetails={[MockFunction]}
+        isRow={true}
+        items={
+          Array [
+            Object {
+              "genres": Array [
+                "Drama",
+                "Sport",
+                "Comedy",
+              ],
+              "id": 2412412,
+              "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+              "poster": "image_path",
+              "title": "Fight club",
+              "vote_average": 8,
+            },
+            Object {
+              "genres": Array [
+                "Drama",
+                "Criminal",
+                "comedy",
+              ],
+              "id": 41412,
+              "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+              "poster": "image_path",
+              "title": "Sopranos",
+              "vote_average": 10,
+            },
+          ]
+        }
+        page={1}
+        pageSize={20}
+        setCurrentPage={[MockFunction]}
+        total_results={2}
+      />
+    </Layout>
+  </Layout>
+  <Footer />
+</React.Fragment>
+`;
+
+exports[`test MovieList component should render MovieList component loading 1`] = `
+<React.Fragment>
+  <Layout
+    className="movieList-container"
+  >
+    <Filter
+      activeGenre="Drama"
+      filter="TRENDING"
+      genres={
+        Array [
+          Object {
+            "id": 13,
+            "name": "Adventure",
+          },
+          Object {
+            "id": 18,
+            "name": "Drama",
+          },
+          Object {
+            "id": 20,
+            "name": "Family",
+          },
+          Object {
+            "id": 21,
+            "name": "Fantasy",
+          },
+        ]
+      }
+      getContent={
+        [MockFunction] {
+          "calls": Array [
+            Array [],
+            Array [],
+          ],
+          "results": Array [
+            Object {
+              "type": "return",
+              "value": undefined,
+            },
+            Object {
+              "type": "return",
+              "value": undefined,
+            },
+          ],
+        }
+      }
+      isRow={true}
+      setCurrentPage={[MockFunction]}
+      setFilter={[MockFunction]}
+      setGenre={[MockFunction]}
+      setListFlexDirection={[MockFunction]}
+    />
+    <Layout
+      className="movieItem-container"
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+        }
+      }
+    >
+      <Spin
+        size="default"
+        spinning={true}
+        tip="Loading..."
+        wrapperClassName=""
+      />
+    </Layout>
+  </Layout>
+  <Footer />
+</React.Fragment>
+`;

@@ -1,0 +1,38 @@
+.movieList-container {
+  display: flex;
+  height: auto;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  position: relative;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.movieItem-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0 75px 30px 75px;
+  min-height: 70vh;
+  justify-self: center;
+  margin: 0 auto;
+}
+
+.noresult-msg {
+  display: block;
+  background: #1890ff;
+  color: #fff;
+  padding: 3px 5px;
+  border-radius: 25%;
+}
+
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
