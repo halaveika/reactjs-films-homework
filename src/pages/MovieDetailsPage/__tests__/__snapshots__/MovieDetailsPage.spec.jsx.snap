@@ -1,81 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`test MovieDetailsPage component should render MovieDetailsPage component 1`] = `
-<section
-  className="ant-layout movieDetails-container"
+<Layout
+  className="movieDetails"
 >
   <img
     alt="wallpaper"
     className="movieDetails-image"
-    src="/assets/images/cover-image.jpg"
   />
-  <main
-    className="ant-layout-content movieDetails-content"
+  <Content
+    className="movieDetails-container"
   >
-    <div
-      className="info-container"
-    >
-      <span
-        className="title"
-      >
-        the jungle book
-      </span>
-      <span
-        className="genre"
-      >
-        Adventure  Drama  Family  Fantasy
-         
-        |
-        139
-      </span>
-      <div
-        className="popularity"
-      >
-        <div
-          className="star"
-        />
-        <div
-          className="star"
-        />
-        <div
-          className="star"
-        />
-        <div
-          className="star"
-        />
-        <div
-          className="star"
-        />
-        <span>
-          4.8
-        </span>
-      </div>
-    </div>
-    <div
-      className="ant-row ant-row-space-between navbar-container"
-      style={Object {}}
-    >
-      <button
-        className="ant-btn"
-        onClick={[Function]}
-        type="button"
-      >
-        <span>
-          Watch Now
-        </span>
-      </button>
-      <button
-        className="ant-btn"
-        onClick={[Function]}
-        onMouseDown={[Function]}
-        onTouchStart={[Function]}
-        type="button"
-      >
-        <span>
-          View Info
-        </span>
-      </button>
-    </div>
-  </main>
-</section>
+    <InfoBar
+      genres={
+        Array [
+          "drama",
+          "sport",
+          "comedy",
+        ]
+      }
+      runtime={120}
+      title="Fight club"
+      vote_average={8}
+    />
+    <NavBar
+      id={2412412}
+      overview="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    />
+  </Content>
+</Layout>
 `;

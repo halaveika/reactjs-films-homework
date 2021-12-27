@@ -1,8 +1,7 @@
 import React from 'react';
-import { create } from 'react-test-renderer';
-import { Provider } from 'react-redux';
+import ShallowRenderer from 'react-test-renderer/shallow';
+import { act } from 'react-test-renderer';
 import App from '../app';
-import { store } from '../modules/store';
 
 window.matchMedia = window.matchMedia || function mMedia() {
   return {
@@ -17,13 +16,14 @@ afterEach(() => {
 });
 
 describe('test App component', () => {
-  it('should render App component', () => {
-    const component = create(
-      <Provider store={store}>
-        <App />
-      </Provider>,
-    );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+  it('Matches snapshot ShallowRenderer', async () => {
+    const renderer = new ShallowRenderer();
+    let result;
+    await act(async () => {
+      result = renderer.render(
+        <App />,
+      );
+    });
+    expect(result).toMatchSnapshot();
   });
 });

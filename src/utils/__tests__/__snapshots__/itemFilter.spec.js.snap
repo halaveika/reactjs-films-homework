@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`itemfilter itemfilter should filter array 1`] = `
+Array [
+  Object {
+    "genres": Array [
+      "drama",
+      "Criminal",
+      "comedy",
+    ],
+    "id": 41412,
+    "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+    "poster": "image_path",
+    "title": "Sopranos",
+    "vote_average": 10,
+  },
+]
+`;
+
+exports[`itemfilter itemfilter should not filter array if there are not pass genre 1`] = `
+Array [
+  Object {
+    "genres": Array [
+      "drama",
+      "sport",
+      "comedy",
+    ],
+    "id": 2412412,
+    "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+    "poster": "image_path",
+    "title": "Fight club",
+    "vote_average": 8,
+  },
+  Object {
+    "genres": Array [
+      "drama",
+      "Criminal",
+      "comedy",
+    ],
+    "id": 41412,
+    "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+    "poster": "image_path",
+    "title": "Sopranos",
+    "vote_average": 10,
+  },
+]
+`;

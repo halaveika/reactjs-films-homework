@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListContainer should show mapStateToProps value 1`] = `
+Object {
+  "filter": "TRENDING",
+  "genre": "",
+  "genres": Array [
+    Object {
+      "id": 13,
+      "name": "Adventure",
+    },
+    Object {
+      "id": 18,
+      "name": "Drama",
+    },
+    Object {
+      "id": 20,
+      "name": "Family",
+    },
+    Object {
+      "id": 21,
+      "name": "Fantasy",
+    },
+  ],
+  "isLoading": true,
+  "isRow": true,
+  "items": Array [
+    Object {
+      "genres": Array [
+        "Adventure",
+        "Family",
+        "Fantasy",
+      ],
+      "id": 2412412,
+      "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "poster": "https://image.tmdb.org/t/p/w500/image_path",
+      "title": "Fight club",
+      "vote_average": 8,
+    },
+    Object {
+      "genres": Array [
+        "Adventure",
+        "Drama",
+      ],
+      "id": 41412,
+      "overview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "poster": "https://image.tmdb.org/t/p/w500/image_path",
+      "title": "Sopranos",
+      "vote_average": 10,
+    },
+  ],
+  "page": 1,
+  "pageSize": 20,
+  "searchValue": "",
+  "total_results": 55,
+}
+`;

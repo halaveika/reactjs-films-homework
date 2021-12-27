@@ -1,23 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import secondsToHoursMinutes from '../../utils/secondsToHoursMinutes';
 import './InfoBar.scss';
 
 export default function InfoBar({
-  original_title, genres, runtime, vote_average,
+  title, genres, runtime, vote_average,
 }) {
   return (
     <div className="info-container">
       <span className="title">
-        {original_title}
+        {title}
       </span>
       <span className="genre">
-        {genres.map((e) => e.name).join('  ')}
-        {' '}
-        |
-        {runtime}
+        {`${genres.join('  ')} | ${secondsToHoursMinutes(runtime)}`}
       </span>
       <div className="popularity">
-        {Array(Math.round(vote_average)).fill(1).map((e, i) => <div className="star" key={i} />)}
+        {Array(Math.round(vote_average))
+          .fill(1)
+          .map((e, i) => <img className="star" key={i} src="assets/images/star.svg" alt="superstar" />)}
         <span>
           {vote_average}
         </span>
@@ -27,11 +27,8 @@ export default function InfoBar({
 }
 
 InfoBar.propTypes = {
-  original_title: PropTypes.string.isRequired,
-  genres: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired,
-  })).isRequired,
-  runtime: PropTypes.number.isRequired,
-  vote_average: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  genres: PropTypes.arrayOf(PropTypes.string),
+  runtime: PropTypes.number,
+  vote_average: PropTypes.number,
 };

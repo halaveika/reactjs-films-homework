@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DetailsContainer should show mapStateToProps value 1`] = `
+Object {
+  "backdrop": "https://image.tmdb.org/t/p/w500/image_path",
+  "genres": Array [
+    undefined,
+    undefined,
+    undefined,
+  ],
+  "id": 2412412,
+  "overview": "Lorem Ipsum is simply dummy text of the printing",
+  "runtime": 120,
+  "title": "Fight club",
+  "vote_average": 10,
+}
+`;

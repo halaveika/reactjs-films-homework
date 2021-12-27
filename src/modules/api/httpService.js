@@ -1,9 +1,39 @@
-import { URL, API_KEY_V3, URL_YOUTUBE } from '../../constants';
+import {
+  URL, API_KEY_V3, URL_YOUTUBE, NOT_FOUND_IMG_PATH,
+} from '../../constants';
 
 class HttpService {
-  static async searchMovieRequest(str) {
+  static async searchMovieRequest(str, page) {
     try {
-      const response = await fetch(`${URL}search/movie?api_key=${API_KEY_V3}&query=${str}&page=1`, { method: 'GET' });
+      const response = await fetch(`${URL}search/movie?api_key=${API_KEY_V3}&query=${str}&page=${page}`,
+        { method: 'GET' });
+      return await response.json();
+    } catch (error) {
+      throw new Error(error);
+    }
+  }
+
+  static async getTrendingRequest(page) {
+    try {
+      const response = await fetch(`${URL}movie/popular?api_key=${API_KEY_V3}&page=${page}`, { method: 'GET' });
+      return await response.json();
+    } catch (error) {
+      throw new Error(error);
+    }
+  }
+
+  static async getTopRatedRequest(page) {
+    try {
+      const response = await fetch(`${URL}movie/top_rated?api_key=${API_KEY_V3}&page=${page}`, { method: 'GET' });
+      return await response.json();
+    } catch (error) {
+      throw new Error(error);
+    }
+  }
+
+  static async getUpcomingRequest(page) {
+    try {
+      const response = await fetch(`${URL}movie/upcoming?api_key=${API_KEY_V3}&page=${page}`, { method: 'GET' });
       return await response.json();
     } catch (error) {
       throw new Error(error);
@@ -23,8 +53,17 @@ class HttpService {
     try {
       const videoInfo = await fetch(`${URL}movie/${id}/videos?api_key=${API_KEY_V3}`, { method: 'GET' });
       const json = await videoInfo.json();
-      if (json.results.length === 0) { return `${URL_YOUTUBE}2Q_ZzBGPdqE`; }
+      if (json.results.length === 0) { return NOT_FOUND_IMG_PATH; }
       return `${URL_YOUTUBE}${json.results[0].key}`;
+    } catch (error) {
+      throw new Error(error);
+    }
+  }
+
+  static async movieDetailsRequest(id) {
+    try {
+      const response = await fetch(`${URL}movie/${id}?api_key=${API_KEY_V3}`, { method: 'GET' });
+      return await response.json();
     } catch (error) {
       throw new Error(error);
     }

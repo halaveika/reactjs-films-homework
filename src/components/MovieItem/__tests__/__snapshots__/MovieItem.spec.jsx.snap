@@ -1,5 +1,61 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`test MovieItem component handleDetailPageNavigation should execut 1`] = `
+<div
+  className="ant-card ant-card-bordered movie-item__hovered"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <div
+    className="ant-card-body"
+    style={Object {}}
+  >
+    <div
+      className="overlay__active"
+      onClick={[Function]}
+    />
+    <img
+      alt="Poster!"
+      className="poster__active"
+      src="image_path"
+    />
+    <button
+      className="ant-btn ant-btn-primary watch-btn__active"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Watch Now
+      </span>
+    </button>
+    <div
+      className="movie-item-container__active"
+    >
+      <span
+        className="movie-item_title"
+      >
+        Fight club
+      </span>
+      <span
+        className="movie-item_vote-average"
+      >
+        8
+      </span>
+      <span
+        className="movie-item_genre"
+      >
+        drama, sport, comedy
+      </span>
+    </div>
+    <span
+      className="overview"
+    >
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    </span>
+  </div>
+</div>
+`;
+
 exports[`test MovieItem component should render MovieItem component 1`] = `
 <div
   className="ant-card ant-card-bordered movie-item"
@@ -12,11 +68,12 @@ exports[`test MovieItem component should render MovieItem component 1`] = `
   >
     <div
       className="overlay"
+      onClick={[Function]}
     />
     <img
       alt="Poster!"
       className="poster"
-      src="https://image.tmdb.org/t/p/w500/image_path"
+      src="image_path"
     />
     
     <div
@@ -54,11 +111,12 @@ exports[`test MovieItem component toggleActive should change state 1`] = `
   >
     <div
       className="overlay__active"
+      onClick={[Function]}
     />
     <img
       alt="Poster!"
       className="poster__active"
-      src="https://image.tmdb.org/t/p/w500/image_path"
+      src="image_path"
     />
     <button
       className="ant-btn ant-btn-primary watch-btn__active"
@@ -91,7 +149,7 @@ exports[`test MovieItem component toggleActive should change state 1`] = `
     <span
       className="overview"
     >
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
     </span>
   </div>
 </div>
@@ -109,11 +167,12 @@ exports[`test MovieItem component toggleHover should change state 1`] = `
   >
     <div
       className="overlay"
+      onClick={[Function]}
     />
     <img
       alt="Poster!"
       className="poster"
-      src="https://image.tmdb.org/t/p/w500/image_path"
+      src="image_path"
     />
     <button
       className="ant-btn ant-btn-primary ant-btn-circle watch-btn"

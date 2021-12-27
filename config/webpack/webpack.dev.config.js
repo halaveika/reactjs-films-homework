@@ -5,14 +5,13 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 module.exports = {
   mode: 'development',
   context: __dirname,
   entry: [
     'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
-    '../../src/index.jsx',
+    '../../src/index.js',
   ],
   module: {
     rules: [
@@ -52,9 +51,9 @@ module.exports = {
   },
   devtool: 'inline-source-map',
   plugins: [
-    new FaviconsWebpackPlugin('../../public/assets/images/film-icon.png'),
     new HtmlWebpackPlugin({
       template:  path.resolve(__dirname, '../../src/index.html'),
+      favicon:  path.resolve(__dirname, '../../public/assets/images/favicon.png')
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),

@@ -1,14 +1,13 @@
 import React from 'react';
-import ListContainer from './components/ListContainer';
-import DetailsContainer from './components/DetailsContainer';
+import { Layout } from 'antd';
 import HeaderContainer from './components/HeaderContainer';
+import AppRouter from './components/AppRouter';
 
 export default function App() {
   return (
-    <>
+    <Layout className="container">
       <HeaderContainer />
-      <DetailsContainer />
-      <ListContainer />
-    </>
+      <AppRouter />
+    </Layout>
   );
 }

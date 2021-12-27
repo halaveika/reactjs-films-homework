@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Modal } from 'antd';
 import PropTypes from 'prop-types';
+import HttpService from '../../modules/api/httpService';
+import ModalContent from '../ModalContent';
 import './WatchVideoModal.scss';
 
 export default class WatchVideoModal extends Component {
@@ -8,35 +10,43 @@ export default class WatchVideoModal extends Component {
     super(props);
     this.state = {
       isModalVisible: false,
+      video: '',
     };
+    this.videoRef = React.createRef();
   }
 
   handleCancel() {
-    this.setState({ isModalVisible: false });
+    this.videoRef.current.src = `${this.state.video}`;
+    this.setState({ ...this.state, isModalVisible: false });
   }
 
-  showModal() {
-    const { id, handleVideo } = this.props;
-    handleVideo(id);
-    this.setState({ isModalVisible: true });
+  async showModal() {
+    const { id } = this.props;
+    const video = await HttpService.movieVideoRequest(id);
+    this.setState({ ...this.state, isModalVisible: true, video });
   }
 
-  /* eslint-disable */
   render() {
     const { isModalVisible } = this.state;
-  return (
-    <>
-      { React.cloneElement(this.props.children, { onClick: this.showModal.bind(this) }) }
-      <Modal visible={isModalVisible} cancelText="cancel" okButtonProps={{ style: { display: 'none' } }} width="85vw" height="85vh" onCancel={this.handleCancel.bind(this)} closable={false} centered>
-        <iframe className="videoIframe" src={`${this.props.video}`} frameBorder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
-      </Modal>
-    </>
-  );
-    /* eslint-enable */
+    return (
+      <>
+        { React.cloneElement(this.props.children, { onClick: this.showModal.bind(this) }) }
+        <Modal
+          visible={isModalVisible}
+          cancelText="cancel"
+          okButtonProps={{ style: { display: 'none' } }}
+          onCancel={this.handleCancel.bind(this)}
+          closable={false}
+        >
+          {' '}
+          <ModalContent videoRef={this.videoRef} video={this.state.video} />
+        </Modal>
+      </>
+    );
   }
 }
+
 WatchVideoModal.propTypes = {
-  id: PropTypes.string.isRequired,
-  video: PropTypes.string.isRequired,
-  handleVideo: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
+  id: PropTypes.number,
 };

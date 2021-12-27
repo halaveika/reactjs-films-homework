@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`contentSelectors testing getGenreView should return genre from state 1`] = `""`;
+
+exports[`contentSelectors testing getListFlexDirectionView should return isRow from state 1`] = `true`;

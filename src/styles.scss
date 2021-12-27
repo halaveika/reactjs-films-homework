@@ -5,12 +5,23 @@
 }
 
 body {
-  min-height: 100vh;
+  height: auto;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   font-size: 20px;
   color: #fff;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  justify-content: flex-start;
+}
+
+.container {
+  background: transparent;
 }
 
 .ant-btn {
@@ -22,14 +33,10 @@ body {
   }
 }
 
-.ant-popover-inner {
-  width: 300px;
-  height: auto;
-  background-color: transparent;
-}
-
 .ant-popover-inner-content {
   color: #fff;
+  height: 50vh;
+  overflow: hidden;
 }
 
 .ant-popover-arrow {
@@ -60,4 +67,129 @@ body {
 
 .ant-modal-centered::before {
   content: unset;
+}
+
+/* Media start 640px */
+
+@media screen and (max-width: 640px) {
+  .header {
+    height: 25vh;
+
+    .search {
+      width: 80vw;
+      margin-top: 10px;
+    }
+  }
+
+  .header-container {
+    padding: 0 30px;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .movieDetails-image {
+    width: 100vw;
+    height: 116vh;
+    overflow: hidden;
+  }
+
+  .movieDetails-container {
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .navbar-container {
+    margin-bottom: 20px;
+  }
+
+  .site-page-header {
+    padding: 0;
+  }
+
+  .movieItem-container {
+    padding: 0 30px 30px 30px;
+    flex-direction: column !important;
+  }
+
+  .btn-container {
+    display: none;
+  }
+
+  .filter-navbar {
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .ant-tabs-nav-list {
+    flex-direction: column;
+    width: 100%;
+
+    &::after {
+      content: none;
+    }
+  }
+
+  .ant-tabs-top {
+    width: 100%;
+    height: auto;
+  }
+
+  .ant-tabs-nav {
+    flex-direction: column;
+
+    &::before {
+      content: none;
+    }
+  }
+
+  .ant-tabs-nav-wrap::before {
+    content: none;
+  }
+
+  .ant-tabs {
+    overflow: visible;
+  }
+
+  .ant-tabs-tab-btn {
+    margin: 0 auto;
+  }
+
+  .ant-tabs-tab {
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+    font-size: 30px;
+
+    & + & {
+      margin: 0 auto;
+    }
+
+    &-active {
+      background-color: #1890ff;
+
+      & .ant-tabs-tab-btn {
+        color: #fff !important;
+      }
+    }
+  }
+
+  .ant-tabs-ink-bar {
+    display: none;
+  }
+
+  .genre-status {
+    left: 58%;
+    top: 74%;
+    font-size: 20px;
+  }
+
+  .menu-item {
+    font-size: 26px;
+  }
+
+  .ant-pagination-total-text {
+    display: none;
+  }
 }

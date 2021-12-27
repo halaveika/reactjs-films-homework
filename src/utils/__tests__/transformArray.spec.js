@@ -1,4 +1,4 @@
-import { transformArray } from '../transformArray';
+import transformArray from '../transformArray';
 
 describe('transformArray', () => {
   test('transformArray should transform input array', async () => {

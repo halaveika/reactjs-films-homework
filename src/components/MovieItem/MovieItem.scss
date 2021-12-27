@@ -1,7 +1,7 @@
 .overlay {
   position: absolute;
   display: none;
-  width: 100%;
+  width: 200px;
   height: 250px;
   top: 0;
   left: 0;
@@ -16,7 +16,7 @@
 .movie-item__hovered {
   position: relative;
   width: 200px;
-  height: 250px;
+  height: 305px;
   margin: 30px;
   padding: 0;
 
@@ -31,6 +31,7 @@
     left: 75px;
     top: 50px;
     z-index: 10;
+    cursor: pointer;
 
     &::after {
       content: 'Watch Now';
@@ -59,18 +60,19 @@
 }
 
 .poster {
-  width: 100%;
+  width: 200px;
   height: 250px;
 
   &__active {
-    height: 300px;
+    width: 200px;
+    height: 250px;
   }
 }
 
 .overlay__active {
   position: absolute;
   display: block;
-  width: 100%;
+  width: 200px;
   height: 300px;
   top: 0;
   left: 0;
@@ -97,7 +99,7 @@
 .watch-btn__active {
   position: absolute;
   left: 15px;
-  bottom: 0;
+  bottom: 20px;
   background-color: transparent;
   color: #fff;
   z-index: 10;

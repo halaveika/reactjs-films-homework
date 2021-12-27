@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test ModalContent component should render ModalContent as iframe 1`] = `
+<iframe
+  allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen={true}
+  frameBorder="0"
+  scrolling="no"
+  src="test"
+  title="trailer"
+/>
+`;
+
+exports[`test ModalContent component sshould render ModalContent as image 1`] = `
+<img
+  alt="notfound"
+  src="assets/images/not-found.png"
+  style={
+    Object {
+      "height": "auto",
+      "margin": "20% auto auto auto",
+      "width": "90%",
+    }
+  }
+/>
+`;

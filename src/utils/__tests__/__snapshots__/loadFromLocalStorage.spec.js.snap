@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`loadFromLocalStorage if localstorage is empty should return undefined 1`] = `undefined`;
+
+exports[`loadFromLocalStorage should load from localstorage and return object 1`] = `
+Object {
+  "test": "TestState",
+}
+`;

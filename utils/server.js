@@ -1,8 +1,10 @@
 const express = require('express');
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
+const history = require('connect-history-api-fallback');
 
 const app = express();
+app.use(history());
 const config = require('../config/webpack/webpack.dev.config');
 const compiler = webpack(config);
 
