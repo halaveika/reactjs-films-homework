@@ -4,6 +4,7 @@ const path = require('path');
 module.exports = {
     rootDir: path.join(__dirname, '../../'),
     verbose: true,
+    testEnvironment: 'jsdom',
     moduleFileExtensions: [
         'js',
         'jsx',
@@ -26,5 +27,6 @@ module.exports = {
         lines: 100,
         statements: 100
       }
-    }
+    },
+    // transform: { "^.+\\.(ts|tsx|js|jsx)?$": "ts-jest" }
 };

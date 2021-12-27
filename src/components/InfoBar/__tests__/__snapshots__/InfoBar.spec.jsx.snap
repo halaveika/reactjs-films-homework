@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test InfoBar component should render InfoBar component 1`] = `
+<div
+  className="info-container"
+>
+  <span
+    className="title"
+  >
+    the jungle book
+  </span>
+  <span
+    className="genre"
+  >
+    Adventure  Drama  Family  Fantasy
+     
+    |
+    139
+  </span>
+  <div
+    className="popularity"
+  >
+    <div
+      className="star"
+    />
+    <div
+      className="star"
+    />
+    <div
+      className="star"
+    />
+    <div
+      className="star"
+    />
+    <div
+      className="star"
+    />
+    <span>
+      4.8
+    </span>
+  </div>
+</div>
+`;

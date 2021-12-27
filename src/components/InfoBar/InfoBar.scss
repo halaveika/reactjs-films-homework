@@ -1,0 +1,39 @@
+.info-container {
+  width: 300px;
+  height: auto;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.genre {
+  font-size: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.popularity {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .star {
+    width: 20px;
+    height: 20px;
+    background-image: url(../../../public/assets/images/star.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  span {
+    margin-left: 20px;
+    font-size: 16px;
+    border: #1890ff solid 2px;
+    border-radius: 25%;
+    padding: 1px 4px;
+  }
+}
