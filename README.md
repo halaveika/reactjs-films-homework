@@ -4,5 +4,5 @@
 [![GitHub release](https://img.shields.io/github/release/halaveika/reactjs-films-homework.svg)](https://github.com/halaveika/reactjs-films-homework/releases/latest)
 
 # reactjs-films-homework
-## DEPLOY
+
 https://reactjs-films-homework-xi.vercel.app/
